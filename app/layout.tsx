@@ -55,7 +55,7 @@ export const metadata: Metadata = {
     description: "Špecialisti na elektrotechnické práce a priemyselné montáže s viac ako 15-ročnými skúsenosťami.",
     images: [
       {
-        url: "/images/logo-transparent.png",
+        url: "/E-P-Industry/images/logo-transparent.png",
         width: 1200,
         height: 630,
         alt: "E&P Industry - Elektrické inštalácie",
@@ -66,15 +66,15 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "E&P Industry - Profesionálne elektrické a montážne riešenia",
     description: "Špecialisti na elektrotechnické práce a priemyselné montáže s viac ako 15-ročnými skúsenosťami.",
-    images: ["/images/logo-transparent.png"],
+    images: ["/E-P-Industry/images/logo-transparent.png"],
   },
   verification: {
     google: "your-google-verification-code",
   },
   icons: {
-    icon: "/images/logo-icon.jpg",
-    shortcut: "/images/logo-icon.jpg",
-    apple: "/images/logo-icon.jpg",
+    icon: "/E-P-Industry/images/logo-icon.jpg",
+    shortcut: "/E-P-Industry/images/logo-icon.jpg",
+    apple: "/E-P-Industry/images/logo-icon.jpg",
   },
     generator: 'v0.dev'
 }
@@ -95,10 +95,10 @@ export default function RootLayout({
   return (
     <html lang="sk" className="scroll-smooth">
       <head>
-        <link rel="icon" href="/images/logo-icon.jpg" sizes="any" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/images/logo-icon.jpg" />
-        <link rel="icon" type="image/jpeg" sizes="32x32" href="/images/logo-icon.jpg" />
-        <link rel="icon" type="image/jpeg" sizes="16x16" href="/images/logo-icon.jpg" />
+        <link rel="icon" href="/E-P-Industry/images/logo-icon.jpg" sizes="any" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/E-P-Industry/images/logo-icon.jpg" />
+        <link rel="icon" type="image/jpeg" sizes="32x32" href="/E-P-Industry/images/logo-icon.jpg" />
+        <link rel="icon" type="image/jpeg" sizes="16x16" href="/E-P-Industry/images/logo-icon.jpg" />
       </head>
       <body className={`${inter.className} antialiased`}>
         <LanguageProvider>

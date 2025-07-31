@@ -25,10 +25,10 @@ export default function ProjectsPage() {
       year: "2024",
       category: "industrial",
       images: [
-        "/images/project-chemical-plant.png",
-        "/images/service-electrical-installations.png",
-        "/images/service-industrial-assembly.png",
-        "/images/service-maintenance.png",
+        "/E-P-Industry/images/project-chemical-plant.png",
+        "/E-P-Industry/images/service-electrical-installations.png",
+        "/E-P-Industry/images/service-industrial-assembly.png",
+        "/E-P-Industry/images/service-maintenance.png",
       ],
     },
     {
@@ -41,10 +41,10 @@ export default function ProjectsPage() {
       year: "2023",
       category: "commercial",
       images: [
-        "/images/project-logistics-center.png",
-        "/images/service-electrical-installations.png",
-        "/images/service-industrial-assembly.png",
-        "/images/service-maintenance.png",
+        "/E-P-Industry/images/project-logistics-center.png",
+        "/E-P-Industry/images/service-electrical-installations.png",
+        "/E-P-Industry/images/service-industrial-assembly.png",
+        "/E-P-Industry/images/service-maintenance.png",
       ],
     },
     {
@@ -57,10 +57,10 @@ export default function ProjectsPage() {
       year: "2023",
       category: "commercial",
       images: [
-        "/images/project-shopping-center.png",
-        "/images/service-electrical-installations.png",
-        "/images/service-industrial-assembly.png",
-        "/images/service-design-engineering.png",
+        "/E-P-Industry/images/project-shopping-center.png",
+        "/E-P-Industry/images/service-electrical-installations.png",
+        "/E-P-Industry/images/service-industrial-assembly.png",
+        "/E-P-Industry/images/service-design-engineering.png",
       ],
     },
     {
@@ -73,10 +73,10 @@ export default function ProjectsPage() {
       year: "2022",
       category: "industrial",
       images: [
-        "/images/project-chemical-plant.png",
-        "/images/service-electrical-installations.png",
-        "/images/service-industrial-assembly.png",
-        "/images/service-maintenance.png",
+        "/E-P-Industry/images/project-chemical-plant.png",
+        "/E-P-Industry/images/service-electrical-installations.png",
+        "/E-P-Industry/images/service-industrial-assembly.png",
+        "/E-P-Industry/images/service-maintenance.png",
       ],
     },
     {
@@ -89,10 +89,10 @@ export default function ProjectsPage() {
       year: "2022",
       category: "healthcare",
       images: [
-        "/images/project-hospital.png",
-        "/images/service-electrical-installations.png",
-        "/images/service-maintenance.png",
-        "/images/service-design-engineering.png",
+        "/E-P-Industry/images/project-hospital.png",
+        "/E-P-Industry/images/service-electrical-installations.png",
+        "/E-P-Industry/images/service-maintenance.png",
+        "/E-P-Industry/images/service-design-engineering.png",
       ],
     },
     {
@@ -105,10 +105,10 @@ export default function ProjectsPage() {
       year: "2021",
       category: "it",
       images: [
-        "/images/project-datacenter.png",
-        "/images/service-electrical-installations.png",
-        "/images/service-maintenance.png",
-        "/images/service-design-engineering.png",
+        "/E-P-Industry/images/project-datacenter.png",
+        "/E-P-Industry/images/service-electrical-installations.png",
+        "/E-P-Industry/images/service-maintenance.png",
+        "/E-P-Industry/images/service-design-engineering.png",
       ],
     },
   ]
@@ -193,7 +193,7 @@ export default function ProjectsPage() {
             <div className="relative hidden lg:block">
               <div className="bg-gradient-to-br from-[#3182A9] to-[#1A73E8] rounded-2xl p-2 shadow-2xl transform rotate-3 hover:rotate-0 transition-transform duration-500">
                 <Image
-                  src="/images/projects-hero.png"
+                  src="/E-P-Industry/images/projects-hero.png"
                   alt="E&P Industry projekty - prehľad elektrických inštalácií"
                   width={600}
                   height={400}

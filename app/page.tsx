@@ -218,7 +218,7 @@ export default function HomePage() {
             <div className="relative order-1 lg:order-2">
               <div className="relative">
                 <Image
-                  src="/images/about-industrial-facility.png"
+                  src="/E-P-Industry/images/about-industrial-facility.png"
                   alt="About E&P Industry"
                   width={600}
                   height={500}
@@ -377,7 +377,7 @@ export default function HomePage() {
 
       {/* CTA Section */}
       <section className="py-16 sm:py-20 bg-gradient-to-r from-[#3182A9] to-[#1A73E8] relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('/images/hero-electrical-work.png')] bg-cover bg-center opacity-10"></div>
+        <div className="absolute inset-0 bg-[url('/E-P-Industry/images/hero-electrical-work.png')] bg-cover bg-center opacity-10"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4 sm:mb-6 uppercase tracking-wide">
             Pripravení začať váš projekt?
