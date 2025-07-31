@@ -25,7 +25,7 @@ export default function ProjectsPage() {
       year: "2024",
       category: "industrial",
       images: [
-        "/images/project-automotive-plant.png",
+        "/images/project-chemical-plant.png",
         "/images/service-electrical-installations.png",
         "/images/service-industrial-assembly.png",
         "/images/service-maintenance.png",
