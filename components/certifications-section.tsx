@@ -59,7 +59,7 @@ export default function CertificationsSection() {
       {/* Background Logo */}
       <div className="absolute inset-0 flex items-center justify-center opacity-5">
         <Image
-          src="/images/logo-full.jpg"
+          src="/E-P-Industry/images/logo-full.jpg"
           alt="E&P Industry Background"
           width={800}
           height={800}
@@ -71,7 +71,7 @@ export default function CertificationsSection() {
         <div className="text-center mb-12 sm:mb-16">
           <div className="flex items-center justify-center mb-6">
             <Image
-              src="/images/logo-icon.jpg"
+              src="/E-P-Industry/images/logo-icon.jpg"
               alt="E&P Industry"
               width={60}
               height={60}
@@ -137,7 +137,7 @@ export default function CertificationsSection() {
           <div className="flex flex-wrap justify-center items-center gap-8 opacity-60">
             <div className="bg-white p-4 rounded-lg shadow-md border border-[#B0B0B0]/20 flex items-center space-x-3">
               <Image
-                src="/images/logo-icon.jpg"
+                src="/E-P-Industry/images/logo-icon.jpg"
                 alt="E&P Industry"
                 width={32}
                 height={32}
@@ -147,7 +147,7 @@ export default function CertificationsSection() {
             </div>
             <div className="bg-white p-4 rounded-lg shadow-md border border-[#B0B0B0]/20 flex items-center space-x-3">
               <Image
-                src="/images/logo-icon.jpg"
+                src="/E-P-Industry/images/logo-icon.jpg"
                 alt="E&P Industry"
                 width={32}
                 height={32}
@@ -157,7 +157,7 @@ export default function CertificationsSection() {
             </div>
             <div className="bg-white p-4 rounded-lg shadow-md border border-[#B0B0B0]/20 flex items-center space-x-3">
               <Image
-                src="/images/logo-icon.jpg"
+                src="/E-P-Industry/images/logo-icon.jpg"
                 alt="E&P Industry"
                 width={32}
                 height={32}

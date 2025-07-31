@@ -86,7 +86,7 @@ export default function ContactPage() {
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-[#1F2C3A] via-[#1F2C3A] to-[#2A2F3B] py-20 sm:py-32 flex items-center relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('/images/contact-hero.png')] bg-cover bg-center opacity-15"></div>
+        <div className="absolute inset-0 bg-[url('/E-P-Industry/images/contact-hero.png')] bg-cover bg-center opacity-15"></div>
         <div className="absolute inset-0 bg-gradient-to-r from-[#1F2C3A]/90 to-[#1F2C3A]/70"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -127,7 +127,7 @@ export default function ContactPage() {
             <div className="relative hidden lg:block">
               <div className="bg-gradient-to-br from-[#3182A9] to-[#1A73E8] rounded-2xl p-2 shadow-2xl transform rotate-3 hover:rotate-0 transition-transform duration-500">
                 <Image
-                  src="/images/contact-hero.png"
+                  src="/E-P-Industry/images/contact-hero.png"
                   alt="E&P Industry kontakt - konzultácia s klientom"
                   width={600}
                   height={400}

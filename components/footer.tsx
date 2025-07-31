@@ -26,7 +26,7 @@ export default function Footer() {
           <div className="lg:col-span-1">
             <div className="mb-6">
               <Image
-                src="/images/logo-transparent.png"
+                src="/E-P-Industry/images/logo-transparent.png"
                 alt="E&P Industry"
                 width={220}
                 height={60}

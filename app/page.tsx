@@ -15,20 +15,20 @@ export default function HomePage() {
     {
       title: t("heroTitle"),
       subtitle: t("heroSubtitle"),
-      image: "/images/hero-electrical-work.png",
+      image: "/E-P-Industry/images/hero-electrical-work.png",
       stats: { number: "15+", text: "Rokov skúseností" },
     },
     {
       title: "Moderné technológie pre priemysel",
       subtitle:
         "Využívame najnovšie technológie a postupy pre dosiahnutie najlepších výsledkov vo všetkých projektoch.",
-      image: "/images/about-industrial-facility.png",
+      image: "/E-P-Industry/images/about-industrial-facility.png",
       stats: { number: "500+", text: "Dokončených projektov" },
     },
     {
       title: "Certifikovaná kvalita práce",
       subtitle: "Všetky naše práce spĺňajú najvyššie štandardy kvality a bezpečnosti podľa európskych noriem.",
-      image: "/images/service-electrical-installations.png",
+      image: "/E-P-Industry/images/service-electrical-installations.png",
       stats: { number: "50+", text: "Spokojných klientov" },
     },
   ]
@@ -44,25 +44,25 @@ export default function HomePage() {
     {
       title: t("service1Title"),
       description: t("service1Desc"),
-      image: "/images/service-electrical-installations.png",
+      image: "/E-P-Industry/images/service-electrical-installations.png",
       icon: "⚡",
     },
     {
       title: t("service2Title"),
       description: t("service2Desc"),
-      image: "/images/service-industrial-assembly.png",
+      image: "/E-P-Industry/images/service-industrial-assembly.png",
       icon: "🔧",
     },
     {
       title: t("service3Title"),
       description: t("service3Desc"),
-      image: "/images/service-maintenance.png",
+      image: "/E-P-Industry/images/service-maintenance.png",
       icon: "🛠️",
     },
     {
       title: t("service4Title"),
       description: t("service4Desc"),
-      image: "/images/service-design-engineering.png",
+      image: "/E-P-Industry/images/service-design-engineering.png",
       icon: "📐",
     },
   ]
