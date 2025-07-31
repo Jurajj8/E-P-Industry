@@ -373,7 +373,7 @@ export default function HomePage() {
       </section>
 
       {/* Certifications Section */}
-      {/* <CertificationsSection /> */}
+      <CertificationsSection />
 
       {/* CTA Section */}
       <section className="py-16 sm:py-20 bg-gradient-to-r from-[#3182A9] to-[#1A73E8] relative overflow-hidden">

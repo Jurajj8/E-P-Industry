@@ -9,9 +9,6 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  basePath: '/E-P-Industry',
-  assetPrefix: '/E-P-Industry/',
-  trailingSlash: true,
 }
 
 export default nextConfig
