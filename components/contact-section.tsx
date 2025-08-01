@@ -38,7 +38,7 @@ export default function ContactSection() {
           <p className="text-xl text-gray-600">{t("contactSubtitle")}</p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
           {/* Contact Information */}
           <div className="space-y-8">
             <div className="bg-white p-8 rounded-xl shadow-lg">
@@ -86,7 +86,7 @@ export default function ContactSection() {
 
           {/* Contact Form */}
           <div className="bg-white p-8 rounded-xl shadow-lg">
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-[#1A1F2B] mb-2">
                   {t("name")}
@@ -98,7 +98,7 @@ export default function ContactSection() {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#FF6B00] focus:border-transparent outline-none transition-colors"
+                  className="w-full px-4 py-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#3182A9] focus:border-transparent outline-none transition-colors text-base"
                 />
               </div>
 
@@ -113,7 +113,7 @@ export default function ContactSection() {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#FF6B00] focus:border-transparent outline-none transition-colors"
+                  className="w-full px-4 py-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#3182A9] focus:border-transparent outline-none transition-colors text-base"
                 />
               </div>
 
@@ -128,7 +128,7 @@ export default function ContactSection() {
                   onChange={handleChange}
                   required
                   rows={5}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#FF6B00] focus:border-transparent outline-none transition-colors resize-vertical"
+                  className="w-full px-4 py-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#3182A9] focus:border-transparent outline-none transition-colors resize-vertical text-base"
                 />
               </div>
 
