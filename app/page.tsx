@@ -100,7 +100,7 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen">
-      {/* Hero Section with Slider */}
+      {/* Hero Section with Image Slider */}
       <section className="relative h-screen overflow-hidden">
         {heroSlides.map((slide, index) => (
           <div
@@ -120,46 +120,46 @@ export default function HomePage() {
               />
               <div className="absolute inset-0 bg-gradient-to-r from-[#1F2C3A]/90 via-[#1F2C3A]/70 to-[#1F2C3A]/50"></div>
             </div>
+          </div>
+        ))}
 
-            <div className="relative z-10 h-full flex items-center">
-              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-                <div className="max-w-3xl text-center sm:text-left">
-                  <div className="mb-4 sm:mb-6">
-                    <span className="text-[#3182A9] font-bold text-base sm:text-lg tracking-wider uppercase">
-                      {String(index + 1).padStart(2, "0")} / {String(heroSlides.length).padStart(2, "0")}
-                    </span>
-                  </div>
-                  <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-4 sm:mb-6 leading-tight uppercase tracking-wide">
-                    {slide.title}
-                  </h1>
-                  <p className="text-lg sm:text-xl text-gray-300 mb-8 leading-relaxed max-w-2xl mx-auto sm:mx-0">
-                    {slide.subtitle}
-                  </p>
-                  <div className="flex flex-col sm:flex-row gap-4 mb-8 sm:mb-12 justify-center sm:justify-start">
-                    <Link
-                      href="/contact"
-                      className="bg-gradient-to-r from-[#3182A9] to-[#1A73E8] text-white px-8 py-4 rounded-lg font-bold hover:from-[#1A73E8] hover:to-[#1565C0] transition-all duration-300 flex items-center justify-center space-x-2 shadow-xl hover:shadow-2xl transform hover:-translate-y-1 touch-manipulation uppercase tracking-wide text-sm sm:text-base"
-                    >
-                      <span>{t("getQuote")}</span>
-                      <ArrowRight className="h-5 w-5" />
-                    </Link>
-                    <Link
-                      href="/projects"
-                      className="border-2 border-white text-white px-8 py-4 rounded-lg font-bold hover:bg-white hover:text-[#1F2C3A] transition-all duration-300 flex items-center justify-center space-x-2 touch-manipulation uppercase tracking-wide text-sm sm:text-base"
-                    >
-                      <Play className="h-5 w-5" />
-                      <span>{t("ourProjects")}</span>
-                    </Link>
-                  </div>
-                  <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 sm:p-6 inline-block">
-                    <div className="text-3xl sm:text-4xl font-bold text-white mb-2">{slide.stats.number}</div>
-                    <div className="text-gray-300 text-xs sm:text-sm uppercase tracking-wide">{slide.stats.text}</div>
-                  </div>
-                </div>
+        <div className="relative z-10 h-full flex items-center">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+            <div className="max-w-3xl text-center sm:text-left">
+              <div className="mb-4 sm:mb-6">
+                <span className="text-[#3182A9] font-bold text-base sm:text-lg tracking-wider uppercase">
+                  Profesionálne riešenia
+                </span>
+              </div>
+              <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-4 sm:mb-6 leading-tight uppercase tracking-wide">
+                {t("heroTitle")}
+              </h1>
+              <p className="text-lg sm:text-xl text-gray-300 mb-8 leading-relaxed max-w-2xl mx-auto sm:mx-0">
+                {t("heroSubtitle")}
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 mb-8 sm:mb-12 justify-center sm:justify-start">
+                <Link
+                  href="/contact"
+                  className="bg-gradient-to-r from-[#3182A9] to-[#1A73E8] text-white px-8 py-4 rounded-lg font-bold hover:from-[#1A73E8] hover:to-[#1565C0] transition-all duration-300 flex items-center justify-center space-x-2 shadow-xl hover:shadow-2xl transform hover:-translate-y-1 touch-manipulation uppercase tracking-wide text-sm sm:text-base"
+                >
+                  <span>{t("getQuote")}</span>
+                  <ArrowRight className="h-5 w-5" />
+                </Link>
+                <Link
+                  href="/projects"
+                  className="border-2 border-white text-white px-8 py-4 rounded-lg font-bold hover:bg-white hover:text-[#1F2C3A] transition-all duration-300 flex items-center justify-center space-x-2 touch-manipulation uppercase tracking-wide text-sm sm:text-base"
+                >
+                  <Play className="h-5 w-5" />
+                  <span>{t("ourProjects")}</span>
+                </Link>
+              </div>
+              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 sm:p-6 inline-block">
+                <div className="text-3xl sm:text-4xl font-bold text-white mb-2">15+</div>
+                <div className="text-gray-300 text-xs sm:text-sm uppercase tracking-wide">Rokov skúseností</div>
               </div>
             </div>
           </div>
-        ))}
+        </div>
 
         {/* Slider Controls */}
         <button
