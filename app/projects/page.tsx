@@ -176,18 +176,7 @@ export default function ProjectsPage() {
                   <span>Získať ponuku</span>
                   <ArrowRight className="h-5 w-5" />
                 </Link>
-                <button
-                  onClick={() => {
-                    const element = document.getElementById("projects-grid")
-                    if (element) {
-                      element.scrollIntoView({ behavior: "smooth" })
-                    }
-                  }}
-                  className="border-2 border-white text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold hover:bg-white hover:text-[#1F2C3A] transition-all duration-300 flex items-center justify-center space-x-2 touch-manipulation"
-                >
-                  <Play className="h-5 w-5" />
-                  <span>Prezrieť projekty</span>
-                </button>
+                
               </div>
             </div>
             <div className="relative hidden lg:block">
@@ -202,14 +191,8 @@ export default function ProjectsPage() {
                   sizes="(max-width: 1200px) 50vw, 600px"
                 />
               </div>
-              <div className="absolute -bottom-4 sm:-bottom-6 -left-4 sm:-left-6 bg-white p-4 sm:p-6 rounded-xl shadow-xl">
-                <div className="text-2xl sm:text-3xl font-bold text-[#1F2C3A]">6</div>
-                <div className="text-xs sm:text-sm text-[#1F2C3A]/80">Kategórií projektov</div>
-              </div>
-              <div className="absolute -top-4 sm:-top-6 -right-4 sm:-right-6 bg-[#3182A9] p-4 sm:p-6 rounded-xl shadow-xl">
-                <div className="text-2xl sm:text-3xl font-bold text-white">500+</div>
-                <div className="text-xs sm:text-sm text-white/90">Realizovaných projektov</div>
-              </div>
+              
+              
             </div>
           </div>
         </div>
