@@ -99,8 +99,8 @@ export default function ContactPage() {
                 {t("contactTitle")}
               </h1>
               <p className="text-lg sm:text-xl text-[#B0B0B0] mb-8 leading-relaxed max-w-2xl">
-                Máte projekt alebo otázku? Radi vám pomôžeme s realizáciou vašich plánov. Kontaktujte nás a získajte
-                bezplatnú konzultáciu.
+                Hľadáte skúsených pracovníkov? Alebo ste elektrikár či mechanik pripravený vycestovať?<p></p>
+                Ozvite sa nám – prepájame firmy s kvalitnými ľuďmi.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start">
                 <button
@@ -163,8 +163,10 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <h3 className="font-semibold text-[#1F2C3A] mb-2">{t("phoneLabel")}</h3>
-                      <p className="text-[#1F2C3A]/80 mb-1">+421 123 456 789</p>
-                      <p className="text-[#1F2C3A]/80">+421 987 654 321</p>
+                      <p>Erik Staškovan</p>
+                      <a href="tel:+421944241733" className="text-[#1F2C3A]/80 hover:underline">+421 944 241 733</a>
+                      <p className="mt-3">Patrik Potočár</p>
+                      <a href="tel:+421948001420" className="text-[#1F2C3A]/80 hover:underline">+421 948 001 420</a>
                       <p className="text-sm text-gray-500 mt-2">24/7 pohotovostná linka</p>
                     </div>
                   </div>
@@ -177,14 +179,13 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <h3 className="font-semibold text-[#1F2C3A] mb-2">{t("emailLabel")}</h3>
-                      <p className="text-[#1F2C3A]/80 mb-1">info@epindustry.sk</p>
-                      <p className="text-[#1F2C3A]/80">projekty@epindustry.sk</p>
+                      <a href="mailto:epindustryy@gmail.com" className="text-[#1F2C3A]/80 mb-1 hover:underline">epindustryy@gmail.com</a>
                       <p className="text-sm text-gray-500 mt-2">Odpoveď do 24 hodín</p>
                     </div>
                   </div>
                 </div>
 
-                <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow border border-gray-100 touch-manipulation">
+                {/* <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow border border-gray-100 touch-manipulation">
                   <div className="flex items-start space-x-4">
                     <div className="bg-[#3182A9] p-3 rounded-lg">
                       <MapPin className="h-6 w-6 text-white" />
@@ -200,7 +201,7 @@ export default function ContactPage() {
                       </p>
                     </div>
                   </div>
-                </div>
+                </div> */}
               </div>
             </div>
 
@@ -290,7 +291,7 @@ export default function ContactPage() {
                   </div>
                 </div>
 
-                <div>
+                {/* <div>
                   <label htmlFor="projectType" className="block text-sm font-medium text-[#1F2C3A] mb-2">
                     Typ projektu
                   </label>
@@ -308,7 +309,7 @@ export default function ContactPage() {
                       </option>
                     ))}
                   </select>
-                </div>
+                </div> */}
 
                 <div>
                   <label htmlFor="message" className="block text-sm font-medium text-[#1F2C3A] mb-2">

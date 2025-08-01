@@ -25,20 +25,20 @@ export default function HomePage() {
     {
       title: t("heroTitle"),
       subtitle: t("heroSubtitle"),
-      image: "/images/hero-electrical-work.png",
+      image: "https://res.cloudinary.com/djreoxyzu/image/upload/f_auto,q_auto/v1754045378/1_fsn0ao.webp",
       stats: { number: "15+", text: "Rokov skúseností" },
     },
     {
       title: "Moderné technológie pre priemysel",
       subtitle:
         "Využívame najnovšie technológie a postupy pre dosiahnutie najlepších výsledkov vo všetkých projektoch.",
-      image: "/images/about-industrial-facility.png",
+      image: "https://res.cloudinary.com/djreoxyzu/image/upload/f_auto,q_auto/v1754045379/3_xuafga.webp",
       stats: { number: "500+", text: "Dokončených projektov" },
     },
     {
       title: "Certifikovaná kvalita práce",
       subtitle: "Všetky naše práce spĺňajú najvyššie štandardy kvality a bezpečnosti podľa európskych noriem.",
-      image: "/images/service-electrical-installations.png",
+      image: "https://res.cloudinary.com/djreoxyzu/image/upload/f_auto,q_auto/v1754045378/2_fv9fk2.webp",
       stats: { number: "50+", text: "Spokojných klientov" },
     },
   ]
@@ -142,7 +142,7 @@ export default function HomePage() {
     {
       title: t("service3Title"),
       description: t("service3Desc"),
-      image: "/images/service-maintenance.png",
+      image: "https://res.cloudinary.com/djreoxyzu/image/upload/f_auto,q_auto/v1754045691/4_ejkyzw.webp",
       icon: "🛠️",
     },
     {
@@ -280,7 +280,7 @@ export default function HomePage() {
               </h2>
               <p className="text-base sm:text-lg text-[#1F2C3A]/80 leading-relaxed mb-4 sm:mb-6">{t("aboutText1")}</p>
               <p className="text-base sm:text-lg text-[#1F2C3A]/80 leading-relaxed mb-6 sm:mb-8">{t("aboutText2")}</p>
-              <div className="grid grid-cols-2 gap-4 sm:gap-8">
+              {/* <div className="grid grid-cols-2 gap-4 sm:gap-8">
                 <div className="text-center">
                   <div className="text-3xl sm:text-4xl font-bold text-[#3182A9] mb-2">500+</div>
                   <div className="text-xs sm:text-sm text-[#1F2C3A]/70 uppercase tracking-wide">Projektov</div>
@@ -291,7 +291,7 @@ export default function HomePage() {
                     Spokojných klientov
                   </div>
                 </div>
-              </div>
+              </div> */}
             </div>
             <div className="relative order-1 lg:order-2">
               <div className="relative">
@@ -304,9 +304,9 @@ export default function HomePage() {
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#1F2C3A]/20 to-transparent rounded-2xl"></div>
-                <div className="absolute top-4 left-4 sm:top-6 sm:left-6 bg-[#3182A9] text-white px-3 py-1.5 sm:px-4 sm:py-2 rounded-lg font-bold text-xs sm:text-sm uppercase tracking-wide">
+                {/* <div className="absolute top-4 left-4 sm:top-6 sm:left-6 bg-[#3182A9] text-white px-3 py-1.5 sm:px-4 sm:py-2 rounded-lg font-bold text-xs sm:text-sm uppercase tracking-wide">
                   15+ Rokov
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
@@ -339,7 +339,7 @@ export default function HomePage() {
                   href="/contact"
                   className="bg-gradient-to-r from-[#3182A9] to-[#1A73E8] text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold hover:from-[#1A73E8] hover:to-[#1A73E8] transition-all duration-300 flex items-center justify-center space-x-2 shadow-xl hover:shadow-2xl transform hover:-translate-y-1 touch-manipulation"
                 >
-                  <span>Získať ponuku</span>
+                  <span>{t("getQuote")}</span>
                   <ArrowRight className="h-5 w-5" />
                 </Link>
               </div>

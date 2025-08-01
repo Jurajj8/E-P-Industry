@@ -14,16 +14,16 @@ export default function TopBar() {
           <div className="flex flex-wrap items-center space-x-4 sm:space-x-6">
             <div className="flex items-center space-x-2">
               <Mail className="h-4 w-4 text-[#3182A9]" />
-              <span>info@epindustry.sk</span>
+              <a href="mailto:epindustryy@gmail.com">epindustryy@gmail.com</a>
             </div>
             <div className="flex items-center space-x-2">
               <Phone className="h-4 w-4 text-[#3182A9]" />
-              <span>+421 123 456 789</span>
+              <a href="tel:+421944241733">+421 944 241 733</a>
             </div>
-            <div className="flex items-center space-x-2">
-              <Clock className="h-4 w-4 text-[#3182A9]" />
-              <span>Po - Pi 7:00 - 16:00, So - Ne zatvorené</span>
-            </div>
+            {/* <div className="flex items-center space-x-2">
+              <Phone className="h-4 w-4 text-[#3182A9]" />
+              <a href="tel:+421948001420">+421 948 001 420</a>
+            </div> */}
           </div>
 
           {/* Social Media */}

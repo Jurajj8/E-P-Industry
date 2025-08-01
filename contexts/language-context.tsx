@@ -22,8 +22,8 @@ const translations = {
     // Home page
     heroTitle: "Profesionálne elektrické a montážne riešenia",
     heroSubtitle:
-      "Sme špecialisti na elektrotechnické práce a priemyselné montáže s viac ako 15-ročnými skúsenosťami v celom regióne.",
-    getQuote: "Získať ponuku",
+      "Dodávame presne takých odborníkov, akých váš projekt potrebuje – rýchlo, spoľahlivo a kdekoľvek v Európe aj mimo nej.",
+    getQuote: "Kontaktujte nás",
     ourProjects: "Naše projekty",
     learnMore: "Zistiť viac",
 
@@ -122,7 +122,7 @@ const translations = {
     address: "Hlavná 123, 010 01 Žilina, Slovakia",
 
     // Footer
-    footerText: "© 2024 E&P Industry s.r.o. Všetky práva vyhradené.",
+    footerText: `© ${new Date().getFullYear()} E&P Industry s.r.o. Všetky práva vyhradené.`,
     followUs: "Sledujte nás",
     quickLinks: "Rýchle odkazy",
     ourServices: "Naše služby",

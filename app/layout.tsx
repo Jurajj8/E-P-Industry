@@ -72,9 +72,9 @@ export const metadata: Metadata = {
     google: "your-google-verification-code",
   },
   icons: {
-    icon: "/images/logo-icon.jpg",
-    shortcut: "/images/logo-icon.jpg",
-    apple: "/images/logo-icon.jpg",
+    icon: "/images/logo-icon.png",
+    shortcut: "/images/logo-icon.png",
+    apple: "/images/logo-icon.png",
   },
     generator: 'v0.dev'
 }
@@ -95,10 +95,6 @@ export default function RootLayout({
   return (
     <html lang="sk" className="scroll-smooth">
       <head>
-        <link rel="icon" href="/images/logo-icon.jpg" sizes="any" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/images/logo-icon.jpg" />
-        <link rel="icon" type="image/jpeg" sizes="32x32" href="/images/logo-icon.jpg" />
-        <link rel="icon" type="image/jpeg" sizes="16x16" href="/images/logo-icon.jpg" />
       </head>
       <body className={`${inter.className} antialiased`}>
         <LanguageProvider>

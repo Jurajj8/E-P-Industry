@@ -12,7 +12,7 @@ export default function Footer() {
     { name: t("home"), href: "/" },
     { name: t("about"), href: "/#about" },
     { name: t("services"), href: "/#services" },
-    { name: t("projects"), href: "/projects" },
+    { name: t("projects"), href: "/#projects" },
     { name: t("contact"), href: "/contact" },
   ]
 
@@ -34,8 +34,7 @@ export default function Footer() {
               />
             </div>
             <p className="text-[#B0B0B0] text-sm leading-relaxed mb-6">
-              Profesionálne riešenia v oblasti elektrotechniky a priemyselných montáží s viac ako 15-ročnými
-              skúsenosťami.
+              E&P Industry je slovenská spoločnosť, ktorá sa špecializuje na poskytovanie kvalifikovaných pracovníkov pre medzinárodné priemyselné projekty.
             </p>
             <div className="flex space-x-4">
               <a
@@ -87,21 +86,21 @@ export default function Footer() {
           <div>
             <h3 className="text-white font-semibold mb-6">{t("contactInfo")}</h3>
             <div className="space-y-4">
-              <div className="flex items-center space-x-3">
-                <Phone className="h-4 w-4 text-[#3182A9]" />
-                <span className="text-[#B0B0B0] text-sm">+421 123 456 789</span>
+              <div className="flex items-start space-x-3">
+                <Phone className="h-4 w-4 text-[#3182A9] mt-1" />
+                <div className="flex flex-col space-y-1">
+                  <a href="tel:+421944241733" className="text-[#B0B0B0]/80 hover:underline">
+                    +421 944 241 733
+                  </a>
+                  <a href="tel:+421948001420" className="text-[#B0B0B0]/80 hover:underline">
+                    +421 948 001 420
+                  </a>
+                </div>
               </div>
+
               <div className="flex items-center space-x-3">
                 <Mail className="h-4 w-4 text-[#3182A9]" />
-                <span className="text-[#B0B0B0] text-sm">info@epindustry.sk</span>
-              </div>
-              <div className="flex items-start space-x-3">
-                <MapPin className="h-4 w-4 text-[#3182A9] mt-0.5" />
-                <div className="text-[#B0B0B0] text-sm">
-                  <div>Hlavná 123</div>
-                  <div>010 01 Žilina</div>
-                  <div>Slovakia</div>
-                </div>
+                <a href="mailto:epindustryy@gmail.com" className="text-[#B0B0B0]/80 mb-1 hover:underline">epindustryy@gmail.com</a>
               </div>
             </div>
           </div>
