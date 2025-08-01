@@ -190,7 +190,7 @@ export default function HomePage() {
   return (
     <div className="min-h-screen">
       {/* Hero Section with Image Slider */}
-      <section className="relative min-h-[60vh] sm:min-h-[70vh] md:min-h-[80vh] lg:min-h-[calc(100vh-80px)] overflow-hidden">
+      <section className="relative h-[calc(100vh-80px)] overflow-hidden">
         {heroSlides.map((slide, index) => (
           <div
             key={index}
@@ -220,7 +220,7 @@ export default function HomePage() {
                   Profesionálne riešenia
                 </span>
               </div>
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 sm:mb-6 leading-tight uppercase tracking-wide">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-4 sm:mb-6 leading-tight uppercase tracking-wide">
                 {t("heroTitle")}
               </h1>
               <p className="text-lg sm:text-xl text-gray-300 mb-8 leading-relaxed max-w-2xl mx-auto sm:mx-0">
@@ -361,9 +361,6 @@ export default function HomePage() {
                       fill
                       className="object-cover"
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
-                      loading="lazy"
-                      placeholder="blur"
-                      blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#1F2C3A]/80 via-transparent to-transparent"></div>
 
@@ -490,7 +487,7 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-6 sm:gap-8">
+          <div className="grid sm:grid-cols-1 lg:grid-cols-3 gap-8">
             {reasons.map((reason, index) => (
               <div
                 key={index}

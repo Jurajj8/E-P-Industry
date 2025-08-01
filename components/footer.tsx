@@ -21,7 +21,7 @@ export default function Footer() {
   return (
     <footer className="bg-[#1F2C3A] pt-16 pb-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+        <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-8 mb-12">
           {/* Company Info */}
           <div className="lg:col-span-1">
             <div className="mb-6">
@@ -37,12 +37,12 @@ export default function Footer() {
               Profesionálne riešenia v oblasti elektrotechniky a priemyselných montáží s viac ako 15-ročnými
               skúsenosťami.
             </p>
-            <div className="flex space-x-3 justify-center sm:justify-start">
+            <div className="flex space-x-4">
               <a
                 href="https://linkedin.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-[#B0B0B0]/20 p-3 rounded-lg hover:bg-[#3182A9] transition-colors group min-h-[44px] min-w-[44px] flex items-center justify-center touch-manipulation"
+                className="bg-[#B0B0B0]/20 p-3 rounded-lg hover:bg-[#3182A9] transition-colors group"
               >
                 <Linkedin className="h-5 w-5 text-white" />
               </a>
@@ -50,7 +50,7 @@ export default function Footer() {
                 href="https://facebook.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-[#B0B0B0]/20 p-3 rounded-lg hover:bg-[#3182A9] transition-colors group min-h-[44px] min-w-[44px] flex items-center justify-center touch-manipulation"
+                className="bg-[#B0B0B0]/20 p-3 rounded-lg hover:bg-[#3182A9] transition-colors group"
               >
                 <Facebook className="h-5 w-5 text-white" />
               </a>

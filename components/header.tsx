@@ -129,7 +129,7 @@ export default function Header() {
           {/* Mobile menu button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="lg:hidden text-[#1F2C3A] p-3 rounded-lg hover:bg-gray-100 transition-colors touch-manipulation min-h-[44px] min-w-[44px] flex items-center justify-center"
+            className="lg:hidden text-[#1F2C3A] p-2 rounded-lg hover:bg-gray-100 transition-colors touch-manipulation"
             aria-label="Toggle menu"
           >
             {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -138,14 +138,14 @@ export default function Header() {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="lg:hidden py-4 border-t border-gray-200 animate-in slide-in-from-top-2 duration-200 bg-white shadow-lg">
-            <div className="flex flex-col space-y-1">
+          <div className="lg:hidden py-4 border-t border-gray-200 animate-in slide-in-from-top-2 duration-200">
+            <div className="flex flex-col space-y-2">
               {navigation.map((item) => (
                 <Link
                   key={item.name}
                   href={item.href}
                   onClick={() => setIsMenuOpen(false)}
-                  className={`px-4 py-3 text-base font-semibold transition-colors rounded-lg mx-2 touch-manipulation uppercase tracking-wide ${pathname === item.href || (item.href !== "/" && pathname.startsWith(item.href)) ? "text-[#3182A9] bg-[#3182A9]/10" : "text-[#1F2C3A] hover:text-[#3182A9] hover:bg-gray-50"}`}
+                  className={`px-3 py-3 text-base font-semibold transition-colors rounded-lg touch-manipulation uppercase tracking-wide ${pathname === item.href || (item.href !== "/" && pathname.startsWith(item.href)) ? "text-[#3182A9] bg-[#3182A9]/10" : "text-[#1F2C3A] hover:text-[#3182A9] hover:bg-gray-50"}`}
                 >
                   {item.name}
                 </Link>
