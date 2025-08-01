@@ -479,39 +479,6 @@ export default function HomePage() {
         {/* Subtle overlay gradient */}
         <div className="absolute inset-0 bg-gradient-to-r from-[#1F2C3A]/95 via-[#1F2C3A]/90 to-[#1F2C3A]/95"></div>
 
-        {/* Animated gradient orbs */}
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute -top-40 -left-40 w-80 h-80 bg-gradient-to-br from-[#3182A9]/10 to-transparent rounded-full blur-3xl animate-pulse"></div>
-          <div
-            className="absolute -bottom-40 -right-40 w-80 h-80 bg-gradient-to-tl from-[#1A73E8]/10 to-transparent rounded-full blur-3xl animate-pulse"
-            style={{ animationDelay: "2s" }}
-          ></div>
-          <div
-            className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-r from-[#3182A9]/5 to-[#1A73E8]/5 rounded-full blur-3xl animate-pulse"
-            style={{ animationDelay: "4s" }}
-          ></div>
-        </div>
-
-        {/* Subtle geometric pattern */}
-        <div className="absolute inset-0 opacity-5">
-          <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
-            <defs>
-              <pattern id="circuit" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
-                <path
-                  d="M0 10h5v-5h5v5h5v5h-5v5h-5v-5h-5z"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="0.5"
-                  opacity="0.3"
-                />
-                <circle cx="5" cy="5" r="1" fill="currentColor" opacity="0.4" />
-                <circle cx="15" cy="15" r="1" fill="currentColor" opacity="0.4" />
-              </pattern>
-            </defs>
-            <rect width="100%" height="100%" fill="url(#circuit)" className="text-[#3182A9]" />
-          </svg>
-        </div>
-
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-12 sm:mb-16">
             <div className="mb-4 sm:mb-6">
@@ -548,22 +515,10 @@ export default function HomePage() {
               </div>
             ))}
           </div>
-
-          {/* Additional visual elements */}
-          <div className="absolute top-20 left-10 w-2 h-2 bg-[#3182A9]/30 rounded-full animate-ping"></div>
-          <div
-            className="absolute bottom-20 right-20 w-1 h-1 bg-[#1A73E8]/40 rounded-full animate-ping"
-            style={{ animationDelay: "1s" }}
-          ></div>
-          <div
-            className="absolute top-1/2 right-10 w-1.5 h-1.5 bg-[#3182A9]/25 rounded-full animate-ping"
-            style={{ animationDelay: "3s" }}
-          ></div>
         </div>
       </section>
 
       {/* CTA Section */}
-      
     </div>
   )
 }
