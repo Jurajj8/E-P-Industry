@@ -42,12 +42,13 @@ const translations = {
     service2Title: "Priemyselné montáže",
     service2Desc:
       "Dodávame pracovníkov na montáž a údržbu strojov, výrobných liniek aj dopravníkov",
-    service3Title: "Údržba a servis",
+    service3Title: "Mechatronika",
     service3Desc:
       "Pravidelná preventívna údržba, servis a pohotovostné opravy elektrických systémov a priemyselných zariadení.",
     service4Title: "Projektovanie a poradenstvo",
     service4Desc:
-      "Návrh a projektovanie elektrických systémov, konzultácie a technické poradenstvo pre optimálne riešenia.",
+      "Dodávame odborníkov na pneumatiku, automatizáciu a riadiace systémy. Naši ľudia nastavujú a montujú technologické celky, ktoré spájajú mechaniku a elektroniku do
+funkčného celku.",
 
     // Why choose us
     whyChooseTitle: "Prečo si vybrať E&P Industry",
