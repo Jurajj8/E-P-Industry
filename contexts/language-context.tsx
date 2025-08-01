@@ -38,8 +38,7 @@ const translations = {
     servicesTitle: "Naše služby",
     service1Title: "Elektrické inštalácie",
     service1Desc:
-      "Dodávame elektrotechnikov na zapájanie rozvodných skríň, realizáciu kompletných
-elektroinštalácií podľa projektovej dokumentácie aj montáž káblových trás.",
+      "Komplexné elektrické inštalácie pre priemyselné objekty, komerčné budovy a infraštruktúrne projekty s certifikáciou a zárukou.",
     service2Title: "Priemyselné montáže",
     service2Desc:
       "Odborné montážne práce strojov, zariadení a technologických celkov s presným dodržaním technických špecifikácií.",
