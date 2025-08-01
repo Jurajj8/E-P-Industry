@@ -41,7 +41,7 @@ const translations = {
       "Dodávame elektrotechnikov na zapájanie rozvodných skríň, realizáciu kompletných elektroinštalácií podľa projektovej dokumentácie aj montáž káblových trás.",
     service2Title: "Priemyselné montáže",
     service2Desc:
-      "Odborné montážne práce strojov, zariadení a technologických celkov s presným dodržaním technických špecifikácií.",
+      "Dodávame pracovníkov na montáž a údržbu strojov, výrobných liniek aj dopravníkov",
     service3Title: "Údržba a servis",
     service3Desc:
       "Pravidelná preventívna údržba, servis a pohotovostné opravy elektrických systémov a priemyselných zariadení.",
