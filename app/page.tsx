@@ -6,62 +6,62 @@ import Image from "next/image"
 import { useState, useEffect } from "react"
 import { useLanguage } from "@/contexts/language-context"
 import CertificationsSection from "@/components/certifications-section"
+import { t } from "@/utils/translation"
+
+const heroSlides = [
+  {
+    title: t("heroTitle"),
+    subtitle: t("heroSubtitle"),
+    image: "/images/hero-electrical-work.png",
+    stats: { number: "15+", text: "Rokov skúseností" },
+  },
+  {
+    title: "Moderné technológie pre priemysel",
+    subtitle: "Využívame najnovšie technológie a postupy pre dosiahnutie najlepších výsledkov vo všetkých projektoch.",
+    image: "/images/about-industrial-facility.png",
+    stats: { number: "500+", text: "Dokončených projektov" },
+  },
+  {
+    title: "Certifikovaná kvalita práce",
+    subtitle: "Všetky naše práce spĺňajú najvyššie štandardy kvality a bezpečnosti podľa európskych noriem.",
+    image: "/images/service-electrical-installations.png",
+    stats: { number: "50+", text: "Spokojných klientov" },
+  },
+]
 
 export default function HomePage() {
-  const { t } = useLanguage()
+  const { language } = useLanguage()
   const [currentSlide, setCurrentSlide] = useState(0)
-
-  const heroSlides = [
-    {
-      title: t("heroTitle"),
-      subtitle: t("heroSubtitle"),
-      image: "/images/hero-electrical-work.png",
-      stats: { number: "15+", text: "Rokov skúseností" },
-    },
-    {
-      title: "Moderné technológie pre priemysel",
-      subtitle:
-        "Využívame najnovšie technológie a postupy pre dosiahnutie najlepších výsledkov vo všetkých projektoch.",
-      image: "/images/about-industrial-facility.png",
-      stats: { number: "500+", text: "Dokončených projektov" },
-    },
-    {
-      title: "Certifikovaná kvalita práce",
-      subtitle: "Všetky naše práce spĺňajú najvyššie štandardy kvality a bezpečnosti podľa európskych noriem.",
-      image: "/images/service-electrical-installations.png",
-      stats: { number: "50+", text: "Spokojných klientov" },
-    },
-  ]
 
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % heroSlides.length)
     }, 6000)
     return () => clearInterval(timer)
-  }, [heroSlides.length])
+  }, [])
 
   const services = [
     {
-      title: t("service1Title"),
-      description: t("service1Desc"),
+      title: t("service1Title", language),
+      description: t("service1Desc", language),
       image: "/images/service-electrical-installations.png",
       icon: "⚡",
     },
     {
-      title: t("service2Title"),
-      description: t("service2Desc"),
+      title: t("service2Title", language),
+      description: t("service2Desc", language),
       image: "/images/service-industrial-assembly.png",
       icon: "🔧",
     },
     {
-      title: t("service3Title"),
-      description: t("service3Desc"),
+      title: t("service3Title", language),
+      description: t("service3Desc", language),
       image: "/images/service-maintenance.png",
       icon: "🛠️",
     },
     {
-      title: t("service4Title"),
-      description: t("service4Desc"),
+      title: t("service4Title", language),
+      description: t("service4Desc", language),
       image: "/images/service-design-engineering.png",
       icon: "📐",
     },
@@ -69,33 +69,33 @@ export default function HomePage() {
 
   const reasons = [
     {
-      title: t("reason1Title"),
-      description: t("reason1Desc"),
+      title: t("reason1Title", language),
+      description: t("reason1Desc", language),
       icon: Clock,
     },
     {
-      title: t("reason2Title"),
-      description: t("reason2Desc"),
+      title: t("reason2Title", language),
+      description: t("reason2Desc", language),
       icon: Award,
     },
     {
-      title: t("reason3Title"),
-      description: t("reason3Desc"),
+      title: t("reason3Title", language),
+      description: t("reason3Desc", language),
       icon: CheckCircle,
     },
     {
-      title: t("reason4Title"),
-      description: t("reason4Desc"),
+      title: t("reason4Title", language),
+      description: t("reason4Desc", language),
       icon: Shield,
     },
   ]
 
   const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % heroSlides.length)
+    setCurrentSlide((prev) => (prev + 1) % 3) // Use fixed length instead of heroSlides.length
   }
 
   const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + heroSlides.length) % heroSlides.length)
+    setCurrentSlide((prev) => (prev - 1 + 3) % 3) // Use fixed length instead of heroSlides.length
   }
 
   return (
@@ -132,22 +132,31 @@ export default function HomePage() {
                 </span>
               </div>
               <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-4 sm:mb-6 leading-tight uppercase tracking-wide">
-                {t("heroTitle")}
+                {t("heroTitle", language)}
               </h1>
               <p className="text-lg sm:text-xl text-gray-300 mb-8 leading-relaxed max-w-2xl mx-auto sm:mx-0">
-                {t("heroSubtitle")}
+                {t("heroSubtitle", language)}
               </p>
               <div className="flex flex-col sm:flex-row gap-4 mb-8 sm:mb-12 justify-center sm:justify-start">
                 <Link
                   href="/contact"
                   className="bg-gradient-to-r from-[#3182A9] to-[#1A73E8] text-white px-8 py-4 rounded-lg font-bold hover:from-[#1A73E8] hover:to-[#1565C0] transition-all duration-300 flex items-center justify-center space-x-2 shadow-xl hover:shadow-2xl transform hover:-translate-y-1 touch-manipulation uppercase tracking-wide text-sm sm:text-base"
                 >
-                  <span>{t("getQuote")}</span>
+                  <span>{t("getQuote", language)}</span>
                   <ArrowRight className="h-5 w-5" />
                 </Link>
-                
+                <Link
+                  href="/projects"
+                  className="border-2 border-white text-white px-8 py-4 rounded-lg font-bold hover:bg-white hover:text-[#1F2C3A] transition-all duration-300 flex items-center justify-center space-x-2 touch-manipulation uppercase tracking-wide text-sm sm:text-base"
+                >
+                  <Play className="h-5 w-5" />
+                  <span>{t("ourProjects", language)}</span>
+                </Link>
               </div>
-              
+              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 sm:p-6 inline-block">
+                <div className="text-3xl sm:text-4xl font-bold text-white mb-2">15+</div>
+                <div className="text-gray-300 text-xs sm:text-sm uppercase tracking-wide">Rokov skúseností</div>
+              </div>
             </div>
           </div>
         </div>
@@ -189,18 +198,24 @@ export default function HomePage() {
                 <span className="text-[#3182A9] font-bold text-base sm:text-lg tracking-wider uppercase">O nás</span>
               </div>
               <h2 className="text-3xl sm:text-4xl font-bold text-[#1F2C3A] mb-4 sm:mb-6 uppercase tracking-wide">
-                {t("aboutTitle")}
+                {t("aboutTitle", language)}
               </h2>
-              <p className="text-base sm:text-lg text-[#1F2C3A]/80 leading-relaxed mb-4 sm:mb-6">{t("aboutText1")}</p>
-              <p className="text-base sm:text-lg text-[#1F2C3A]/80 leading-relaxed mb-6 sm:mb-8">{t("aboutText2")}</p>
+              <p className="text-base sm:text-lg text-[#1F2C3A]/80 leading-relaxed mb-4 sm:mb-6">
+                {t("aboutText1", language)}
+              </p>
+              <p className="text-base sm:text-lg text-[#1F2C3A]/80 leading-relaxed mb-6 sm:mb-8">
+                {t("aboutText2", language)}
+              </p>
               <div className="grid grid-cols-2 gap-4 sm:gap-8">
                 <div className="text-center">
-                  
-                  
+                  <div className="text-3xl sm:text-4xl font-bold text-[#3182A9] mb-2">500+</div>
+                  <div className="text-xs sm:text-sm text-[#1F2C3A]/70 uppercase tracking-wide">Projektov</div>
                 </div>
                 <div className="text-center">
-                  
-                  
+                  <div className="text-3xl sm:text-4xl font-bold text-[#3182A9] mb-2">50+</div>
+                  <div className="text-xs sm:text-sm text-[#1F2C3A]/70 uppercase tracking-wide">
+                    Spokojných klientov
+                  </div>
                 </div>
               </div>
             </div>
@@ -232,7 +247,7 @@ export default function HomePage() {
               <span className="text-[#3182A9] font-bold text-base sm:text-lg tracking-wider uppercase">Služby</span>
             </div>
             <h2 className="text-3xl sm:text-4xl font-bold text-[#1F2C3A] mb-4 sm:mb-6 uppercase tracking-wide">
-              {t("servicesTitle")}
+              {t("servicesTitle", language)}
             </h2>
             <p className="text-lg sm:text-xl text-[#1F2C3A]/80 max-w-3xl mx-auto">
               Poskytujeme komplexné riešenia v oblasti elektrotechniky a priemyselných montáží
@@ -317,7 +332,7 @@ export default function HomePage() {
               <span className="text-[#3182A9] font-bold text-base sm:text-lg tracking-wider uppercase">Prečo my</span>
             </div>
             <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4 sm:mb-6 uppercase tracking-wide">
-              {t("whyChooseTitle")}
+              {t("whyChooseTitle", language)}
             </h2>
             <p className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto">
               Dôvody, prečo si klienti vyberajú práve nás pre svoje projekty
