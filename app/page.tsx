@@ -145,9 +145,18 @@ export default function HomePage() {
                   <span>{t("getQuote")}</span>
                   <ArrowRight className="h-5 w-5" />
                 </Link>
-                
+                <Link
+                  href="/projects"
+                  className="border-2 border-white text-white px-8 py-4 rounded-lg font-bold hover:bg-white hover:text-[#1F2C3A] transition-all duration-300 flex items-center justify-center space-x-2 touch-manipulation uppercase tracking-wide text-sm sm:text-base"
+                >
+                  <Play className="h-5 w-5" />
+                  <span>{t("ourProjects")}</span>
+                </Link>
               </div>
-              
+              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 sm:p-6 inline-block">
+                <div className="text-3xl sm:text-4xl font-bold text-white mb-2">15+</div>
+                <div className="text-gray-300 text-xs sm:text-sm uppercase tracking-wide">Rokov skúseností</div>
+              </div>
             </div>
           </div>
         </div>
@@ -195,12 +204,14 @@ export default function HomePage() {
               <p className="text-base sm:text-lg text-[#1F2C3A]/80 leading-relaxed mb-6 sm:mb-8">{t("aboutText2")}</p>
               <div className="grid grid-cols-2 gap-4 sm:gap-8">
                 <div className="text-center">
-                  
-                  
+                  <div className="text-3xl sm:text-4xl font-bold text-[#3182A9] mb-2">500+</div>
+                  <div className="text-xs sm:text-sm text-[#1F2C3A]/70 uppercase tracking-wide">Projektov</div>
                 </div>
                 <div className="text-center">
-                  
-                  
+                  <div className="text-3xl sm:text-4xl font-bold text-[#3182A9] mb-2">50+</div>
+                  <div className="text-xs sm:text-sm text-[#1F2C3A]/70 uppercase tracking-wide">
+                    Spokojných klientov
+                  </div>
                 </div>
               </div>
             </div>
@@ -215,7 +226,9 @@ export default function HomePage() {
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#1F2C3A]/20 to-transparent rounded-2xl"></div>
-                
+                <div className="absolute top-4 left-4 sm:top-6 sm:left-6 bg-[#3182A9] text-white px-3 py-1.5 sm:px-4 sm:py-2 rounded-lg font-bold text-xs sm:text-sm uppercase tracking-wide">
+                  15+ Rokov
+                </div>
               </div>
             </div>
           </div>
