@@ -33,6 +33,8 @@ const translations = {
       "Sme etablovaná spoločnosť s bohatými skúsenosťami v oblasti elektrotechniky a priemyselných montáží. Naša firma pôsobí na trhu už viac ako 15 rokov a za ten čas sme si vybudovali povesť spoľahlivého partnera.",
     aboutText2:
       "Špecializujeme sa na komplexné riešenia pre priemyselné podniky, komerčné objekty a infraštruktúrne projekty. Naši certifikovaní technici a inžinieri zabezpečujú najvyššiu kvalitu práce.",
+    aboutText2:
+      "Špecializujeme sa na komplexné riešenia pre priemyselné podniky, komerčné objekty a infraštruktúrne projekty. Naši certifikovaní technici a inžinieri zabezpečujú najvyššiu kvalitu práce.",
 
     // Services
     servicesTitle: "Naše služby",
