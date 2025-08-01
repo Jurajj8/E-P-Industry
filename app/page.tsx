@@ -1,15 +1,25 @@
 "use client"
 
-import { ArrowRight, Play, CheckCircle, Award, Clock, Shield, ChevronLeft, ChevronRight } from "lucide-react"
+import {
+  ArrowRight,
+  CheckCircle,
+  Award,
+  Clock,
+  Shield,
+  ChevronLeft,
+  ChevronRight,
+  MapPin,
+  Calendar,
+} from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
 import { useState, useEffect } from "react"
 import { useLanguage } from "@/contexts/language-context"
-import CertificationsSection from "@/components/certifications-section"
 
 export default function HomePage() {
   const { t } = useLanguage()
   const [currentSlide, setCurrentSlide] = useState(0)
+  const [currentProjectSlide, setCurrentProjectSlide] = useState(0)
 
   const heroSlides = [
     {
@@ -33,12 +43,88 @@ export default function HomePage() {
     },
   ]
 
+  const projects = [
+    {
+      id: 1,
+      title: t("project1Title"),
+      description: t("project1Desc"),
+      type: t("project1Type"),
+      client: t("project1Client"),
+      location: "Bratislava, Slovakia",
+      year: "2024",
+      category: "industrial",
+      image: "/images/project-automotive-plant.png",
+    },
+    {
+      id: 2,
+      title: t("project2Title"),
+      description: t("project2Desc"),
+      type: t("project2Type"),
+      client: t("project2Client"),
+      location: "Košice, Slovakia",
+      year: "2023",
+      category: "commercial",
+      image: "/images/project-logistics-center.png",
+    },
+    {
+      id: 3,
+      title: t("project3Title"),
+      description: t("project3Desc"),
+      type: t("project3Type"),
+      client: t("project3Client"),
+      location: "Žilina, Slovakia",
+      year: "2023",
+      category: "commercial",
+      image: "/images/project-shopping-center.png",
+    },
+    {
+      id: 4,
+      title: t("project4Title"),
+      description: t("project4Desc"),
+      type: t("project4Type"),
+      client: t("project4Client"),
+      location: "Bratislava, Slovakia",
+      year: "2022",
+      category: "industrial",
+      image: "/images/project-chemical-plant.png",
+    },
+    {
+      id: 5,
+      title: t("project5Title"),
+      description: t("project5Desc"),
+      type: t("project5Type"),
+      client: t("project5Client"),
+      location: "Nové Zámky, Slovakia",
+      year: "2022",
+      category: "healthcare",
+      image: "/images/project-hospital.png",
+    },
+    {
+      id: 6,
+      title: t("project6Title"),
+      description: t("project6Desc"),
+      type: t("project6Type"),
+      client: t("project6Client"),
+      location: "Trnava, Slovakia",
+      year: "2021",
+      category: "it",
+      image: "/images/project-datacenter.png",
+    },
+  ]
+
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % heroSlides.length)
     }, 6000)
     return () => clearInterval(timer)
   }, [heroSlides.length])
+
+  useEffect(() => {
+    const projectTimer = setInterval(() => {
+      setCurrentProjectSlide((prev) => (prev + 1) % projects.length)
+    }, 5000)
+    return () => clearInterval(projectTimer)
+  }, [projects.length])
 
   const services = [
     {
@@ -98,6 +184,14 @@ export default function HomePage() {
     setCurrentSlide((prev) => (prev - 1 + heroSlides.length) % heroSlides.length)
   }
 
+  const nextProjectSlide = () => {
+    setCurrentProjectSlide((prev) => (prev + 1) % projects.length)
+  }
+
+  const prevProjectSlide = () => {
+    setCurrentProjectSlide((prev) => (prev - 1 + projects.length) % projects.length)
+  }
+
   return (
     <div className="min-h-screen">
       {/* Hero Section with Image Slider */}
@@ -145,9 +239,7 @@ export default function HomePage() {
                   <span>{t("getQuote")}</span>
                   <ArrowRight className="h-5 w-5" />
                 </Link>
-                
               </div>
-              
             </div>
           </div>
         </div>
@@ -195,12 +287,14 @@ export default function HomePage() {
               <p className="text-base sm:text-lg text-[#1F2C3A]/80 leading-relaxed mb-6 sm:mb-8">{t("aboutText2")}</p>
               <div className="grid grid-cols-2 gap-4 sm:gap-8">
                 <div className="text-center">
-                  
-                  
+                  <div className="text-3xl sm:text-4xl font-bold text-[#3182A9] mb-2">500+</div>
+                  <div className="text-xs sm:text-sm text-[#1F2C3A]/70 uppercase tracking-wide">Projektov</div>
                 </div>
                 <div className="text-center">
-                  
-                  
+                  <div className="text-3xl sm:text-4xl font-bold text-[#3182A9] mb-2">50+</div>
+                  <div className="text-xs sm:text-sm text-[#1F2C3A]/70 uppercase tracking-wide">
+                    Spokojných klientov
+                  </div>
                 </div>
               </div>
             </div>
@@ -266,6 +360,121 @@ export default function HomePage() {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Projects Section */}
+      <section
+        id="projects"
+        className="py-16 sm:py-20 bg-gradient-to-br from-[#1F2C3A] via-[#1F2C3A] to-[#2A2F3B] relative overflow-hidden"
+      >
+        <div className="absolute inset-0 bg-gradient-to-r from-[#1F2C3A]/95 to-[#1F2C3A]/90"></div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="text-center lg:text-left">
+              <div className="inline-flex items-center px-4 py-2 bg-[#3182A9]/10 border border-[#3182A9]/20 rounded-full text-[#3182A9] text-sm font-medium mb-6">
+                <Award className="h-4 w-4 mr-2" />
+                Portfólio našich prác
+              </div>
+              <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4 sm:mb-6 leading-tight uppercase tracking-wide">
+                {t("projectsTitle")}
+              </h2>
+              <p className="text-lg sm:text-xl text-[#B0B0B0] mb-8 leading-relaxed max-w-2xl">
+                Prezentujeme výber našich najvýznamnejších projektov v oblasti elektrotechniky a priemyselných montáží
+                realizovaných pre významných klientov.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start">
+                <Link
+                  href="/contact"
+                  className="bg-gradient-to-r from-[#3182A9] to-[#1A73E8] text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold hover:from-[#1A73E8] hover:to-[#1A73E8] transition-all duration-300 flex items-center justify-center space-x-2 shadow-xl hover:shadow-2xl transform hover:-translate-y-1 touch-manipulation"
+                >
+                  <span>Získať ponuku</span>
+                  <ArrowRight className="h-5 w-5" />
+                </Link>
+              </div>
+            </div>
+
+            {/* Project Image Slider */}
+            <div className="relative">
+              <div className="relative h-80 sm:h-96 rounded-2xl overflow-hidden shadow-2xl">
+                {projects.map((project, index) => (
+                  <div
+                    key={project.id}
+                    className={`absolute inset-0 transition-opacity duration-1000 ${
+                      index === currentProjectSlide ? "opacity-100" : "opacity-0"
+                    }`}
+                  >
+                    <Image
+                      src={project.image || "/placeholder.svg"}
+                      alt={project.title}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#1F2C3A]/80 via-transparent to-transparent"></div>
+
+                    {/* Project Info Overlay */}
+                    <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                      <div className="mb-2">
+                        <span className="inline-block bg-[#3182A9]/90 text-white px-3 py-1 rounded-full text-xs font-medium">
+                          {project.type}
+                        </span>
+                      </div>
+                      <h3 className="text-lg sm:text-xl font-bold mb-2">{project.title}</h3>
+                      <div className="flex items-center justify-between text-sm opacity-90">
+                        <div className="flex items-center space-x-1">
+                          <MapPin className="h-3 w-3" />
+                          <span>{project.location}</span>
+                        </div>
+                        <div className="flex items-center space-x-1">
+                          <Calendar className="h-3 w-3" />
+                          <span>{project.year}</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Project Slider Controls */}
+              <button
+                onClick={prevProjectSlide}
+                className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white p-2 rounded-full transition-all duration-300 z-20"
+              >
+                <ChevronLeft className="h-5 w-5" />
+              </button>
+              <button
+                onClick={nextProjectSlide}
+                className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white p-2 rounded-full transition-all duration-300 z-20"
+              >
+                <ChevronRight className="h-5 w-5" />
+              </button>
+
+              {/* Project Slide Indicators */}
+              <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 z-20">
+                {projects.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentProjectSlide(index)}
+                    className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                      index === currentProjectSlide ? "bg-[#3182A9] scale-125" : "bg-white/50 hover:bg-white/70"
+                    }`}
+                  />
+                ))}
+              </div>
+
+              {/* Project Stats */}
+              <div className="absolute -bottom-4 -left-4 bg-white p-4 rounded-xl shadow-xl">
+                <div className="text-2xl font-bold text-[#1F2C3A]">{projects.length}</div>
+                <div className="text-xs text-[#1F2C3A]/70 uppercase tracking-wide">Projektov</div>
+              </div>
+              <div className="absolute -top-4 -right-4 bg-[#3182A9] p-4 rounded-xl shadow-xl">
+                <div className="text-2xl font-bold text-white">15+</div>
+                <div className="text-xs text-white/90 uppercase tracking-wide">Rokov</div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -361,9 +570,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Certifications Section */}
-      <CertificationsSection />
-
       {/* CTA Section */}
       <section className="py-16 sm:py-20 bg-gradient-to-r from-[#3182A9] to-[#1A73E8] relative overflow-hidden">
         <div className="absolute inset-0 bg-[url('/images/hero-electrical-work.png')] bg-cover bg-center opacity-10"></div>
@@ -381,12 +587,6 @@ export default function HomePage() {
             >
               <span>Kontaktovať nás</span>
               <ArrowRight className="h-5 w-5" />
-            </Link>
-            <Link
-              href="/projects"
-              className="border-2 border-white text-white px-8 py-4 rounded-lg font-bold hover:bg-white hover:text-[#1F2C3A] transition-colors flex items-center justify-center space-x-2 touch-manipulation uppercase tracking-wide text-sm sm:text-base"
-            >
-              <span>Pozrieť projekty</span>
             </Link>
           </div>
         </div>
