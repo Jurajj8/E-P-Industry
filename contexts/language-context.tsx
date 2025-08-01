@@ -47,7 +47,7 @@ const translations = {
       "Pravidelná preventívna údržba, servis a pohotovostné opravy elektrických systémov a priemyselných zariadení.",
     service4Title: "Projektovanie a poradenstvo",
     service4Desc:
-      "Dodávame odborníkov na pneumatiku, automatizáciu a riadiace systémy. Naši ľudia nastavujú a montujú technologické celky, ktoré spájajú mechaniku a elektroniku do funkčného celku.",
+      "Skúsení montážnici na rýchlu a presnú realizáciu konštrukcií a regálov podľa projektu – spoľahlivo, bezpečne, bez kompromisov.",
 
     // Why choose us
     whyChooseTitle: "Prečo si vybrať E&P Industry",
