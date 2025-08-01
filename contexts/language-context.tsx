@@ -60,7 +60,7 @@ legislatívou.",
     reason3Title: "Komplexný servis",
     reason3Desc: "Ponúkame pracovníkov na rôzne technické oblasti – od elektroinštalácií po mechanické montáže a mechatroniku",
     reason4Title: "Flexibilita",
-    reason4Desc: "Prispôsobíme sa vašim požiadavkám a termínom, či už ide o krátkodobé alebodlhodobé projekty",
+    reason4Desc: "Prispôsobíme sa vašim požiadavkám a termínom, či už ide o krátkodobé alebo dlhodobé projekty",
 
     // Projects page
     projectsTitle: "Naše realizované projekty",
