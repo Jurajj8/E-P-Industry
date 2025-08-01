@@ -115,13 +115,7 @@ export default function ContactPage() {
                   <span>Napísať správu</span>
                   <ArrowRight className="h-5 w-5" />
                 </button>
-                <Link
-                  href="/projects"
-                  className="border-2 border-white text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold hover:bg-white hover:text-[#1F2C3A] transition-all duration-300 flex items-center justify-center space-x-2 touch-manipulation"
-                >
-                  <Play className="h-5 w-5" />
-                  <span>Naše projekty</span>
-                </Link>
+                
               </div>
             </div>
             <div className="relative hidden lg:block">
@@ -136,10 +130,7 @@ export default function ContactPage() {
                   sizes="(max-width: 1200px) 50vw, 600px"
                 />
               </div>
-              <div className="absolute -bottom-4 sm:-bottom-6 -left-4 sm:-left-6 bg-white p-4 sm:p-6 rounded-xl shadow-xl">
-                <div className="text-2xl sm:text-3xl font-bold text-[#1F2C3A]">24/7</div>
-                <div className="text-xs sm:text-sm text-[#1F2C3A]/80">Pohotovostná linka</div>
-              </div>
+              
               <div className="absolute -top-4 sm:-top-6 -right-4 sm:-right-6 bg-[#3182A9] p-4 sm:p-6 rounded-xl shadow-xl">
                 <div className="text-2xl sm:text-3xl font-bold text-white">{"<24h"}</div>
                 <div className="text-xs sm:text-sm text-white/90">Odpoveď na email</div>
