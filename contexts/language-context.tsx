@@ -33,7 +33,8 @@ const translations = {
       "E&P Industry je slovenská spoločnosť, ktorá sa špecializuje na poskytovanie kvalifikovaných pracovníkov pre medzinárodné priemyselné projekty. Zameriavame sa na mechanické a elektro práce v každej podobe – od montáže a demontáže výrobných liniek, stavby regálových systémov, až po zapájanie rozvodných skríň, elektroinštalácie, pneumatické systémy a kompletnú technickú podporu výrobných prevádzok.
 ",
     aboutText2:
-      "Špecializujeme sa na komplexné riešenia pre priemyselné podniky, komerčné objekty a infraštruktúrne projekty. Naši certifikovaní technici a inžinieri zabezpečujú najvyššiu kvalitu práce.",
+      "Pôsobíme v Európe aj mimo nej, pričom naše tímy pracujú precízne, efektívne a bez zbytočných komplikácií. Vždy kladieme dôraz na spoľahlivosť, kvalitu a súlad s platnou
+legislatívou.",
 
     // Services
     servicesTitle: "Naše služby",
