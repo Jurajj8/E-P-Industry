@@ -53,8 +53,8 @@ legislatívou.",
 
     // Why choose us
     whyChooseTitle: "Prečo si vybrať E&P Industry",
-    reason1Title: "15+ rokov skúseností",
-    reason1Desc: "Dlhoročné skúsenosti v elektrotechnike a priemyselných montážach",
+    reason1Title: "Skúsení pracovníci",
+    reason1Desc: "Dodávame kvalifikovaných odborníkov s praxou v priemysle a overenými zručnosťami",
     reason2Title: "Certifikovaní technici",
     reason2Desc: "Všetci naši technici majú potrebné certifikáty a pravidelné školenia",
     reason3Title: "Komplexné riešenia",
