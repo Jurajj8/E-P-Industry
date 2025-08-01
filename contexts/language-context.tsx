@@ -45,7 +45,8 @@ const translations = {
     service3Title: "Mechatronika",
     service3Desc:
       "Pravidelná preventívna údržba, servis a pohotovostné opravy elektrických systémov a priemyselných zariadení.",
-    service4Title: "Projektovanie a poradenstvo",
+    service4Title: "Oceľové konštrukcie a regálové systémy
+",
     service4Desc:
       "Skúsení montážnici na rýchlu a presnú realizáciu konštrukcií a regálov podľa projektu – spoľahlivo, bezpečne, bez kompromisov.",
 
