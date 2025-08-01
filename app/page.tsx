@@ -466,14 +466,8 @@ export default function HomePage() {
               </div>
 
               {/* Project Stats */}
-              <div className="absolute -bottom-4 -left-4 bg-white p-4 rounded-xl shadow-xl">
-                <div className="text-2xl font-bold text-[#1F2C3A]">{projects.length}</div>
-                <div className="text-xs text-[#1F2C3A]/70 uppercase tracking-wide">Projektov</div>
-              </div>
-              <div className="absolute -top-4 -right-4 bg-[#3182A9] p-4 rounded-xl shadow-xl">
-                <div className="text-2xl font-bold text-white">15+</div>
-                <div className="text-xs text-white/90 uppercase tracking-wide">Rokov</div>
-              </div>
+              
+              
             </div>
           </div>
         </div>
