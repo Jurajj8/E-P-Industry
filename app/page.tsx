@@ -193,7 +193,6 @@ export default function HomePage() {
               </h2>
               <p className="text-base sm:text-lg text-[#1F2C3A]/80 leading-relaxed mb-4 sm:mb-6">{t("aboutText1")}</p>
               <p className="text-base sm:text-lg text-[#1F2C3A]/80 leading-relaxed mb-6 sm:mb-8">{t("aboutText2")}</p>
-              <p className="text-base sm:text-lg text-[#1F2C3A]/80 leading-relaxed mb-6 sm:mb-8">{t("aboutText3")}</p>
               <div className="grid grid-cols-2 gap-4 sm:gap-8">
                 <div className="text-center">
                   
