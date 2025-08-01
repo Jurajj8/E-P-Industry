@@ -101,7 +101,7 @@ export default function HomePage() {
   return (
     <div className="min-h-screen">
       {/* Hero Section with Image Slider */}
-      <section className="relative h-screen overflow-hidden">
+      <section className="relative h-[calc(100vh-80px)] overflow-hidden">
         {heroSlides.map((slide, index) => (
           <div
             key={index}
