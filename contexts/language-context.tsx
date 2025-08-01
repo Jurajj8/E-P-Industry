@@ -30,11 +30,9 @@ const translations = {
     // About section
     aboutTitle: "O spoločnosti E&P Industry",
     aboutText1:
-      "E&P Industry je slovenská spoločnosť, ktorá sa špecializuje na poskytovanie kvalifikovaných pracovníkov pre medzinárodné priemyselné projekty. Zameriavame sa na mechanické a elektro práce v každej podobe – od montáže a demontáže výrobných liniek, stavby regálových systémov, až po zapájanie rozvodných skríň, elektroinštalácie, pneumatické systémy a kompletnú technickú podporu výrobných prevádzok.
-",
+      "E&P Industry je slovenská spoločnosť, ktorá sa špecializuje na poskytovanie kvalifikovaných pracovníkov pre medzinárodné priemyselné projekty. Zameriavame sa na mechanické a elektro práce v každej podobe – od montáže a demontáže výrobných liniek, stavby regálových systémov, až po zapájanie rozvodných skríň, elektroinštalácie, pneumatické systémy a kompletnú technickú podporu výrobných prevádzok.",
     aboutText2:
-      "Pôsobíme v Európe aj mimo nej, pričom naše tímy pracujú precízne, efektívne a bez zbytočných komplikácií. Vždy kladieme dôraz na spoľahlivosť, kvalitu a súlad s platnou
-legislatívou.",
+      "Pôsobíme v Európe aj mimo nej, pričom naše tímy pracujú precízne, efektívne a bez zbytočných komplikácií. Vždy kladieme dôraz na spoľahlivosť, kvalitu a súlad s platnou legislatívou.",
 
     // Services
     servicesTitle: "Naše služby",
@@ -42,8 +40,7 @@ legislatívou.",
     service1Desc:
       "Dodávame elektrotechnikov na zapájanie rozvodných skríň, realizáciu kompletných elektroinštalácií podľa projektovej dokumentácie aj montáž káblových trás.",
     service2Title: "Priemyselné montáže",
-    service2Desc:
-      "Dodávame pracovníkov na montáž a údržbu strojov, výrobných liniek aj dopravníkov",
+    service2Desc: "Dodávame pracovníkov na montáž a údržbu strojov, výrobných liniek aj dopravníkov",
     service3Title: "Mechatronika",
     service3Desc:
       "Dodávame odborníkov na pneumatiku, automatizáciu a riadiace systémy. Naši ľudia nastavujú a montujú technologické celky, ktoré spájajú mechaniku a elektroniku do funkčného celku.",
@@ -58,7 +55,8 @@ legislatívou.",
     reason2Title: "Certifikovaní technici",
     reason2Desc: "Všetci naši technici majú potrebné certifikáty a pravidelné školenia",
     reason3Title: "Komplexný servis",
-    reason3Desc: "Ponúkame pracovníkov na rôzne technické oblasti – od elektroinštalácií po mechanické montáže a mechatroniku",
+    reason3Desc:
+      "Ponúkame pracovníkov na rôzne technické oblasti – od elektroinštalácií po mechanické montáže a mechatroniku",
     reason4Title: "Flexibilita",
     reason4Desc: "Prispôsobíme sa vašim požiadavkám a termínom, či už ide o krátkodobé alebo dlhodobé projekty",
 
