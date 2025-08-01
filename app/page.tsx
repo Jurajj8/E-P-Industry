@@ -563,26 +563,7 @@ export default function HomePage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 sm:py-20 bg-gradient-to-r from-[#3182A9] to-[#1A73E8] relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('/images/hero-electrical-work.png')] bg-cover bg-center opacity-10"></div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4 sm:mb-6 uppercase tracking-wide">
-            Pripravení začať váš projekt?
-          </h2>
-          <p className="text-lg sm:text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-            Kontaktujte nás ešte dnes a získajte bezplatnú konzultáciu pre váš projekt
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href="/contact"
-              className="bg-white text-[#3182A9] px-8 py-4 rounded-lg font-bold hover:bg-gray-100 transition-colors flex items-center justify-center space-x-2 shadow-lg touch-manipulation uppercase tracking-wide text-sm sm:text-base"
-            >
-              <span>Kontaktovať nás</span>
-              <ArrowRight className="h-5 w-5" />
-            </Link>
-          </div>
-        </div>
-      </section>
+      
     </div>
   )
 }
