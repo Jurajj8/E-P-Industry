@@ -145,18 +145,9 @@ export default function HomePage() {
                   <span>{t("getQuote")}</span>
                   <ArrowRight className="h-5 w-5" />
                 </Link>
-                <Link
-                  href="/projects"
-                  className="border-2 border-white text-white px-8 py-4 rounded-lg font-bold hover:bg-white hover:text-[#1F2C3A] transition-all duration-300 flex items-center justify-center space-x-2 touch-manipulation uppercase tracking-wide text-sm sm:text-base"
-                >
-                  <Play className="h-5 w-5" />
-                  <span>{t("ourProjects")}</span>
-                </Link>
+                
               </div>
-              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 sm:p-6 inline-block">
-                <div className="text-3xl sm:text-4xl font-bold text-white mb-2">15+</div>
-                <div className="text-gray-300 text-xs sm:text-sm uppercase tracking-wide">Rokov skúseností</div>
-              </div>
+              
             </div>
           </div>
         </div>
