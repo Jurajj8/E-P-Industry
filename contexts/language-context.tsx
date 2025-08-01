@@ -44,9 +44,8 @@ const translations = {
       "Dodávame pracovníkov na montáž a údržbu strojov, výrobných liniek aj dopravníkov",
     service3Title: "Mechatronika",
     service3Desc:
-      "Pravidelná preventívna údržba, servis a pohotovostné opravy elektrických systémov a priemyselných zariadení.",
-    service4Title: "Oceľové konštrukcie a regálové systémy
-",
+      "Dodávame odborníkov na pneumatiku, automatizáciu a riadiace systémy. Naši ľudia nastavujú a montujú technologické celky, ktoré spájajú mechaniku a elektroniku do funkčného celku.",
+    service4Title: "Oceľové konštrukcie a regálové systémy",
     service4Desc:
       "Skúsení montážnici na rýchlu a presnú realizáciu konštrukcií a regálov podľa projektu – spoľahlivo, bezpečne, bez kompromisov.",
 
