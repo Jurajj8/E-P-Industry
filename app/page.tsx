@@ -318,52 +318,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Services Section */}
-      <section id="services" className="py-16 sm:py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12 sm:mb-16">
-            <div className="mb-4 sm:mb-6">
-              <span className="text-[#3182A9] font-bold text-base sm:text-lg tracking-wider uppercase">Služby</span>
-            </div>
-            <h2 className="text-3xl sm:text-4xl font-bold text-[#1F2C3A] mb-4 sm:mb-6 uppercase tracking-wide">
-              {t("servicesTitle")}
-            </h2>
-            <p className="text-lg sm:text-xl text-[#1F2C3A]/80 max-w-3xl mx-auto">
-              Poskytujeme komplexné riešenia v oblasti elektrotechniky a priemyselných montáží
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-6 sm:gap-8">
-            {services.map((service, index) => (
-              <div
-                key={index}
-                className="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden border border-gray-100 hover:border-[#3182A9]/20"
-              >
-                <div className="relative h-56 sm:h-64 overflow-hidden">
-                  <Image
-                    src={service.image || "/placeholder.svg"}
-                    alt={service.title}
-                    width={400}
-                    height={300}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 400px"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#1F2C3A]/60 to-transparent"></div>
-                  <div className="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6">
-                    <h3 className="text-lg sm:text-xl font-bold text-white mb-2 uppercase tracking-wide">
-                      {service.title}
-                    </h3>
-                  </div>
-                </div>
-                <div className="p-6 sm:p-8">
-                  <p className="text-sm sm:text-base text-[#1F2C3A]/80 leading-relaxed">{service.description}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Projects Section */}
       <section
         id="projects"
@@ -466,9 +420,53 @@ export default function HomePage() {
               </div>
 
               {/* Project Stats */}
-              
-              
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Services Section */}
+      <section id="services" className="py-16 sm:py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12 sm:mb-16">
+            <div className="mb-4 sm:mb-6">
+              <span className="text-[#3182A9] font-bold text-base sm:text-lg tracking-wider uppercase">Služby</span>
+            </div>
+            <h2 className="text-3xl sm:text-4xl font-bold text-[#1F2C3A] mb-4 sm:mb-6 uppercase tracking-wide">
+              {t("servicesTitle")}
+            </h2>
+            <p className="text-lg sm:text-xl text-[#1F2C3A]/80 max-w-3xl mx-auto">
+              Poskytujeme komplexné riešenia v oblasti elektrotechniky a priemyselných montáží
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-6 sm:gap-8">
+            {services.map((service, index) => (
+              <div
+                key={index}
+                className="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden border border-gray-100 hover:border-[#3182A9]/20"
+              >
+                <div className="relative h-56 sm:h-64 overflow-hidden">
+                  <Image
+                    src={service.image || "/placeholder.svg"}
+                    alt={service.title}
+                    width={400}
+                    height={300}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 400px"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#1F2C3A]/60 to-transparent"></div>
+                  <div className="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6">
+                    <h3 className="text-lg sm:text-xl font-bold text-white mb-2 uppercase tracking-wide">
+                      {service.title}
+                    </h3>
+                  </div>
+                </div>
+                <div className="p-6 sm:p-8">
+                  <p className="text-sm sm:text-base text-[#1F2C3A]/80 leading-relaxed">{service.description}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
