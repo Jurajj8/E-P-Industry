@@ -58,7 +58,7 @@ legislatívou.",
     reason2Title: "Certifikovaní technici",
     reason2Desc: "Všetci naši technici majú potrebné certifikáty a pravidelné školenia",
     reason3Title: "Komplexný servis",
-    reason3Desc: "Od návrhu cez realizáciu až po servis - všetko na jednom mieste",
+    reason3Desc: "Ponúkame pracovníkov na rôzne technické oblasti – od elektroinštalácií po mechanické montáže a mechatroniku",
     reason4Title: "Záruka kvality",
     reason4Desc: "Poskytujeme záruku na všetky naše práce a používame kvalitné materiály",
 
