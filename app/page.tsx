@@ -160,11 +160,6 @@ export default function HomePage() {
       icon: Clock,
     },
     {
-      title: t("reason2Title"),
-      description: t("reason2Desc"),
-      icon: Award,
-    },
-    {
       title: t("reason3Title"),
       description: t("reason3Desc"),
       icon: CheckCircle,
@@ -492,7 +487,7 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid sm:grid-cols-1 lg:grid-cols-3 gap-8">
             {reasons.map((reason, index) => (
               <div
                 key={index}
