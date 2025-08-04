@@ -4,7 +4,10 @@ import nodemailer from "nodemailer"
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json()
-    const { name, email, phone, company, projectType, message } = body
+    const { name, email, phone, company, message } = body
+
+    console.log("SMTP_HOST:", process.env.SMTP_HOST)
+
 
     // Validácia povinných polí
     if (!name || !email || !message) {
@@ -12,7 +15,7 @@ export async function POST(request: NextRequest) {
     }
 
     // Konfigurácia SMTP transportu
-    const transporter = nodemailer.createTransporter({
+    const transporter = nodemailer.createTransport({
       host: process.env.SMTP_HOST, // napr. 'smtp.gmail.com'
       port: Number.parseInt(process.env.SMTP_PORT || "587"),
       secure: process.env.SMTP_PORT === "465", // true pre 465, false pre ostatné porty
@@ -22,11 +25,13 @@ export async function POST(request: NextRequest) {
       },
     })
 
+    console.log("SMTP_USER:", process.env.SMTP_USER)
+
     // Email pre firmu
     const companyEmailOptions = {
       from: process.env.SMTP_USER,
-      to: process.env.COMPANY_EMAIL || "info@epindustry.sk",
-      subject: `Nová správa z kontaktného formulára - ${projectType || "Všeobecný dopyt"}`,
+      to: process.env.COMPANY_EMAIL,
+      subject: `Nová správa z kontaktného formulára - Všeobecný dopyt`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
           <div style="background: linear-gradient(135deg, #3182A9, #1A73E8); padding: 20px; text-align: center;">
@@ -63,16 +68,6 @@ export async function POST(request: NextRequest) {
               <tr style="background: #fff;">
                 <td style="padding: 8px; font-weight: bold; color: #1F2C3A;">Spoločnosť:</td>
                 <td style="padding: 8px; color: #666;">${company}</td>
-              </tr>
-              `
-                  : ""
-              }
-              ${
-                projectType
-                  ? `
-              <tr>
-                <td style="padding: 8px; font-weight: bold; color: #1F2C3A;">Typ projektu:</td>
-                <td style="padding: 8px; color: #666;">${projectType}</td>
               </tr>
               `
                   : ""
@@ -124,9 +119,9 @@ export async function POST(request: NextRequest) {
 
             <div style="background: #3182A9; color: white; padding: 15px; border-radius: 8px; margin: 20px 0;">
               <h3 style="margin-top: 0;">Kontaktné informácie:</h3>
-              <p style="margin: 5px 0;">📞 +421 123 456 789</p>
-              <p style="margin: 5px 0;">📧 info@epindustry.sk</p>
-              <p style="margin: 5px 0;">📍 Hlavná 123, 010 01 Žilina</p>
+              <p style="margin: 5px 0;">📞 +421 944 241 733 </p>
+              <p style="margin: 5px 0;">📞 +421 948 001 420 </p>
+              <p style="margin: 5px 0;">📧 epindustryy@gmail.com</p>
             </div>
 
             <p style="color: #666; line-height: 1.6;">

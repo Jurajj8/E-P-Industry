@@ -15,7 +15,6 @@ export default function ContactPage() {
     email: "",
     phone: "",
     company: "",
-    projectType: "",
     message: "",
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
@@ -50,7 +49,6 @@ export default function ContactPage() {
           email: "",
           phone: "",
           company: "",
-          projectType: "",
           message: "",
         })
       } else {
@@ -80,8 +78,6 @@ export default function ContactPage() {
     })
   }
 
-  const projectTypes = ["Elektrické inštalácie", "Priemyselné montáže", "Údržba a servis", "Projektovanie", "Iné"]
-
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
@@ -99,7 +95,7 @@ export default function ContactPage() {
                 {t("contactTitle")}
               </h1>
               <p className="text-lg sm:text-xl text-[#B0B0B0] mb-8 leading-relaxed max-w-2xl">
-                Hľadáte skúsených pracovníkov? Alebo ste elektrikár či mechanik pripravený vycestovať?<p></p>
+                Hľadáte skúsených pracovníkov? Alebo ste elektrikár či mechanik pripravený vycestovať?<br></br>
                 Ozvite sa nám – prepájame firmy s kvalitnými ľuďmi.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start">

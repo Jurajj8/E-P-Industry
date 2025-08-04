@@ -296,7 +296,7 @@ export default function HomePage() {
             <div className="relative order-1 lg:order-2">
               <div className="relative">
                 <Image
-                  src="https://res.cloudinary.com/djreoxyzu/image/upload/f_auto,q_auto/v1754308427/logo-full_vqe2ru.png"
+                  src="https://res.cloudinary.com/djreoxyzu/image/upload/f_auto,q_auto/v1754312364/backg_ms4s9m.webp"
                   alt="About E&P Industry"
                   width={600}
                   height={500}
