@@ -38,7 +38,7 @@ const translations = {
     servicesTitle: "Naše služby",
     service1Title: "Elektrické inštalácie",
     service1Desc:
-      "Dodávame elektrotechnikov na zapájanie rozvodných skríň, realizáciu kompletných elektroinštalácií podľa projektovej dokumentácie aj montáž káblových trás.",
+      "Zabezpečujeme kompletné elektroinštalácie, ťahanie káblov, montáže trás a komplexné elektrotechnické práce. Poskytujeme kvalifikovaných odborníkov aj celé realizačné tímy.",
     service2Title: "Priemyselné montáže",
     service2Desc: "Dodávame pracovníkov na montáž a údržbu strojov, výrobných liniek aj dopravníkov",
     service3Title: "Mechatronika",

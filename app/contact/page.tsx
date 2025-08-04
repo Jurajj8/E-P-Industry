@@ -119,7 +119,7 @@ export default function ContactPage() {
               </div>
             </div>
             <div className="relative hidden lg:block">
-              <div className="bg-gradient-to-br from-[#3182A9] to-[#1A73E8] rounded-2xl p-2 shadow-2xl transform rotate-3 hover:rotate-0 transition-transform duration-500">
+              {/* <div className="bg-gradient-to-br from-[#3182A9] to-[#1A73E8] rounded-2xl p-2 shadow-2xl transform rotate-3 hover:rotate-0 transition-transform duration-500">
                 <Image
                   src="/images/contact-hero.png"
                   alt="E&P Industry kontakt - konzultácia s klientom"
@@ -129,12 +129,12 @@ export default function ContactPage() {
                   priority
                   sizes="(max-width: 1200px) 50vw, 600px"
                 />
-              </div>
+              </div> */}
               
-              <div className="absolute -top-4 sm:-top-6 -right-4 sm:-right-6 bg-[#3182A9] p-4 sm:p-6 rounded-xl shadow-xl">
+              {/* <div className="absolute -top-4 sm:-top-6 -right-4 sm:-right-6 bg-[#3182A9] p-4 sm:p-6 rounded-xl shadow-xl">
                 <div className="text-2xl sm:text-3xl font-bold text-white">{"<24h"}</div>
                 <div className="text-xs sm:text-sm text-white/90">Odpoveď na email</div>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

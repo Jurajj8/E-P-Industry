@@ -36,7 +36,7 @@ export default function Footer() {
             <p className="text-[#B0B0B0] text-sm leading-relaxed mb-6">
               E&P Industry je slovenská spoločnosť, ktorá sa špecializuje na poskytovanie kvalifikovaných pracovníkov pre medzinárodné priemyselné projekty.
             </p>
-            <div className="flex space-x-4">
+            {/* <div className="flex space-x-4">
               <a
                 href="https://linkedin.com"
                 target="_blank"
@@ -53,7 +53,7 @@ export default function Footer() {
               >
                 <Facebook className="h-5 w-5 text-white" />
               </a>
-            </div>
+            </div> */}
           </div>
 
           {/* Quick Links */}
@@ -110,9 +110,9 @@ export default function Footer() {
         <div className="border-t border-[#B0B0B0]/20 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center text-center md:text-left">
             <p className="text-[#B0B0B0] text-sm">{t("footerText")}</p>
-            <div className="flex items-center space-x-6 mt-4 md:mt-0">
+            {/* <div className="flex items-center space-x-6 mt-4 md:mt-0">
               <span className="text-[#B0B0B0] text-sm">{t("followUs")}</span>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

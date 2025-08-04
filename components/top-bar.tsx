@@ -11,7 +11,7 @@ export default function TopBar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col sm:flex-row justify-between items-center space-y-2 sm:space-y-0">
           {/* Contact Info */}
-          <div className="flex flex-wrap items-center space-x-4 sm:space-x-6">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:space-x-6 space-y-4 sm:space-y-0">
             <div className="flex items-center space-x-2">
               <Mail className="h-4 w-4 text-[#3182A9]" />
               <a href="mailto:epindustryy@gmail.com">epindustryy@gmail.com</a>
@@ -20,14 +20,14 @@ export default function TopBar() {
               <Phone className="h-4 w-4 text-[#3182A9]" />
               <a href="tel:+421944241733">+421 944 241 733</a>
             </div>
-            {/* <div className="flex items-center space-x-2">
+            <div className="flex items-center space-x-2">
               <Phone className="h-4 w-4 text-[#3182A9]" />
               <a href="tel:+421948001420">+421 948 001 420</a>
-            </div> */}
+            </div>
           </div>
 
           {/* Social Media */}
-          <div className="flex items-center space-x-3">
+          {/* <div className="flex items-center space-x-3">
             <a
               href="https://facebook.com"
               target="_blank"
@@ -52,7 +52,7 @@ export default function TopBar() {
             >
               <Instagram className="h-4 w-4" />
             </a>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>
