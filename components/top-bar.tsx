@@ -7,7 +7,7 @@ export default function TopBar() {
   const { t } = useLanguage()
 
   return (
-    <div className="bg-[#1F2C3A] text-white py-2 text-sm">
+    <div className="hidden sm:block bg-[#1F2C3A] text-white py-2 text-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col sm:flex-row justify-between items-center space-y-2 sm:space-y-0">
           {/* Contact Info */}
@@ -18,11 +18,11 @@ export default function TopBar() {
             </div>
             <div className="flex items-center space-x-2">
               <Phone className="h-4 w-4 text-[#3182A9]" />
-              <a href="tel:+421944241733">+421 944 241 733</a>
+              <a href="tel:+421944241733">Erik Staškovan +421 944 241 733</a>
             </div>
             <div className="flex items-center space-x-2">
               <Phone className="h-4 w-4 text-[#3182A9]" />
-              <a href="tel:+421948001420">+421 948 001 420</a>
+              <a href="tel:+421948001420">Patrik Potočár +421 948 001 420</a>
             </div>
           </div>
 

@@ -46,8 +46,8 @@ export default function ProjectsSection() {
     <section id="projects" className="py-20 bg-[#1A1F2B]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-white mb-4">{t("projectsTitle")}</h2>
-          <p className="text-xl text-gray-300">{t("projectsSubtitle")}</p>
+          {/* <h2 className="text-4xl font-bold text-white mb-4">{t("projectsTitle")}</h2>
+          <p className="text-xl text-gray-300">{t("projectsSubtitle")}</p> */}
         </div>
 
         <div className="grid lg:grid-cols-3 gap-8">
@@ -64,8 +64,8 @@ export default function ProjectsSection() {
                 />
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-bold text-[#1A1F2B] mb-2">{project.title}</h3>
-                <p className="text-gray-600 mb-4">{project.description}</p>
+                {/* <h3 className="text-xl font-bold text-[#1A1F2B] mb-2">{project.title}</h3>
+                <p className="text-gray-600 mb-4">{project.description}</p> */}
                 <div className="flex items-center justify-between text-sm text-gray-500">
                   <div className="flex items-center space-x-1">
                     <MapPin className="h-4 w-4" />

@@ -47,68 +47,67 @@ export default function HomePage() {
     {
       id: 1,
       title: t("project1Title"),
-      description: t("project1Desc"),
-      type: t("project1Type"),
-      client: t("project1Client"),
-      location: "Bratislava, Slovakia",
-      year: "2024",
-      category: "industrial",
-      image: "/images/project-automotive-plant.png",
+      image: "https://res.cloudinary.com/djreoxyzu/image/upload/v1754312364/backg_ms4s9m.webp",
     },
     {
       id: 2,
-      title: t("project2Title"),
-      description: t("project2Desc"),
-      type: t("project2Type"),
-      client: t("project2Client"),
-      location: "Košice, Slovakia",
-      year: "2023",
-      category: "commercial",
-      image: "/images/project-logistics-center.png",
+      title: t("project1Title"),
+      image: "https://res.cloudinary.com/djreoxyzu/image/upload/v1754490705/IMG_2535_wdcajr.webp",
     },
     {
       id: 3,
-      title: t("project3Title"),
-      description: t("project3Desc"),
-      type: t("project3Type"),
-      client: t("project3Client"),
-      location: "Žilina, Slovakia",
-      year: "2023",
-      category: "commercial",
-      image: "/images/project-shopping-center.png",
+      title: t("project1Title"),
+      image: "https://res.cloudinary.com/djreoxyzu/image/upload/v1754490705/IMG_6847_t3lfrw.webp",
     },
     {
       id: 4,
-      title: t("project4Title"),
-      description: t("project4Desc"),
-      type: t("project4Type"),
-      client: t("project4Client"),
-      location: "Bratislava, Slovakia",
-      year: "2022",
-      category: "industrial",
-      image: "/images/project-chemical-plant.png",
+      title: t("project1Title"),
+      image: "https://res.cloudinary.com/djreoxyzu/image/upload/v1754490705/IMG_8850_grwcwq.webp",
     },
     {
       id: 5,
-      title: t("project5Title"),
-      description: t("project5Desc"),
-      type: t("project5Type"),
-      client: t("project5Client"),
-      location: "Nové Zámky, Slovakia",
-      year: "2022",
-      category: "healthcare",
-      image: "/images/project-hospital.png",
+      title: t("project1Title"),
+      image: "https://res.cloudinary.com/djreoxyzu/image/upload/v1754490706/IMG_1123_bkyw4l.webp",
     },
     {
       id: 6,
-      title: t("project6Title"),
-      description: t("project6Desc"),
-      type: t("project6Type"),
-      client: t("project6Client"),
-      location: "Trnava, Slovakia",
-      year: "2021",
-      category: "it",
-      image: "/images/project-datacenter.png",
+      title: t("project1Title"),
+      image: "https://res.cloudinary.com/djreoxyzu/image/upload/v1754490706/IMG_3558_ewqs2j.webp",
+    },
+    {
+      id: 7,
+      title: t("project1Title"),
+      image: "https://res.cloudinary.com/djreoxyzu/image/upload/v1754490706/IMG_1144_wgofs7.webp",
+    },
+    {
+      id: 8,
+      title: t("project1Title"),
+      image: "https://res.cloudinary.com/djreoxyzu/image/upload/v1754490711/IMG_7074_u7dbmu.webp",
+    },
+    {
+      id: 9,
+      title: t("project1Title"),
+      image: "https://res.cloudinary.com/djreoxyzu/image/upload/v1754490713/IMG_8610_gx2mji.webp",
+    },
+    {
+      id: 10,
+      title: t("project1Title"),
+      image: "https://res.cloudinary.com/djreoxyzu/image/upload/v1754490714/IMG_0710_jkyrww.webp",
+    },
+    {
+      id: 11,
+      title: t("project1Title"),
+      image: "https://res.cloudinary.com/djreoxyzu/image/upload/v1754490716/IMG_1131_zhp1ew.webp",
+    },
+    {
+      id: 12,
+      title: t("project1Title"),
+      image: "https://res.cloudinary.com/djreoxyzu/image/upload/v1754490716/IMG_5494_x4wqog.webp",
+    },
+    {
+      id: 13,
+      title: t("project1Title"),
+      image: "https://res.cloudinary.com/djreoxyzu/image/upload/v1754490716/IMG_2924_ptvsot.webp",
     },
   ]
 
@@ -363,26 +362,6 @@ export default function HomePage() {
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#1F2C3A]/80 via-transparent to-transparent"></div>
-
-                    {/* Project Info Overlay */}
-                    <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                      <div className="mb-2">
-                        <span className="inline-block bg-[#3182A9]/90 text-white px-3 py-1 rounded-full text-xs font-medium">
-                          {project.type}
-                        </span>
-                      </div>
-                      <h3 className="text-lg sm:text-xl font-bold mb-2">{project.title}</h3>
-                      <div className="flex items-center justify-between text-sm opacity-90">
-                        <div className="flex items-center space-x-1">
-                          <MapPin className="h-3 w-3" />
-                          <span>{project.location}</span>
-                        </div>
-                        <div className="flex items-center space-x-1">
-                          <Calendar className="h-3 w-3" />
-                          <span>{project.year}</span>
-                        </div>
-                      </div>
-                    </div>
                   </div>
                 ))}
               </div>

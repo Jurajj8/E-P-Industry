@@ -85,23 +85,30 @@ export default function Footer() {
           {/* Contact Info */}
           <div>
             <h3 className="text-white font-semibold mb-6">{t("contactInfo")}</h3>
-            <div className="space-y-4">
-              <div className="flex items-start space-x-3">
-                <Phone className="h-4 w-4 text-[#3182A9] mt-1" />
-                <div className="flex flex-col space-y-1">
-                  <a href="tel:+421944241733" className="text-[#B0B0B0]/80 hover:underline">
-                    +421 944 241 733
-                  </a>
-                  <a href="tel:+421948001420" className="text-[#B0B0B0]/80 hover:underline">
-                    +421 948 001 420
-                  </a>
-                </div>
+            <div className="flex flex-col space-y-4">
+              {/* Erik */}
+              <div>
+                <p className="text-white mb-1">Erik Staškovan</p>
+                <a href="tel:+421944241733" className="flex items-center space-x-2 text-[#B0B0B0]/80 hover:underline">
+                  <Phone className="h-4 w-4 text-[#3182A9]" />
+                  <span>+421 944 241 733</span>
+                </a>
+              </div>
+
+              {/* Patrik */}
+              <div>
+                <p className="text-white mb-1">Patrik Potočár</p>
+                <a href="tel:+421948001420" className="flex items-center space-x-2 text-[#B0B0B0]/80 hover:underline">
+                  <Phone className="h-4 w-4 text-[#3182A9]" />
+                  <span>+421 948 001 420</span>
+                </a>
               </div>
 
               <div className="flex items-center space-x-3">
                 <Mail className="h-4 w-4 text-[#3182A9]" />
                 <a href="mailto:epindustryy@gmail.com" className="text-[#B0B0B0]/80 mb-1 hover:underline">epindustryy@gmail.com</a>
               </div>
+
             </div>
           </div>
         </div>
