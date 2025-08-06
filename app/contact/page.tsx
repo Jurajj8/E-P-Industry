@@ -89,14 +89,13 @@ export default function ContactPage() {
             <div className="text-center lg:text-left">
               <div className="inline-flex items-center px-4 py-2 bg-[#3182A9]/10 border border-[#3182A9]/20 rounded-full text-[#3182A9] text-sm font-medium mb-6">
                 <MessageCircle className="h-4 w-4 mr-2" />
-                Sme tu pre vás
+                {t("vas")}
               </div>
               <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-6 leading-tight">
                 {t("contactTitle")}
               </h1>
               <p className="text-lg sm:text-xl text-[#B0B0B0] mb-8 leading-relaxed max-w-2xl">
-                Hľadáte skúsených pracovníkov? Alebo ste elektrikár či mechanik pripravený vycestovať?<br></br>
-                Ozvite sa nám – prepájame firmy s kvalitnými ľuďmi.
+                {t("look")}
               </p>
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start">
                 <button
@@ -108,7 +107,7 @@ export default function ContactPage() {
                   }}
                   className="bg-gradient-to-r from-[#3182A9] to-[#1A73E8] text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold hover:from-[#1A73E8] hover:to-[#1A73E8] transition-all duration-300 flex items-center justify-center space-x-2 shadow-xl hover:shadow-2xl transform hover:-translate-y-1 touch-manipulation"
                 >
-                  <span>Napísať správu</span>
+                  <span>{t("writeMessage")}</span>
                   <ArrowRight className="h-5 w-5" />
                 </button>
                 
@@ -145,8 +144,7 @@ export default function ContactPage() {
               <div>
                 <h2 className="text-3xl font-bold text-[#1F2C3A] mb-6 sm:mb-8">{t("getInTouch")}</h2>
                 <p className="text-lg text-[#1F2C3A]/80 leading-relaxed mb-8">
-                  Sme tu pre vás. Kontaktujte nás telefonicky alebo emailom. Radi prediskutujeme váš projekt a nájdeme
-                  najlepšie riešenie.
+                {t("here")}
                 </p>
               </div>
 
@@ -163,7 +161,7 @@ export default function ContactPage() {
                       <a href="tel:+421944241733" className="text-[#1F2C3A]/80 hover:underline">+421 944 241 733</a>
                       <p className="mt-3">Patrik Potočár</p>
                       <a href="tel:+421948001420" className="text-[#1F2C3A]/80 hover:underline">+421 948 001 420</a>
-                      <p className="text-sm text-gray-500 mt-2">24/7 pohotovostná linka</p>
+                      <p className="text-sm text-gray-500 mt-2">{t("nonstop")}</p>
                     </div>
                   </div>
                 </div>
@@ -176,7 +174,7 @@ export default function ContactPage() {
                     <div>
                       <h3 className="font-semibold text-[#1F2C3A] mb-2">{t("emailLabel")}</h3>
                       <a href="mailto:epindustryy@gmail.com" className="text-[#1F2C3A]/80 mb-1 hover:underline">epindustryy@gmail.com</a>
-                      <p className="text-sm text-gray-500 mt-2">Odpoveď do 24 hodín</p>
+                      <p className="text-sm text-gray-500 mt-2">{t("answer")}</p>
                     </div>
                   </div>
                 </div>
@@ -234,7 +232,7 @@ export default function ContactPage() {
                       onChange={handleChange}
                       required
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#3182A9] focus:border-transparent outline-none transition-colors"
-                      placeholder="Vaše meno a priezvisko"
+                      placeholder={t("nameGrey")}
                     />
                   </div>
 
@@ -250,7 +248,7 @@ export default function ContactPage() {
                       onChange={handleChange}
                       required
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#3182A9] focus:border-transparent outline-none transition-colors"
-                      placeholder="vas@email.sk"
+                      placeholder={t("emailGrey")}
                     />
                   </div>
                 </div>
@@ -282,7 +280,7 @@ export default function ContactPage() {
                       value={formData.company}
                       onChange={handleChange}
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#3182A9] focus:border-transparent outline-none transition-colors"
-                      placeholder="Názov spoločnosti"
+                      placeholder={t("companyGrey")}
                     />
                   </div>
                 </div>
@@ -319,7 +317,7 @@ export default function ContactPage() {
                     required
                     rows={6}
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#3182A9] focus:border-transparent outline-none resize-vertical"
-                    placeholder="Opíšte váš projekt alebo požiadavky..."
+                    placeholder={t("projectGrey")}
                   />
                 </div>
 
@@ -331,7 +329,7 @@ export default function ContactPage() {
                   {isSubmitting ? (
                     <>
                       <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white"></div>
-                      <span>Odosiela sa...</span>
+                      <span>{t("sending")}</span>
                     </>
                   ) : (
                     <>

@@ -20,6 +20,7 @@ const translations = {
     services: "Služby",
 
     // Home page
+    heroTi: "Profesionálne riešenia",
     heroTitle: "Profesionálne elektrické a montážne riešenia",
     heroSubtitle:
       "Dodávame presne takých odborníkov, akých váš projekt potrebuje – rýchlo, spoľahlivo a kdekoľvek v Európe aj mimo nej.",
@@ -35,6 +36,8 @@ const translations = {
       "Pôsobíme v Európe aj mimo nej, pričom naše tímy pracujú precízne, efektívne a bez zbytočných komplikácií. Vždy kladieme dôraz na spoľahlivosť, kvalitu a súlad s platnou legislatívou.",
 
     // Services
+    servicesL: "Služby",
+    komplex: "Poskytujeme komplexné riešenia v oblasti elektrotechniky a priemyselných montáží",
     servicesTitle: "Naše služby",
     service1Title: "Elektrické inštalácie",
     service1Desc:
@@ -49,6 +52,9 @@ const translations = {
       "Skúsení montážnici na rýchlu a presnú realizáciu konštrukcií a regálov podľa projektu – spoľahlivo, bezpečne, bez kompromisov.",
 
     // Why choose us
+    why: "Prečo my",
+    reason: "Dôvody, prečo si klienti vyberajú práve nás pre svoje projekty",
+    portfolio: "Portfólio našich prác",
     whyChooseTitle: "Prečo si vybrať E&P Industry",
     reason1Title: "Skúsení pracovníci",
     reason1Desc: "Dodávame kvalifikovaných odborníkov s praxou v priemysle a overenými zručnosťami",
@@ -61,6 +67,7 @@ const translations = {
     reason4Desc: "Prispôsobíme sa vašim požiadavkám a termínom, či už ide o krátkodobé alebo dlhodobé projekty",
 
     // Projects page
+    presentation: "Prezentujeme výber našich najvýznamnejších projektov v oblasti elektrotechniky a priemyselných montáží realizovaných pre významných klientov.",
     projectsTitle: "Naše realizované projekty",
     projectsSubtitle:
       "Pozrite si výber našich najvýznamnejších projektov v oblasti elektrotechniky a priemyselných montáží",
@@ -87,6 +94,17 @@ const translations = {
     emailLabel: "Email",
     addressLabel: "Adresa",
     address: "Hlavná 123, 010 01 Žilina, Slovakia",
+    vas: "Sme tu pre vás",
+    look: "Hľadáte skúsených pracovníkov? Alebo ste elektrikár či mechanik pripravený vycestovať? Ozvite sa nám – prepájame firmy s kvalitnými ľuďmi.",
+    writeMessage: "Napísať správu",
+    here: "Sme tu pre vás. Kontaktujte nás telefonicky alebo emailom. Radi prediskutujeme váš projekt a nájdeme najlepšie riešenie.",
+    nonstop: "24/7 pohotovostná linka",
+    answer: "Odpoveď do 24 hodín",
+    nameGrey: "Vaše meno a priezvisko",
+    emailGrey: "vas@email.sk",
+    companyGrey: "Názov spoločnosti",
+    projectGrey: "Opíšte váš projekt alebo požiadavky...",
+    sending: "Odosiela sa...",
 
     // Footer
     footerText: `© ${new Date().getFullYear()} E&P Industry s.r.o. Všetky práva vyhradené.`,
@@ -94,6 +112,7 @@ const translations = {
     quickLinks: "Rýchle odkazy",
     ourServices: "Naše služby",
     contactInfo: "Kontaktné informácie",
+    footer: "E&P Industry je slovenská spoločnosť, ktorá sa špecializuje na poskytovanie kvalifikovaných pracovníkov pre medzinárodné priemyselné projekty.",
   },
   en: {
   // Navigation
@@ -104,6 +123,7 @@ const translations = {
   services: "Services",
 
   // Home page
+  heroTi: "Professional solutions",
   heroTitle: "Professional Electrical and Assembly Solutions",
   heroSubtitle:
     "We provide exactly the specialists your project needs – fast, reliable, and available across Europe and beyond.",
@@ -119,6 +139,8 @@ const translations = {
     "We operate across Europe and beyond. Our teams work precisely, efficiently, and without unnecessary complications. We always prioritize reliability, quality, and compliance with current legislation.",
 
   // Services
+  servicesL: "Services",
+  komplex: "We provide comprehensive solutions in the field of electrical engineering and industrial assembly.",
   servicesTitle: "Our Services",
   service1Title: "Electrical Installations",
   service1Desc:
@@ -134,6 +156,9 @@ const translations = {
     "Experienced assemblers for fast and precise installation of structures and shelving systems according to project specifications – reliably, safely, and without compromise.",
 
   // Why choose us
+  why: "Why us",
+  reason: "Reasons why clients choose us for their projects",
+  portfolio: "Portfolio of our work",
   whyChooseTitle: "Why Choose E&P Industry",
   reason1Title: "Experienced Professionals",
   reason1Desc:
@@ -149,6 +174,7 @@ const translations = {
     "We adapt to your requirements and deadlines, whether for short-term or long-term projects.",
 
   // Projects page
+  presentation: "We present a selection of our most significant projects in the field of electrical engineering and industrial assembly implemented for major clients.",
   projectsTitle: "Our Completed Projects",
   projectsSubtitle:
     "Explore a selection of our most important projects in electrical engineering and industrial assembly.",
@@ -170,6 +196,17 @@ const translations = {
   company: "Company",
   message: "Message",
   sendMessage: "Send Message",
+  vas: "We are here for you",
+  look: "Looking for experienced workers? Or are you an electrician or mechanic ready to travel? Get in touch – we connect companies with skilled professionals.",
+  writeMessage: "Write a message",
+  here: "We are here for you. Contact us by phone or email. We’ll gladly discuss your project and find the best solution.",
+  nonstop: "24/7 emergency line",
+  answer: "Response within 24 hours",
+  nameGrey: "Your full name",
+  emailGrey: "your@email.com",
+  companyGrey: "Company name",
+  projectGrey: "Describe your project or requirements...",
+  sending: "Sending...",
 
   // Contact info
   phoneLabel: "Phone",
@@ -183,6 +220,7 @@ const translations = {
   quickLinks: "Quick Links",
   ourServices: "Our Services",
   contactInfo: "Contact Information",
+  footer: "E&P Industry is a Slovak company specializing in providing qualified workers for international industrial projects.",
 },
   de: {
   // Navigation
@@ -193,6 +231,7 @@ const translations = {
   services: "Dienstleistungen",
 
   // Home page
+  heroTi: "Professionelle Lösungen",
   heroTitle: "Professionelle Elektro- und Montagelösungen",
   heroSubtitle:
     "Wir liefern genau die Fachkräfte, die Ihr Projekt benötigt – schnell, zuverlässig und überall in Europa und darüber hinaus.",
@@ -208,6 +247,8 @@ const translations = {
     "Wir sind in Europa und darüber hinaus tätig. Unsere Teams arbeiten präzise, effizient und ohne unnötige Komplikationen. Zuverlässigkeit, Qualität und die Einhaltung der geltenden Vorschriften stehen bei uns immer im Vordergrund.",
 
   // Services
+  servicesL: "Leistungen",
+  komplex: "Wir bieten umfassende Lösungen im Bereich der Elektrotechnik und Industriemontage.",
   servicesTitle: "Unsere Dienstleistungen",
   service1Title: "Elektroinstallationen",
   service1Desc:
@@ -223,6 +264,9 @@ const translations = {
     "Erfahrene Monteure für eine schnelle und präzise Umsetzung von Konstruktionen und Regalsystemen gemäß Projekt – zuverlässig, sicher und ohne Kompromisse.",
 
   // Why choose us
+  why: "Warum wir",
+  reason: "Gründe, warum Kunden uns für ihre Projekte auswählen",
+  portfolio: "Portfolio unserer Arbeit",
   whyChooseTitle: "Warum E&P Industry wählen",
   reason1Title: "Erfahrene Fachkräfte",
   reason1Desc:
@@ -238,6 +282,7 @@ const translations = {
     "Wir passen uns Ihren Anforderungen und Terminen an – ob für kurzfristige oder langfristige Projekte.",
 
   // Projects page
+  presentation: "Wir präsentieren eine Auswahl unserer bedeutendsten Projekte im Bereich Elektrotechnik und Industriemontage, die wir für Großkunden umgesetzt haben.",
   projectsTitle: "Unsere realisierten Projekte",
   projectsSubtitle:
     "Werfen Sie einen Blick auf eine Auswahl unserer bedeutendsten Projekte im Bereich Elektrotechnik und Industriemontage.",
@@ -265,6 +310,17 @@ const translations = {
   emailLabel: "E-Mail",
   addressLabel: "Adresse",
   address: "Hlavná 123, 010 01 Žilina, Slowakei",
+  vas: "Wir sind für Sie da",
+  look: "Suchen Sie erfahrene Fachkräfte? Oder sind Sie Elektriker oder Mechaniker und bereit zu reisen? Kontaktieren Sie uns – wir verbinden Unternehmen mit qualifizierten Fachleuten.",
+  writeMessage: "Nachricht schreiben",
+  here: "Wir sind für Sie da. Kontaktieren Sie uns telefonisch oder per E-Mail. Gerne besprechen wir Ihr Projekt und finden die beste Lösung.",
+  nonstop: "24/7 Notfall-Hotline",
+  answer: "Antwort innerhalb von 24 Stunden",
+  nameGrey: "Ihr vollständiger Name",
+  emailGrey: "ihre@email.de",
+  companyGrey: "Firmenname",
+  projectGrey: "Beschreiben Sie Ihr Projekt oder Ihre Anforderungen...",
+  sending: "Wird gesendet...",
 
   // Footer
   footerText: `© ${new Date().getFullYear()} E&P Industry s.r.o. Alle Rechte vorbehalten.`,
@@ -272,6 +328,7 @@ const translations = {
   quickLinks: "Schnellzugriff",
   ourServices: "Unsere Dienstleistungen",
   contactInfo: "Kontaktinformationen",
+  footer: "E&P Industry ist ein slowakisches Unternehmen, das auf die Bereitstellung qualifizierter Arbeitskräfte für internationale Industrieprojekte spezialisiert ist.",
 },
 }
 

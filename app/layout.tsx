@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     template: "%s | E&P Industry",
   },
   description:
-    "E&P Industry s.r.o. - Špecialisti na elektrotechnické práce a priemyselné montáže s viac ako 15-ročnými skúsenosťami. Komplexné riešenia pre priemysel, komerčné objekty a infraštruktúru.",
+    "E&P Industry s.r.o. - Špecialisti na elektrotechnické práce a priemyselné montáže. Komplexné riešenia pre priemysel, komerčné objekty a infraštruktúru.",
   keywords: [
     "elektrické inštalácie",
     "priemyselné montáže",
@@ -49,13 +49,13 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "sk_SK",
-    url: "https://epindustry.sk",
+    url: "https://www.epindustry.sk",
     siteName: "E&P Industry",
     title: "E&P Industry - Profesionálne elektrické a montážne riešenia",
-    description: "Špecialisti na elektrotechnické práce a priemyselné montáže s viac ako 15-ročnými skúsenosťami.",
+    description: "Špecialisti na elektrotechnické práce a priemyselné montáže.",
     images: [
       {
-        url: "/images/logo-transparent.png",
+        url: "https://res.cloudinary.com/djreoxyzu/image/upload/v1754499477/logocierne_ctdghw.webp",
         width: 1200,
         height: 630,
         alt: "E&P Industry - Elektrické inštalácie",
@@ -65,7 +65,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "E&P Industry - Profesionálne elektrické a montážne riešenia",
-    description: "Špecialisti na elektrotechnické práce a priemyselné montáže s viac ako 15-ročnými skúsenosťami.",
+    description: "Špecialisti na elektrotechnické práce a priemyselné montáže.",
     images: ["/images/logo-transparent.png"],
   },
   verification: {

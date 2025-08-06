@@ -216,7 +216,7 @@ export default function HomePage() {
             <div className="max-w-3xl text-center sm:text-left">
               <div className="mb-4 sm:mb-6">
                 <span className="text-[#3182A9] font-bold text-base sm:text-lg tracking-wider uppercase">
-                  Profesionálne riešenia
+                  {t("heroTi")}
                 </span>
               </div>
               <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-4 sm:mb-6 leading-tight uppercase tracking-wide">
@@ -272,7 +272,7 @@ export default function HomePage() {
           <div className="grid lg:grid-cols-2 gap-12 sm:gap-16 items-center">
             <div className="order-2 lg:order-1">
               <div className="mb-4 sm:mb-6">
-                <span className="text-[#3182A9] font-bold text-base sm:text-lg tracking-wider uppercase">O nás</span>
+                <span className="text-[#3182A9] font-bold text-base sm:text-lg tracking-wider uppercase">{t("about")}</span>
               </div>
               <h2 className="text-3xl sm:text-4xl font-bold text-[#1F2C3A] mb-4 sm:mb-6 uppercase tracking-wide">
                 {t("aboutTitle")}
@@ -324,14 +324,13 @@ export default function HomePage() {
             <div className="text-center lg:text-left">
               <div className="inline-flex items-center px-4 py-2 bg-[#3182A9]/10 border border-[#3182A9]/20 rounded-full text-[#3182A9] text-sm font-medium mb-6">
                 <Award className="h-4 w-4 mr-2" />
-                Portfólio našich prác
+                {t("portfolio")}
               </div>
               <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4 sm:mb-6 leading-tight uppercase tracking-wide">
                 {t("projectsTitle")}
               </h2>
               <p className="text-lg sm:text-xl text-[#B0B0B0] mb-8 leading-relaxed max-w-2xl">
-                Prezentujeme výber našich najvýznamnejších projektov v oblasti elektrotechniky a priemyselných montáží
-                realizovaných pre významných klientov.
+                {t("presentation")}
               </p>
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start">
                 <Link
@@ -404,13 +403,13 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 sm:mb-16">
             <div className="mb-4 sm:mb-6">
-              <span className="text-[#3182A9] font-bold text-base sm:text-lg tracking-wider uppercase">Služby</span>
+              <span className="text-[#3182A9] font-bold text-base sm:text-lg tracking-wider uppercase">{t("servicesL")}</span>
             </div>
             <h2 className="text-3xl sm:text-4xl font-bold text-[#1F2C3A] mb-4 sm:mb-6 uppercase tracking-wide">
               {t("servicesTitle")}
             </h2>
             <p className="text-lg sm:text-xl text-[#1F2C3A]/80 max-w-3xl mx-auto">
-              Poskytujeme komplexné riešenia v oblasti elektrotechniky a priemyselných montáží
+              {t("komplex")}
             </p>
           </div>
 
@@ -456,13 +455,13 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-12 sm:mb-16">
             <div className="mb-4 sm:mb-6">
-              <span className="text-[#3182A9] font-bold text-base sm:text-lg tracking-wider uppercase">Prečo my</span>
+              <span className="text-[#3182A9] font-bold text-base sm:text-lg tracking-wider uppercase">{t("why")}</span>
             </div>
             <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4 sm:mb-6 uppercase tracking-wide">
               {t("whyChooseTitle")}
             </h2>
             <p className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto">
-              Dôvody, prečo si klienti vyberajú práve nás pre svoje projekty
+              {t("reason")}
             </p>
           </div>
 

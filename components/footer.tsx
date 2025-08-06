@@ -34,7 +34,7 @@ export default function Footer() {
               />
             </div>
             <p className="text-[#B0B0B0] text-sm leading-relaxed mb-6">
-              E&P Industry je slovenská spoločnosť, ktorá sa špecializuje na poskytovanie kvalifikovaných pracovníkov pre medzinárodné priemyselné projekty.
+              {t("footer")}
             </p>
             {/* <div className="flex space-x-4">
               <a
