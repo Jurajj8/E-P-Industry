@@ -15,7 +15,6 @@ if (isGithubActions) {
 }
 
 const nextConfig = {
-  output: "export", // Povolí statický export
   assetPrefix: assetPrefix,
   basePath: basePath,
   eslint: {
