@@ -6,22 +6,22 @@ export async function POST(request: NextRequest) {
     const body = await request.json()
     const { name, email, phone, company, message } = body
 
-    console.log("SMTP_HOST:", process.env.SMTP_HOST)
+    console.log("➡️ [POST] /api/contact called")
+    console.log("📩 Received data:", { name, email, phone, company, message })
 
-
-    // Validácia povinných polí
     if (!name || !email || !message) {
+      console.warn("⚠️ Missing required fields")
       return NextResponse.json({ error: "Meno, email a správa sú povinné polia" }, { status: 400 })
     }
 
-    // Konfigurácia SMTP transportu
+    console.log("🔐 Preparing SMTP transport")
     const transporter = nodemailer.createTransport({
-      host: process.env.SMTP_HOST, // napr. 'smtp.gmail.com'
+      host: process.env.SMTP_HOST,
       port: Number.parseInt(process.env.SMTP_PORT || "587"),
-      secure: process.env.SMTP_PORT === "465", // true pre 465, false pre ostatné porty
+      secure: process.env.SMTP_PORT === "465",
       auth: {
-        user: process.env.SMTP_USER, // váš email
-        pass: process.env.SMTP_PASS, // heslo alebo app password
+        user: process.env.SMTP_USER,
+        pass: process.env.SMTP_PASS,
       },
     })
 
