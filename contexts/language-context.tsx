@@ -70,39 +70,6 @@ const translations = {
     projectType: "Typ projektu",
     client: "Klient",
 
-    // Project details
-    project1Title: "Výrobný závod AutoParts Bratislava",
-    project1Desc:
-      "Kompletná elektrická inštalácia moderného výrobného závodu automobilových súčiastok vrátane priemyselnej automatizácie.",
-    project1Type: "Priemyselná elektroinštalácia",
-    project1Client: "AutoParts Slovakia s.r.o.",
-
-    project2Title: "Logistické centrum DHL Košice",
-    project2Desc:
-      "Montáž a inštalácia komplexných elektrických systémov pre najmodernejšie logistické centrum v regióne.",
-    project2Type: "Komerčná elektroinštalácia",
-    project2Client: "DHL Supply Chain Slovakia",
-
-    project3Title: "Obchodné centrum Central Žilina",
-    project3Desc: "Elektrické systémy, osvetlenie a bezpečnostné systémy pre veľké obchodné centrum.",
-    project3Type: "Komerčná elektroinštalácia",
-    project3Client: "Central Shopping Centers",
-
-    project4Title: "Chemický závod Slovnaft Bratislava",
-    project4Desc: "Špecializované elektrické inštalácie pre chemický priemysel s vysokými bezpečnostnými štandardmi.",
-    project4Type: "Priemyselná špecializácia",
-    project4Client: "Slovnaft a.s.",
-
-    project5Title: "Nemocnica Nové Zámky",
-    project5Desc: "Kritické elektrické systémy pre zdravotnícke zariadenie vrátane záložných zdrojov energie.",
-    project5Type: "Zdravotníctvo",
-    project5Client: "Nemocnica Nové Zámky",
-
-    project6Title: "Datacentrum Telekom Trnava",
-    project6Desc: "Vysoko spoľahlivé elektrické systémy pre kritickú IT infraštruktúru s redundanciou.",
-    project6Type: "IT infraštruktúra",
-    project6Client: "Slovak Telekom a.s.",
-
     // Contact page
     contactTitle: "Kontaktujte nás",
     contactSubtitle: "Máte projekt alebo otázku? Radi vám pomôžeme s realizáciou vašich plánov.",
@@ -127,284 +94,185 @@ const translations = {
     quickLinks: "Rýchle odkazy",
     ourServices: "Naše služby",
     contactInfo: "Kontaktné informácie",
-
-    // Certifications
-    certificationsTitle: "Naše certifikácie a ocenenia",
-    certificationsSubtitle: "Potvrdenie našej kvality a odbornosti",
-    cert1Title: "ISO 9001:2015 Certifikácia",
-    cert1Desc:
-      "Certifikát systému manažérstva kvality, ktorý potvrdzuje náš záväzok k neustálemu zlepšovaniu a spokojnosti zákazníkov.",
-    cert2Title: "Bezpečnosť práce (BOZP)",
-    cert2Desc:
-      "Pravidelné školenia a certifikácie v oblasti bezpečnosti a ochrany zdravia pri práci pre všetkých zamestnancov.",
-    cert3Title: "Autorizácia pre elektroinštalácie",
-    cert3Desc: "Licencia a oprávnenie na vykonávanie všetkých typov elektrických inštalácií podľa platných noriem.",
-    cert4Title: "Členstvo v priemyselných asociáciách",
-    cert4Desc: "Aktívna účasť v kľúčových priemyselných asociáciách, ktorá nám umožňuje byť v popredí inovácií.",
   },
   en: {
-    // Navigation
-    home: "Home",
-    projects: "Projects",
-    contact: "Contact",
-    about: "About",
-    services: "Services",
+  // Navigation
+  home: "Home",
+  projects: "Projects",
+  contact: "Contact",
+  about: "About Us",
+  services: "Services",
 
-    // Home page
-    heroTitle: "Professional Electrical and Assembly Solutions",
-    heroSubtitle:
-      "We are specialists in electrotechnical works and industrial assembly with over 15 years of experience throughout the region.",
-    getQuote: "Get Quote",
-    ourProjects: "Our Projects",
-    learnMore: "Learn More",
+  // Home page
+  heroTitle: "Professional Electrical and Assembly Solutions",
+  heroSubtitle:
+    "We provide exactly the specialists your project needs – fast, reliable, and available across Europe and beyond.",
+  getQuote: "Contact Us",
+  ourProjects: "Our Projects",
+  learnMore: "Learn More",
 
-    // About section
-    aboutTitle: "About E&P Industry",
-    aboutText1:
-      "We are an established company with extensive experience in electrical engineering and industrial assembly. Our company has been operating in the market for over 15 years and has built a reputation as a reliable partner.",
-    aboutText2:
-      "We specialize in comprehensive solutions for industrial enterprises, commercial buildings and infrastructure projects. Our certified technicians and engineers ensure the highest quality of work.",
+  // About section
+  aboutTitle: "About E&P Industry",
+  aboutText1:
+    "E&P Industry is a Slovak company specializing in the provision of qualified professionals for international industrial projects. We focus on mechanical and electrical work in all forms – from the assembly and disassembly of production lines, building shelving systems, to wiring distribution cabinets, electrical installations, pneumatic systems, and providing full technical support for production facilities.",
+  aboutText2:
+    "We operate across Europe and beyond. Our teams work precisely, efficiently, and without unnecessary complications. We always prioritize reliability, quality, and compliance with current legislation.",
 
-    // Services
-    servicesTitle: "Our Services",
-    service1Title: "Electrical Installations",
-    service1Desc:
-      "Complete electrical installations for industrial facilities, commercial buildings and infrastructure projects with certification and warranty.",
-    service2Title: "Industrial Assembly",
-    service2Desc:
-      "Professional assembly work of machines, equipment and technological units with precise adherence to technical specifications.",
-    service3Title: "Maintenance & Service",
-    service3Desc:
-      "Regular preventive maintenance, service and emergency repairs of electrical systems and industrial equipment.",
-    service4Title: "Design & Consulting",
-    service4Desc:
-      "Design and engineering of electrical systems, consultations and technical advisory for optimal solutions.",
+  // Services
+  servicesTitle: "Our Services",
+  service1Title: "Electrical Installations",
+  service1Desc:
+    "We provide complete electrical installations, cable routing, track assembly, and complex electrotechnical work. We offer both qualified specialists and full implementation teams.",
+  service2Title: "Industrial Assemblies",
+  service2Desc:
+    "We supply skilled workers for the assembly and maintenance of machines, production lines, and conveyor systems.",
+  service3Title: "Mechatronics",
+  service3Desc:
+    "We provide experts in pneumatics, automation, and control systems. Our staff configure and assemble technological units that combine mechanics and electronics into fully functional systems.",
+  service4Title: "Steel Structures & Racking Systems",
+  service4Desc:
+    "Experienced assemblers for fast and precise installation of structures and shelving systems according to project specifications – reliably, safely, and without compromise.",
 
-    // Why choose us
-    whyChooseTitle: "Why Choose E&P Industry",
-    reason1Title: "15+ Years Experience",
-    reason1Desc: "Long-term experience in electrical engineering and industrial assembly",
-    reason2Title: "Certified Technicians",
-    reason2Desc: "All our technicians have necessary certificates and regular training",
-    reason3Title: "Complete Solutions",
-    reason3Desc: "From design through implementation to service - everything in one place",
-    reason4Title: "Quality Guarantee",
-    reason4Desc: "We provide warranty on all our work and use quality materials",
+  // Why choose us
+  whyChooseTitle: "Why Choose E&P Industry",
+  reason1Title: "Experienced Professionals",
+  reason1Desc:
+    "We supply qualified specialists with industry experience and proven skills.",
+  reason2Title: "Certified Technicians",
+  reason2Desc:
+    "All our technicians hold the necessary certifications and undergo regular training.",
+  reason3Title: "Comprehensive Service",
+  reason3Desc:
+    "We provide personnel across technical disciplines – from electrical installations to mechanical assemblies and mechatronics.",
+  reason4Title: "Flexibility",
+  reason4Desc:
+    "We adapt to your requirements and deadlines, whether for short-term or long-term projects.",
 
-    // Projects page
-    projectsTitle: "Our Completed Projects",
-    projectsSubtitle:
-      "View a selection of our most significant projects in electrical engineering and industrial assembly",
-    viewProject: "View Project",
-    projectDetails: "Project Details",
-    completedIn: "Completed in",
-    projectType: "Project Type",
-    client: "Client",
+  // Projects page
+  projectsTitle: "Our Completed Projects",
+  projectsSubtitle:
+    "Explore a selection of our most important projects in electrical engineering and industrial assembly.",
+  viewProject: "View Project",
+  projectDetails: "Project Details",
+  completedIn: "Completed In",
+  projectType: "Project Type",
+  client: "Client",
 
-    // Project details
-    project1Title: "AutoParts Manufacturing Plant Bratislava",
-    project1Desc:
-      "Complete electrical installation of modern automotive parts manufacturing plant including industrial automation.",
-    project1Type: "Industrial Electrical Installation",
-    project1Client: "AutoParts Slovakia s.r.o.",
+  // Contact page
+  contactTitle: "Contact Us",
+  contactSubtitle:
+    "Do you have a project or question? We’d be happy to help bring your plans to life.",
+  getInTouch: "Get in Touch",
+  contactForm: "Contact Form",
+  name: "Full Name",
+  email: "Email",
+  phone: "Phone",
+  company: "Company",
+  message: "Message",
+  sendMessage: "Send Message",
 
-    project2Title: "DHL Logistics Center Košice",
-    project2Desc:
-      "Assembly and installation of complex electrical systems for the most modern logistics center in the region.",
-    project2Type: "Commercial Electrical Installation",
-    project2Client: "DHL Supply Chain Slovakia",
+  // Contact info
+  phoneLabel: "Phone",
+  emailLabel: "Email",
+  addressLabel: "Address",
+  address: "Hlavná 123, 010 01 Žilina, Slovakia",
 
-    project3Title: "Central Shopping Center Žilina",
-    project3Desc: "Electrical systems, lighting and security systems for large shopping center.",
-    project3Type: "Commercial Electrical Installation",
-    project3Client: "Central Shopping Centers",
-
-    project4Title: "Slovnaft Chemical Plant Bratislava",
-    project4Desc: "Specialized electrical installations for chemical industry with high safety standards.",
-    project4Type: "Industrial Specialization",
-    project4Client: "Slovnaft a.s.",
-
-    project5Title: "Hospital Nové Zámky",
-    project5Desc: "Critical electrical systems for healthcare facility including backup power sources.",
-    project5Type: "Healthcare",
-    project5Client: "Hospital Nové Zámky",
-
-    project6Title: "Telekom Datacenter Trnava",
-    project6Desc: "Highly reliable electrical systems for critical IT infrastructure with redundancy.",
-    project6Type: "IT Infrastructure",
-    project6Client: "Slovak Telekom a.s.",
-
-    // Contact page
-    contactTitle: "Contact Us",
-    contactSubtitle: "Have a project or question? We'd be happy to help you realize your plans.",
-    getInTouch: "Get in Touch",
-    contactForm: "Contact Form",
-    name: "Full Name",
-    email: "Email",
-    phone: "Phone",
-    company: "Company",
-    message: "Message",
-    sendMessage: "Send Message",
-
-    // Contact info
-    phoneLabel: "Phone",
-    emailLabel: "Email",
-    addressLabel: "Address",
-    address: "Hlavná 123, 010 01 Žilina, Slovakia",
-
-    // Footer
-    footerText: "© 2024 E&P Industry s.r.o. All rights reserved.",
-    followUs: "Follow Us",
-    quickLinks: "Quick Links",
-    ourServices: "Our Services",
-    contactInfo: "Contact Information",
-
-    // Certifications
-    certificationsTitle: "Our Certifications & Awards",
-    certificationsSubtitle: "Confirmation of our quality and expertise",
-    cert1Title: "ISO 9001:2015 Certification",
-    cert1Desc:
-      "Quality management system certificate, confirming our commitment to continuous improvement and customer satisfaction.",
-    cert2Title: "Occupational Health & Safety (OHS)",
-    cert2Desc: "Regular training and certifications in occupational health and safety for all employees.",
-    cert3Title: "Authorization for Electrical Installations",
-    cert3Desc:
-      "License and authorization to perform all types of electrical installations according to applicable standards.",
-    cert4Title: "Membership in Industry Associations",
-    cert4Desc: "Active participation in key industry associations, allowing us to be at the forefront of innovation.",
-  },
+  // Footer
+  footerText: `© ${new Date().getFullYear()} E&P Industry s.r.o. All rights reserved.`,
+  followUs: "Follow Us",
+  quickLinks: "Quick Links",
+  ourServices: "Our Services",
+  contactInfo: "Contact Information",
+},
   de: {
-    // Navigation
-    home: "Startseite",
-    projects: "Projekte",
-    contact: "Kontakt",
-    about: "Über uns",
-    services: "Dienstleistungen",
+  // Navigation
+  home: "Startseite",
+  projects: "Projekte",
+  contact: "Kontakt",
+  about: "Über uns",
+  services: "Dienstleistungen",
 
-    // Home page
-    heroTitle: "Professionelle Elektro- und Montagelösungen",
-    heroSubtitle:
-      "Wir sind Spezialisten für elektrotechnische Arbeiten und Industriemontage mit über 15 Jahren Erfahrung in der gesamten Region.",
-    getQuote: "Angebot erhalten",
-    ourProjects: "Unsere Projekte",
-    learnMore: "Mehr erfahren",
+  // Home page
+  heroTitle: "Professionelle Elektro- und Montagelösungen",
+  heroSubtitle:
+    "Wir liefern genau die Fachkräfte, die Ihr Projekt benötigt – schnell, zuverlässig und überall in Europa und darüber hinaus.",
+  getQuote: "Kontaktieren Sie uns",
+  ourProjects: "Unsere Projekte",
+  learnMore: "Mehr erfahren",
 
-    // About section
-    aboutTitle: "Über E&P Industry",
-    aboutText1:
-      "Wir sind ein etabliertes Unternehmen mit umfangreicher Erfahrung in der Elektrotechnik und Industriemontage. Unser Unternehmen ist seit über 15 Jahren am Markt tätig und hat sich einen Ruf als zuverlässiger Partner aufgebaut.",
-    aboutText2:
-      "Wir spezialisieren uns auf umfassende Lösungen für Industrieunternehmen, Gewerbegebäude und Infrastrukturprojekte. Unsere zertifizierten Techniker und Ingenieure gewährleisten höchste Arbeitsqualität.",
+  // About section
+  aboutTitle: "Über E&P Industry",
+  aboutText1:
+    "E&P Industry ist ein slowakisches Unternehmen, das sich auf die Bereitstellung qualifizierter Fachkräfte für internationale Industrieprojekte spezialisiert hat. Wir konzentrieren uns auf mechanische und elektrotechnische Arbeiten in jeder Form – von der Montage und Demontage von Produktionslinien, dem Aufbau von Regalsystemen, bis hin zum Anschluss von Schaltschränken, Elektroinstallationen, pneumatischen Systemen und umfassender technischer Unterstützung von Produktionsbetrieben.",
+  aboutText2:
+    "Wir sind in Europa und darüber hinaus tätig. Unsere Teams arbeiten präzise, effizient und ohne unnötige Komplikationen. Zuverlässigkeit, Qualität und die Einhaltung der geltenden Vorschriften stehen bei uns immer im Vordergrund.",
 
-    // Services
-    servicesTitle: "Unsere Dienstleistungen",
-    service1Title: "Elektrische Installationen",
-    service1Desc:
-      "Komplette Elektroinstallationen für Industrieanlagen, Gewerbegebäude und Infrastrukturprojekte mit Zertifizierung und Garantie.",
-    service2Title: "Industrielle Montage",
-    service2Desc:
-      "Professionelle Montagearbeiten von Maschinen, Anlagen und technologischen Einheiten unter genauer Einhaltung technischer Spezifikationen.",
-    service3Title: "Wartung & Service",
-    service3Desc:
-      "Regelmäßige vorbeugende Wartung, Service und Notfallreparaturen von elektrischen Systemen und Industrieanlagen.",
-    service4Title: "Planung & Beratung",
-    service4Desc:
-      "Planung und Engineering von elektrischen Systemen, Beratung und technische Beratung für optimale Lösungen.",
+  // Services
+  servicesTitle: "Unsere Dienstleistungen",
+  service1Title: "Elektroinstallationen",
+  service1Desc:
+    "Wir bieten komplette Elektroinstallationen, Kabelverlegung, Trassenmontage und umfassende elektrotechnische Arbeiten. Sowohl einzelne Fachkräfte als auch komplette Montageteams stehen zur Verfügung.",
+  service2Title: "Industriemontagen",
+  service2Desc:
+    "Wir stellen Fachpersonal für die Montage und Wartung von Maschinen, Produktionslinien und Förderanlagen bereit.",
+  service3Title: "Mechatronik",
+  service3Desc:
+    "Wir liefern Spezialisten für Pneumatik, Automatisierung und Steuerungstechnik. Unsere Fachkräfte montieren und konfigurieren technische Einheiten, die Mechanik und Elektronik zu einem funktionierenden Ganzen verbinden.",
+  service4Title: "Stahlkonstruktionen & Regalsysteme",
+  service4Desc:
+    "Erfahrene Monteure für eine schnelle und präzise Umsetzung von Konstruktionen und Regalsystemen gemäß Projekt – zuverlässig, sicher und ohne Kompromisse.",
 
-    // Why choose us
-    whyChooseTitle: "Warum E&P Industry wählen",
-    reason1Title: "15+ Jahre Erfahrung",
-    reason1Desc: "Langjährige Erfahrung in Elektrotechnik und Industriemontage",
-    reason2Title: "Zertifizierte Techniker",
-    reason2Desc: "Alle unsere Techniker haben notwendige Zertifikate und regelmäßige Schulungen",
-    reason3Title: "Komplettlösungen",
-    reason3Desc: "Von der Planung über die Umsetzung bis zum Service - alles aus einer Hand",
-    reason4Title: "Qualitätsgarantie",
-    reason4Desc: "Wir bieten Garantie auf alle unsere Arbeiten und verwenden Qualitätsmaterialien",
+  // Why choose us
+  whyChooseTitle: "Warum E&P Industry wählen",
+  reason1Title: "Erfahrene Fachkräfte",
+  reason1Desc:
+    "Wir stellen qualifizierte Fachkräfte mit Industrieerfahrung und geprüften Fähigkeiten zur Verfügung.",
+  reason2Title: "Zertifizierte Techniker",
+  reason2Desc:
+    "Alle unsere Techniker verfügen über die erforderlichen Zertifikate und absolvieren regelmäßige Schulungen.",
+  reason3Title: "Umfassender Service",
+  reason3Desc:
+    "Wir bieten Personal für verschiedene technische Bereiche – von Elektroinstallationen über mechanische Montage bis hin zur Mechatronik.",
+  reason4Title: "Flexibilität",
+  reason4Desc:
+    "Wir passen uns Ihren Anforderungen und Terminen an – ob für kurzfristige oder langfristige Projekte.",
 
-    // Projects page
-    projectsTitle: "Unsere abgeschlossenen Projekte",
-    projectsSubtitle: "Sehen Sie eine Auswahl unserer bedeutendsten Projekte in Elektrotechnik und Industriemontage",
-    viewProject: "Projekt ansehen",
-    projectDetails: "Projektdetails",
-    completedIn: "Abgeschlossen in",
-    projectType: "Projekttyp",
-    client: "Kunde",
+  // Projects page
+  projectsTitle: "Unsere realisierten Projekte",
+  projectsSubtitle:
+    "Werfen Sie einen Blick auf eine Auswahl unserer bedeutendsten Projekte im Bereich Elektrotechnik und Industriemontage.",
+  viewProject: "Projekt anzeigen",
+  projectDetails: "Projektdetails",
+  completedIn: "Abgeschlossen in",
+  projectType: "Projekttyp",
+  client: "Kunde",
 
-    // Project details
-    project1Title: "AutoParts Produktionsanlage Bratislava",
-    project1Desc:
-      "Komplette Elektroinstallation einer modernen Automobilteile-Produktionsanlage einschließlich Industrieautomatisierung.",
-    project1Type: "Industrielle Elektroinstallation",
-    project1Client: "AutoParts Slovakia s.r.o.",
+  // Contact page
+  contactTitle: "Kontaktieren Sie uns",
+  contactSubtitle:
+    "Haben Sie ein Projekt oder eine Frage? Wir helfen Ihnen gerne bei der Umsetzung Ihrer Pläne.",
+  getInTouch: "Kontakt aufnehmen",
+  contactForm: "Kontaktformular",
+  name: "Vollständiger Name",
+  email: "E-Mail",
+  phone: "Telefon",
+  company: "Unternehmen",
+  message: "Nachricht",
+  sendMessage: "Nachricht senden",
 
-    project2Title: "DHL Logistikzentrum Košice",
-    project2Desc:
-      "Montage und Installation komplexer elektrischer Systeme für das modernste Logistikzentrum der Region.",
-    project2Type: "Gewerbliche Elektroinstallation",
-    project2Client: "DHL Supply Chain Slovakia",
+  // Contact info
+  phoneLabel: "Telefon",
+  emailLabel: "E-Mail",
+  addressLabel: "Adresse",
+  address: "Hlavná 123, 010 01 Žilina, Slowakei",
 
-    project3Title: "Einkaufszentrum Central Žilina",
-    project3Desc: "Elektrische Systeme, Beleuchtung und Sicherheitssysteme für großes Einkaufszentrum.",
-    project3Type: "Gewerbliche Elektroinstallation",
-    project3Client: "Central Shopping Centers",
-
-    project4Title: "Slovnaft Chemiewerk Bratislava",
-    project4Desc: "Spezialisierte Elektroinstallationen für die chemische Industrie mit hohen Sicherheitsstandards.",
-    project4Type: "Industrielle Spezialisierung",
-    project4Client: "Slovnaft a.s.",
-
-    project5Title: "Krankenhaus Nové Zámky",
-    project5Desc: "Kritische elektrische Systeme für Gesundheitseinrichtung einschließlich Notstromquellen.",
-    project5Type: "Gesundheitswesen",
-    project5Client: "Krankenhaus Nové Zámky",
-
-    project6Title: "Telekom Rechenzentrum Trnava",
-    project6Desc: "Hochzuverlässige elektrische Systeme für kritische IT-Infrastruktur mit Redundanz.",
-    project6Type: "IT-Infrastruktur",
-    project6Client: "Slovak Telekom a.s.",
-
-    // Contact page
-    contactTitle: "Kontaktieren Sie uns",
-    contactSubtitle: "Haben Sie ein Projekt oder eine Frage? Wir helfen Ihnen gerne bei der Umsetzung Ihrer Pläne.",
-    getInTouch: "Kontakt aufnehmen",
-    contactForm: "Kontaktformular",
-    name: "Vollständiger Name",
-    email: "E-Mail",
-    phone: "Telefon",
-    company: "Unternehmen",
-    message: "Nachricht",
-    sendMessage: "Nachricht senden",
-
-    // Contact info
-    phoneLabel: "Telefon",
-    emailLabel: "E-Mail",
-    addressLabel: "Adresse",
-    address: "Hlavná 123, 010 01 Žilina, Slovakia",
-
-    // Footer
-    footerText: "© 2024 E&P Industry s.r.o. Alle Rechte vorbehalten.",
-    followUs: "Folgen Sie uns",
-    quickLinks: "Schnelle Links",
-    ourServices: "Unsere Dienstleistungen",
-    contactInfo: "Kontaktinformationen",
-
-    // Certifications
-    certificationsTitle: "Unsere Zertifizierungen & Auszeichnungen",
-    certificationsSubtitle: "Bestätigung unserer Qualität und Expertise",
-    cert1Title: "ISO 9001:2015 Zertifizierung",
-    cert1Desc:
-      "Zertifikat für Qualitätsmanagementsysteme, das unser Engagement für kontinuierliche Verbesserung und Kundenzufriedenheit bestätigt.",
-    cert2Title: "Arbeitssicherheit (ASiG)",
-    cert2Desc:
-      "Regelmäßige Schulungen und Zertifizierungen im Bereich Arbeitssicherheit und Gesundheitsschutz für alle Mitarbeiter.",
-    cert3Title: "Autorisierung für Elektroinstallationen",
-    cert3Desc:
-      "Lizenz und Berechtigung zur Durchführung aller Arten von Elektroinstallationen gemäß den geltenden Normen.",
-    cert4Title: "Mitgliedschaft in Industrieverbänden",
-    cert4Desc:
-      "Aktive Teilnahme an wichtigen Industrieverbänden, die es uns ermöglicht, an der Spitze der Innovation zu stehen.",
-  },
+  // Footer
+  footerText: `© ${new Date().getFullYear()} E&P Industry s.r.o. Alle Rechte vorbehalten.`,
+  followUs: "Folgen Sie uns",
+  quickLinks: "Schnellzugriff",
+  ourServices: "Unsere Dienstleistungen",
+  contactInfo: "Kontaktinformationen",
+},
 }
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined)
