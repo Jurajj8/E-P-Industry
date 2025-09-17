@@ -71,12 +71,14 @@ export const metadata: Metadata = {
   verification: {
     google: "your-google-verification-code",
   },
-  icons: {
-    icon: "/images/logo-icon.png",
-    shortcut: "/images/logo-icon.png",
-    apple: "/images/logo-icon.png",
-  },
-    generator: 'v0.dev'
+  icons: [
+    { rel: 'icon', url: 'favicon.ico' },
+    { rel: 'apple-touch-icon', url: 'apple-icon.png' },
+    { rel: 'icon', type: 'image/png', url: 'icon1.png' },
+    { rel: 'icon', type: 'image/svg+xml', url: 'icon0.svg' },
+  ],
+  manifest: 'manifest.json',
+  generator: 'v0.dev'
 }
 
 export const viewport: Viewport = {
@@ -95,6 +97,7 @@ export default function RootLayout({
   return (
     <html lang="sk" className="scroll-smooth">
       <head>
+      <meta name="apple-mobile-web-app-title" content="E&PIndustry" />
       </head>
       <body className={`${inter.className} antialiased`}>
         <LanguageProvider>
