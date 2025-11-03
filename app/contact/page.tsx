@@ -110,7 +110,7 @@ export default function ContactPage() {
                   <span>{t("writeMessage")}</span>
                   <ArrowRight className="h-5 w-5" />
                 </button>
-                
+
               </div>
             </div>
             <div className="relative hidden lg:block">
@@ -125,7 +125,7 @@ export default function ContactPage() {
                   sizes="(max-width: 1200px) 50vw, 600px"
                 />
               </div> */}
-              
+
               {/* <div className="absolute -top-4 sm:-top-6 -right-4 sm:-right-6 bg-[#3182A9] p-4 sm:p-6 rounded-xl shadow-xl">
                 <div className="text-2xl sm:text-3xl font-bold text-white">{"<24h"}</div>
                 <div className="text-xs sm:text-sm text-white/90">Odpoveď na email</div>
@@ -144,7 +144,7 @@ export default function ContactPage() {
               <div>
                 <h2 className="text-3xl font-bold text-[#1F2C3A] mb-6 sm:mb-8">{t("getInTouch")}</h2>
                 <p className="text-lg text-[#1F2C3A]/80 leading-relaxed mb-8">
-                {t("here")}
+                  {t("here")}
                 </p>
               </div>
 
@@ -173,7 +173,7 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <h3 className="font-semibold text-[#1F2C3A] mb-2">{t("emailLabel")}</h3>
-                      <a href="mailto:epindustryy@gmail.com" className="text-[#1F2C3A]/80 mb-1 hover:underline">epindustryy@gmail.com</a>
+                      <a href="mailto:ep@infoepindustry.com" className="text-[#1F2C3A]/80 mb-1 hover:underline">ep@infoepindustry.com</a>
                       <p className="text-sm text-gray-500 mt-2">{t("answer")}</p>
                     </div>
                   </div>

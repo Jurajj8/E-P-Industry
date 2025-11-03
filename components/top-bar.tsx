@@ -14,7 +14,7 @@ export default function TopBar() {
           <div className="flex flex-col sm:flex-row sm:items-center sm:space-x-6 space-y-4 sm:space-y-0">
             <div className="flex items-center space-x-2">
               <Mail className="h-4 w-4 text-[#3182A9]" />
-              <a href="mailto:epindustryy@gmail.com">epindustryy@gmail.com</a>
+              <a href="mailto:ep@infoepindustry.com">ep@infoepindustry.com</a>
             </div>
             <div className="flex items-center space-x-2">
               <Phone className="h-4 w-4 text-[#3182A9]" />

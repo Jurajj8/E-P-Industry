@@ -106,7 +106,7 @@ export default function Footer() {
 
               <div className="flex items-center space-x-3">
                 <Mail className="h-4 w-4 text-[#3182A9]" />
-                <a href="mailto:epindustryy@gmail.com" className="text-[#B0B0B0]/80 mb-1 hover:underline">epindustryy@gmail.com</a>
+                <a href="mailto:ep@infoepindustry.com" className="text-[#B0B0B0]/80 mb-1 hover:underline">ep@infoepindustry.com</a>
               </div>
 
             </div>
