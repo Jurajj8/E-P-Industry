@@ -21,10 +21,12 @@ const nextConfig = {
     ignoreDuringBuilds: true,
   },
   typescript: {
-    ignoreBuildErrors: true,
+    ignoreBuildErrors: false,
   },
   images: {
-    unoptimized: true, // Vypne optimalizáciu obrázkov, ktorá na statickom hostingu nefunguje
+    // Cloudinary robí zmenšovanie a formáty (WebP/AVIF) — funguje aj na statickom hostingu
+    loader: "custom",
+    loaderFile: "./lib/image-loader.ts",
   },
 }
 

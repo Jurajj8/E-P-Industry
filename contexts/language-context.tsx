@@ -1,347 +1,580 @@
 "use client"
 
-import { createContext, useContext, useState, type ReactNode } from "react"
+import { createContext, useContext, useMemo, type ReactNode } from "react"
+import type { Lang } from "@/lib/site"
+import { localePath } from "@/lib/i18n"
 
-type Language = "sk" | "en" | "de"
+type Language = Lang
 
 interface LanguageContextType {
   language: Language
-  setLanguage: (lang: Language) => void
-  t: (key: string) => string
+  t: (key: TranslationKey) => string
+  /** Prefixes an internal link with the current language: lp("/contact") → "/en/contact" */
+  lp: (href: string) => string
 }
 
-const translations = {
-  sk: {
-    // Navigation
-    home: "Domov",
-    projects: "Projekty",
-    contact: "Kontakt",
-    about: "O nás",
-    services: "Služby",
+const year = new Date().getFullYear()
 
-    // Home page
-    heroTi: "Profesionálne riešenia",
-    heroTitle: "Profesionálne elektrické a montážne riešenia",
-    heroSubtitle:
-      "Dodávame presne takých odborníkov, akých váš projekt potrebuje – rýchlo, spoľahlivo a kdekoľvek v Európe aj mimo nej.",
-    getQuote: "Kontaktujte nás",
-    ourProjects: "Naše projekty",
-    learnMore: "Zistiť viac",
-
-    // About section
-    aboutTitle: "O spoločnosti E&P Industry",
-    aboutText1:
-      "E&P Industry je slovenská spoločnosť, ktorá sa špecializuje na poskytovanie kvalifikovaných pracovníkov pre medzinárodné priemyselné projekty. Zameriavame sa na mechanické a elektro práce v každej podobe – od montáže a demontáže výrobných liniek, stavby regálových systémov, až po zapájanie rozvodných skríň, elektroinštalácie, pneumatické systémy a kompletnú technickú podporu výrobných prevádzok.",
-    aboutText2:
-      "Pôsobíme v Európe aj mimo nej, pričom naše tímy pracujú precízne, efektívne a bez zbytočných komplikácií. Vždy kladieme dôraz na spoľahlivosť, kvalitu a súlad s platnou legislatívou.",
-
-    // Services
-    servicesL: "Služby",
-    komplex: "Poskytujeme komplexné riešenia v oblasti elektrotechniky a priemyselných montáží",
-    servicesTitle: "Naše služby",
-    service1Title: "Elektrické inštalácie",
-    service1Desc:
-      "Zabezpečujeme kompletné elektroinštalácie, ťahanie káblov, montáže trás a komplexné elektrotechnické práce. Poskytujeme kvalifikovaných odborníkov aj celé realizačné tímy.",
-    service2Title: "Priemyselné montáže",
-    service2Desc: "Dodávame pracovníkov na montáž a údržbu strojov, výrobných liniek aj dopravníkov",
-    service3Title: "Mechatronika",
-    service3Desc:
-      "Dodávame odborníkov na pneumatiku, automatizáciu a riadiace systémy. Naši ľudia nastavujú a montujú technologické celky, ktoré spájajú mechaniku a elektroniku do funkčného celku.",
-    service4Title: "Oceľové konštrukcie a regálové systémy",
-    service4Desc:
-      "Skúsení montážnici na rýchlu a presnú realizáciu konštrukcií a regálov podľa projektu – spoľahlivo, bezpečne, bez kompromisov.",
-
-    // Why choose us
-    why: "Prečo my",
-    reason: "Dôvody, prečo si klienti vyberajú práve nás pre svoje projekty",
-    portfolio: "Portfólio našich prác",
-    whyChooseTitle: "Prečo si vybrať E&P Industry",
-    reason1Title: "Skúsení pracovníci",
-    reason1Desc: "Dodávame kvalifikovaných odborníkov s praxou v priemysle a overenými zručnosťami",
-    reason2Title: "Certifikovaní technici",
-    reason2Desc: "Všetci naši technici majú potrebné certifikáty a pravidelné školenia",
-    reason3Title: "Komplexný servis",
-    reason3Desc:
-      "Ponúkame pracovníkov na rôzne technické oblasti – od elektroinštalácií po mechanické montáže a mechatroniku",
-    reason4Title: "Flexibilita",
-    reason4Desc: "Prispôsobíme sa vašim požiadavkám a termínom, či už ide o krátkodobé alebo dlhodobé projekty",
-
-    // Projects page
-    presentation: "Prezentujeme výber našich najvýznamnejších projektov v oblasti elektrotechniky a priemyselných montáží realizovaných pre významných klientov.",
-    projectsTitle: "Naše realizované projekty",
-    projectsSubtitle:
-      "Pozrite si výber našich najvýznamnejších projektov v oblasti elektrotechniky a priemyselných montáží",
-    viewProject: "Zobraziť projekt",
-    projectDetails: "Detaily projektu",
-    completedIn: "Dokončené v",
-    projectType: "Typ projektu",
-    client: "Klient",
-
-    // Contact page
-    contactTitle: "Kontaktujte nás",
-    contactSubtitle: "Máte projekt alebo otázku? Radi vám pomôžeme s realizáciou vašich plánov.",
-    getInTouch: "Spojte sa s nami",
-    contactForm: "Kontaktný formulár",
-    name: "Meno a priezvisko",
-    email: "Email",
-    phone: "Telefón",
-    company: "Spoločnosť",
-    message: "Správa",
-    sendMessage: "Odoslať správu",
-
-    // Contact info
-    phoneLabel: "Telefón",
-    emailLabel: "Email",
-    addressLabel: "Adresa",
-    address: "Hlavná 123, 010 01 Žilina, Slovakia",
-    vas: "Sme tu pre vás",
-    look: "Hľadáte skúsených pracovníkov? Alebo ste elektrikár či mechanik pripravený vycestovať? Ozvite sa nám – prepájame firmy s kvalitnými ľuďmi.",
-    writeMessage: "Napísať správu",
-    here: "Sme tu pre vás. Kontaktujte nás telefonicky alebo emailom. Radi prediskutujeme váš projekt a nájdeme najlepšie riešenie.",
-    nonstop: "24/7 pohotovostná linka",
-    answer: "Odpoveď do 24 hodín",
-    nameGrey: "Vaše meno a priezvisko",
-    emailGrey: "vas@email.sk",
-    companyGrey: "Názov spoločnosti",
-    projectGrey: "Opíšte váš projekt alebo požiadavky...",
-    sending: "Odosiela sa...",
-
-    // Footer
-    footerText: `© ${new Date().getFullYear()} E&P Industry s.r.o. Všetky práva vyhradené.`,
-    followUs: "Sledujte nás",
-    quickLinks: "Rýchle odkazy",
-    ourServices: "Naše služby",
-    contactInfo: "Kontaktné informácie",
-    footer: "E&P Industry je slovenská spoločnosť, ktorá sa špecializuje na poskytovanie kvalifikovaných pracovníkov pre medzinárodné priemyselné projekty.",
-  },
-  en: {
+const sk = {
   // Navigation
-  home: "Home",
-  projects: "Projects",
-  contact: "Contact",
-  about: "About Us",
-  services: "Services",
+  navAbout: "O nás",
+  navServices: "Služby",
+  navProjects: "Projekty",
+  navProcess: "Postup",
+  navContact: "Kontakt",
+  navCta: "Poskladať partiu",
+  menu: "Menu",
+  close: "Zavrieť",
+  skip: "Preskočiť na obsah",
+  language: "Jazyk",
 
-  // Home page
-  heroTi: "Professional solutions",
-  heroTitle: "Professional Electrical and Assembly Solutions",
-  heroSubtitle:
-    "We provide exactly the specialists your project needs – fast, reliable, and available across Europe and beyond.",
-  getQuote: "Contact Us",
-  ourProjects: "Our Projects",
-  learnMore: "Learn More",
+  // Hero
+  heroKicker: "Kvalifikovaní ľudia pre priemyselné projekty",
+  heroL1: "Elektrikári",
+  heroL2: "Mechanici",
+  heroL3: "Mechatronici",
+  heroSub:
+    "Dodávame skúsených jednotlivcov aj celé realizačné tímy — od montáže výrobných liniek po zapojenie rozvádzačov. Na Slovensku, v Európe aj mimo nej.",
+  heroCta: "Poskladať partiu",
+  heroCallLabel: "Rovno zavolať",
+  heroPhotoTag: "Foto z terénu",
+  heroPhotoCaption: "Zapojenie riadiaceho rozvádzača",
 
-  // About section
-  aboutTitle: "About E&P Industry",
+  // Disciplines
+  disc_electro_title: "Elektroinštalácie",
+  disc_electro_short: "Rozvádzače, kabeláž, káblové trasy",
+  disc_electro_desc:
+    "Kompletné elektroinštalácie, ťahanie káblov, montáž trás a zapájanie rozvodných skríň. Dodáme jednotlivých odborníkov aj celé realizačné tímy.",
+  disc_electro_tags: "Zapájanie rozvádzačov · Ťahanie káblov · Montáž trás · Elektroinštalácie",
+  disc_assembly_title: "Priemyselné montáže",
+  disc_assembly_short: "Linky, stroje, dopravníky",
+  disc_assembly_desc:
+    "Montážnici na montáž, demontáž a údržbu strojov, výrobných liniek aj dopravníkových systémov.",
+  disc_assembly_tags: "Výrobné linky · Stroje · Dopravníky · Demontáž a presuny",
+  disc_mechatronics_title: "Mechatronika",
+  disc_mechatronics_short: "Pneumatika, automatizácia, riadenie",
+  disc_mechatronics_desc:
+    "Odborníci na pneumatiku, automatizáciu a riadiace systémy. Nastavujú a montujú technologické celky, ktoré spájajú mechaniku a elektroniku do funkčného celku.",
+  disc_mechatronics_tags: "Pneumatika · Automatizácia · Riadiace systémy · Nastavovanie technológií",
+  disc_steel_title: "Oceľové konštrukcie a regály",
+  disc_steel_short: "Konštrukcie, regály, plošiny",
+  disc_steel_desc:
+    "Skúsení montážnici na rýchlu a presnú realizáciu konštrukcií a regálových systémov podľa projektu — spoľahlivo, bezpečne, bez kompromisov.",
+  disc_steel_tags: "Oceľové konštrukcie · Regálové systémy · Plošiny",
+
+  // About
+  aboutMarker: "O nás",
+  aboutStatement1: "Keď sa stavia, sťahuje alebo modernizuje výroba, pošleme ľudí, ktorí vedia, čo robia.",
+  aboutStatement2: "Jednotlivcov aj celé tímy — presne podľa toho, čo váš projekt potrebuje.",
   aboutText1:
-    "E&P Industry is a Slovak company specializing in the provision of qualified professionals for international industrial projects. We focus on mechanical and electrical work in all forms – from the assembly and disassembly of production lines, building shelving systems, to wiring distribution cabinets, electrical installations, pneumatic systems, and providing full technical support for production facilities.",
+    "E&P Industry je slovenská spoločnosť, ktorá poskytuje kvalifikovaných pracovníkov pre medzinárodné priemyselné projekty. Robíme mechanické a elektro práce v každej podobe — od montáže a demontáže výrobných liniek a stavby regálových systémov až po zapájanie rozvodných skríň, pneumatické systémy a technickú podporu výrobných prevádzok.",
   aboutText2:
-    "We operate across Europe and beyond. Our teams work precisely, efficiently, and without unnecessary complications. We always prioritize reliability, quality, and compliance with current legislation.",
+    "Naše tímy pracujú precízne, efektívne a bez zbytočných komplikácií. Vždy kladieme dôraz na spoľahlivosť, kvalitu a súlad s platnou legislatívou.",
+  fact1K: "Rozsah",
+  fact1V: "Jednotlivci aj celé realizačné tímy",
+  fact2K: "Nasadenie",
+  fact2V: "Krátkodobé aj dlhodobé projekty",
+  fact3K: "Pôsobnosť",
+  fact3V: "Slovensko, Európa aj mimo nej",
+  fact4K: "Štandard",
+  fact4V: "Práca v súlade s platnou legislatívou",
+  aboutPhotoCaption: "Robotické pracovisko — montáž a zapojenie",
 
-  // Services
-  servicesL: "Services",
-  komplex: "We provide comprehensive solutions in the field of electrical engineering and industrial assembly.",
-  servicesTitle: "Our Services",
-  service1Title: "Electrical Installations",
-  service1Desc:
-    "We provide complete electrical installations, cable routing, track assembly, and complex electrotechnical work. We offer both qualified specialists and full implementation teams.",
-  service2Title: "Industrial Assemblies",
-  service2Desc:
-    "We supply skilled workers for the assembly and maintenance of machines, production lines, and conveyor systems.",
-  service3Title: "Mechatronics",
-  service3Desc:
-    "We provide experts in pneumatics, automation, and control systems. Our staff configure and assemble technological units that combine mechanics and electronics into fully functional systems.",
-  service4Title: "Steel Structures & Racking Systems",
-  service4Desc:
-    "Experienced assemblers for fast and precise installation of structures and shelving systems according to project specifications – reliably, safely, and without compromise.",
+  discMarker: "Služby",
+  discTitle: "Štyri remeslá. Jedna partia.",
+  discSub:
+    "Ľudí skladáme podľa práce, nie podľa tabuľky. Profesie kombinujeme tak, aby tím na mieste zvládol celý rozsah.",
 
-  // Why choose us
-  why: "Why us",
-  reason: "Reasons why clients choose us for their projects",
-  portfolio: "Portfolio of our work",
-  whyChooseTitle: "Why Choose E&P Industry",
-  reason1Title: "Experienced Professionals",
-  reason1Desc:
-    "We supply qualified specialists with industry experience and proven skills.",
-  reason2Title: "Certified Technicians",
-  reason2Desc:
-    "All our technicians hold the necessary certifications and undergo regular training.",
-  reason3Title: "Comprehensive Service",
-  reason3Desc:
-    "We provide personnel across technical disciplines – from electrical installations to mechanical assemblies and mechatronics.",
-  reason4Title: "Flexibility",
-  reason4Desc:
-    "We adapt to your requirements and deadlines, whether for short-term or long-term projects.",
+  // Crew builder
+  crewMarker: "Dopyt",
+  crewTitle: "Poskladajte si partiu.",
+  crewSub:
+    "Vyberte profesie, počty a termín. Z toho pripravíme konkrétnu ponuku — odpovedáme do 24 hodín.",
+  role_electrician: "Elektrikár",
+  role_electrician_d: "Rozvádzače, kabeláž, trasy",
+  role_mechanic: "Mechanik / montážnik",
+  role_mechanic_d: "Linky, stroje, dopravníky",
+  role_mechatronic: "Mechatronik",
+  role_mechatronic_d: "Pneumatika, automatizácia",
+  role_structural: "Montážnik konštrukcií",
+  role_structural_d: "Oceľ, regály, plošiny",
+  crewRoles: "Profesie",
+  crewDuration: "Dĺžka nasadenia",
+  duration_short: "Do 1 mesiaca",
+  duration_mid: "1–3 mesiace",
+  duration_long: "Viac ako 3 mesiace",
+  crewStart: "Nástup",
+  start_asap: "Čo najskôr",
+  start_month: "Do 30 dní",
+  start_planned: "Plánujeme dopredu",
+  crewLocation: "Miesto výkonu práce",
+  crewLocationPh: "napr. Ingolstadt, Nemecko",
+  ticketTitle: "Montážny list",
+  ticketNo: "Č.",
+  ticketDate: "Dátum",
+  ticketCrew: "Zloženie partie",
+  ticketTotal: "Spolu",
+  ticketPeople: "os.",
+  ticketEmpty: "Pridajte aspoň jednu profesiu.",
+  ticketSend: "Odoslať dopyt",
+  ticketNote: "Údaje sa prenesú do kontaktného formulára.",
+  decrease: "Ubrať",
+  increase: "Pridať",
 
-  // Projects page
-  presentation: "We present a selection of our most significant projects in the field of electrical engineering and industrial assembly implemented for major clients.",
-  projectsTitle: "Our Completed Projects",
-  projectsSubtitle:
-    "Explore a selection of our most important projects in electrical engineering and industrial assembly.",
-  viewProject: "View Project",
-  projectDetails: "Project Details",
-  completedIn: "Completed In",
-  projectType: "Project Type",
-  client: "Client",
+  // Field archive
+  fieldMarker: "Projekty",
+  fieldTitle: "Z hál, kde sme pracovali.",
+  fieldSub: "Skutočné fotky z našich nasadení. Žiadna fotobanka.",
+  fieldOpen: "Zväčšiť fotku",
+  fieldCtaTitle: "Ďalšia hala môže byť vaša.",
+  fieldCta: "Poslať dopyt",
+  lbClose: "Zavrieť",
+  lbPrev: "Predchádzajúca",
+  lbNext: "Ďalšia",
+
+  // Process
+  procMarker: "Postup",
+  procTitle: "Od telefonátu po prvú zmenu.",
+  proc1T: "Zadanie",
+  proc1D: "Popíšete rozsah prác, profesie, počty ľudí a termín nástupu.",
+  proc2T: "Výber ľudí",
+  proc2D: "Zostavíme partiu z ľudí, ktorí majú skúsenosti presne s týmto typom práce.",
+  proc3T: "Nástup",
+  proc3D: "Tím dorazí na miesto v dohodnutom termíne a pustí sa do práce.",
+  proc4T: "Jeden kontakt",
+  proc4D: "Počas celého projektu riešite všetko s jedným človekom — s nami.",
+
+  // Team
+  teamMarker: "Kontakt",
+  teamTitle: "E&P Industry.",
+  teamTitleSub: "Priama linka. Žiadne call centrum.",
+  lineLabel: "Linka",
+  teamSub: "Keď zavoláte, dvíha to človek, ktorý o vašom projekte rozhoduje.",
+  call: "Zavolať",
+  writeEmail: "Napísať e-mail",
+
+  // Careers
+  careersKicker: "Kariéra",
+  careersTitle: "Ste elektrikár, mechanik alebo mechatronik?",
+  careersText:
+    "Hľadáme skúsených ľudí, ktorí sú pripravení vycestovať za prácou na priemyselné projekty. Ozvite sa nám.",
+  careersCta: "Chcem sa pridať",
+
+  // Footer
+  footerLine: "Máte projekt? Nájdeme preň ľudí.",
+  footerAbout:
+    "Slovenská spoločnosť, ktorá dodáva kvalifikovaných pracovníkov pre medzinárodné priemyselné projekty.",
+  footerNav: "Navigácia",
+  footerServices: "Služby",
+  footerContact: "Kontakt",
+  footerRights: `© ${year} E&P Industry s.r.o. Všetky práva vyhradené.`,
+  backToTop: "Hore",
 
   // Contact page
-  contactTitle: "Contact Us",
-  contactSubtitle:
-    "Do you have a project or question? We’d be happy to help bring your plans to life.",
-  getInTouch: "Get in Touch",
-  contactForm: "Contact Form",
-  name: "Full Name",
-  email: "Email",
-  phone: "Phone",
-  company: "Company",
-  message: "Message",
-  sendMessage: "Send Message",
-  vas: "We are here for you",
-  look: "Looking for experienced workers? Or are you an electrician or mechanic ready to travel? Get in touch – we connect companies with skilled professionals.",
-  writeMessage: "Write a message",
-  here: "We are here for you. Contact us by phone or email. We’ll gladly discuss your project and find the best solution.",
-  nonstop: "24/7 emergency line",
-  answer: "Response within 24 hours",
-  nameGrey: "Your full name",
-  emailGrey: "your@email.com",
-  companyGrey: "Company name",
-  projectGrey: "Describe your project or requirements...",
-  sending: "Sending...",
+  contactKicker: "Kontakt",
+  contactTitle: "Povedzte nám, koho potrebujete.",
+  contactSub: "Zavolajte priamo alebo vyplňte formulár. Odpovedáme do 24 hodín.",
+  modeClient: "Hľadám ľudí",
+  modeJob: "Hľadám prácu",
+  modeClientHint: "Pre firmy a projekty",
+  modeJobHint: "Pre elektrikárov, mechanikov a mechatronikov",
+  fName: "Meno a priezvisko",
+  fCompany: "Spoločnosť",
+  fEmail: "E-mail",
+  fPhone: "Telefón",
+  fMessage: "Správa",
+  fProfession: "Profesia",
+  phName: "Vaše meno",
+  phCompany: "Názov spoločnosti",
+  phEmail: "vas@email.sk",
+  phPhone: "+421 …",
+  phMessageClient: "Rozsah prác, miesto, termín…",
+  phMessageJob: "Vaša prax, certifikáty, odkedy môžete nastúpiť…",
+  required: "povinné",
+  optional: "nepovinné",
+  send: "Odoslať",
+  sending: "Odosiela sa…",
+  sent: "Ďakujeme. Správu sme prijali a ozveme sa do 24 hodín.",
+  sendError: "Správu sa nepodarilo odoslať. Skúste to znova alebo nám zavolajte.",
+  crewAttached: "Pripojený montážny list",
+  crewRemove: "Odstrániť",
+  directLines: "Priame linky",
+  emailLabel: "E-mail",
+  responseTime: "Odpoveď do 24 hodín",
+  profOther: "Iné",
+}
 
-  // Contact info
-  phoneLabel: "Phone",
+export type TranslationKey = keyof typeof sk
+
+const en: Record<TranslationKey, string> = {
+  navAbout: "About",
+  navServices: "Services",
+  navProjects: "Projects",
+  navProcess: "Process",
+  navContact: "Contact",
+  navCta: "Build your crew",
+  menu: "Menu",
+  close: "Close",
+  skip: "Skip to content",
+  language: "Language",
+
+  heroKicker: "Skilled people for industrial projects",
+  heroL1: "Electricians",
+  heroL2: "Mechanics",
+  heroL3: "Technicians",
+  heroSub:
+    "We supply experienced specialists and complete installation teams — from production-line assembly to control-cabinet wiring. In Slovakia, across Europe and beyond.",
+  heroCta: "Build your crew",
+  heroCallLabel: "Call us directly",
+  heroPhotoTag: "Field photo",
+  heroPhotoCaption: "Wiring a control cabinet",
+
+  disc_electro_title: "Electrical installations",
+  disc_electro_short: "Cabinets, cabling, cable routes",
+  disc_electro_desc:
+    "Complete electrical installations, cable pulling, tray installation and distribution-cabinet wiring. We supply individual specialists as well as complete installation teams.",
+  disc_electro_tags: "Cabinet wiring · Cable pulling · Tray installation · Electrical installations",
+  disc_assembly_title: "Industrial assembly",
+  disc_assembly_short: "Lines, machines, conveyors",
+  disc_assembly_desc:
+    "Fitters for the assembly, dismantling and maintenance of machines, production lines and conveyor systems.",
+  disc_assembly_tags: "Production lines · Machines · Conveyors · Dismantling & relocation",
+  disc_mechatronics_title: "Mechatronics",
+  disc_mechatronics_short: "Pneumatics, automation, controls",
+  disc_mechatronics_desc:
+    "Specialists in pneumatics, automation and control systems. They set up and assemble technological units that combine mechanics and electronics into one working system.",
+  disc_mechatronics_tags: "Pneumatics · Automation · Control systems · Machine setup",
+  disc_steel_title: "Steel structures & racking",
+  disc_steel_short: "Structures, racking, platforms",
+  disc_steel_desc:
+    "Experienced fitters for fast and precise installation of structures and racking systems to project specification — reliably, safely and without compromise.",
+  disc_steel_tags: "Steel structures · Racking systems · Platforms",
+
+  aboutMarker: "About",
+  aboutStatement1: "When production is being built, moved or modernised, we send people who know what they're doing.",
+  aboutStatement2: "Individual specialists or entire teams — exactly what your project needs.",
+  aboutText1:
+    "E&P Industry is a Slovak company supplying qualified workers for international industrial projects. We handle mechanical and electrical work in every form — from assembling and dismantling production lines and building racking systems to wiring distribution cabinets, pneumatic systems and technical support for production sites.",
+  aboutText2:
+    "Our teams work precisely, efficiently and without unnecessary complications. We always put reliability, quality and compliance with current legislation first.",
+  fact1K: "Scope",
+  fact1V: "Individual specialists and complete teams",
+  fact2K: "Deployment",
+  fact2V: "Short-term and long-term projects",
+  fact3K: "Coverage",
+  fact3V: "Slovakia, Europe and beyond",
+  fact4K: "Standard",
+  fact4V: "Work in line with current legislation",
+  aboutPhotoCaption: "Robotic cell — assembly and wiring",
+
+  discMarker: "Services",
+  discTitle: "Four trades. One crew.",
+  discSub:
+    "We build teams around the work, not a spreadsheet — combining trades so the crew on site can cover the full scope.",
+
+  crewMarker: "Request",
+  crewTitle: "Build your crew.",
+  crewSub: "Pick the trades, headcount and timing. We'll turn it into a concrete offer — we reply within 24 hours.",
+  role_electrician: "Electrician",
+  role_electrician_d: "Cabinets, cabling, routes",
+  role_mechanic: "Mechanic / fitter",
+  role_mechanic_d: "Lines, machines, conveyors",
+  role_mechatronic: "Mechatronics technician",
+  role_mechatronic_d: "Pneumatics, automation",
+  role_structural: "Structural fitter",
+  role_structural_d: "Steel, racking, platforms",
+  crewRoles: "Trades",
+  crewDuration: "Duration",
+  duration_short: "Under 1 month",
+  duration_mid: "1–3 months",
+  duration_long: "Over 3 months",
+  crewStart: "Start",
+  start_asap: "As soon as possible",
+  start_month: "Within 30 days",
+  start_planned: "Planning ahead",
+  crewLocation: "Work location",
+  crewLocationPh: "e.g. Ingolstadt, Germany",
+  ticketTitle: "Crew request",
+  ticketNo: "No.",
+  ticketDate: "Date",
+  ticketCrew: "Crew",
+  ticketTotal: "Total",
+  ticketPeople: "ppl",
+  ticketEmpty: "Add at least one trade.",
+  ticketSend: "Send request",
+  ticketNote: "Details carry over to the contact form.",
+  decrease: "Remove",
+  increase: "Add",
+
+  fieldMarker: "Projects",
+  fieldTitle: "From the halls we've worked in.",
+  fieldSub: "Real photos from our deployments. No stock images.",
+  fieldOpen: "Enlarge photo",
+  fieldCtaTitle: "The next hall could be yours.",
+  fieldCta: "Send a request",
+  lbClose: "Close",
+  lbPrev: "Previous",
+  lbNext: "Next",
+
+  procMarker: "Process",
+  procTitle: "From first call to first shift.",
+  proc1T: "Brief",
+  proc1D: "You describe the scope, trades, headcount and start date.",
+  proc2T: "Selection",
+  proc2D: "We put together a crew with experience in exactly this type of work.",
+  proc3T: "Mobilisation",
+  proc3D: "The team arrives on site on the agreed date and gets to work.",
+  proc4T: "One contact",
+  proc4D: "For the whole project you deal with one person — us.",
+
+  teamMarker: "Contact",
+  teamTitle: "E&P Industry.",
+  teamTitleSub: "A direct line. No call centre.",
+  lineLabel: "Line",
+  teamSub: "When you call, the person who picks up is the one who makes decisions about your project.",
+  call: "Call",
+  writeEmail: "Send an email",
+
+  careersKicker: "Careers",
+  careersTitle: "Electrician, mechanic or mechatronics technician?",
+  careersText:
+    "We're looking for experienced people who are ready to travel for work on industrial projects. Get in touch.",
+  careersCta: "I want to join",
+
+  footerLine: "Got a project? We'll find the people.",
+  footerAbout: "A Slovak company supplying qualified workers for international industrial projects.",
+  footerNav: "Navigation",
+  footerServices: "Services",
+  footerContact: "Contact",
+  footerRights: `© ${year} E&P Industry s.r.o. All rights reserved.`,
+  backToTop: "Top",
+
+  contactKicker: "Contact",
+  contactTitle: "Tell us who you need.",
+  contactSub: "Call us directly or fill in the form. We reply within 24 hours.",
+  modeClient: "I need workers",
+  modeJob: "I'm looking for work",
+  modeClientHint: "For companies and projects",
+  modeJobHint: "For electricians, mechanics and technicians",
+  fName: "Full name",
+  fCompany: "Company",
+  fEmail: "Email",
+  fPhone: "Phone",
+  fMessage: "Message",
+  fProfession: "Trade",
+  phName: "Your name",
+  phCompany: "Company name",
+  phEmail: "you@company.com",
+  phPhone: "+49 …",
+  phMessageClient: "Scope of work, location, dates…",
+  phMessageJob: "Your experience, certificates, when you can start…",
+  required: "required",
+  optional: "optional",
+  send: "Send",
+  sending: "Sending…",
+  sent: "Thank you. We've received your message and will reply within 24 hours.",
+  sendError: "The message couldn't be sent. Please try again or call us.",
+  crewAttached: "Attached crew request",
+  crewRemove: "Remove",
+  directLines: "Direct lines",
   emailLabel: "Email",
-  addressLabel: "Address",
-  address: "Hlavná 123, 010 01 Žilina, Slovakia",
-
-  // Footer
-  footerText: `© ${new Date().getFullYear()} E&P Industry s.r.o. All rights reserved.`,
-  followUs: "Follow Us",
-  quickLinks: "Quick Links",
-  ourServices: "Our Services",
-  contactInfo: "Contact Information",
-  footer: "E&P Industry is a Slovak company specializing in providing qualified workers for international industrial projects.",
-},
-  de: {
-  // Navigation
-  home: "Startseite",
-  projects: "Projekte",
-  contact: "Kontakt",
-  about: "Über uns",
-  services: "Dienstleistungen",
-
-  // Home page
-  heroTi: "Professionelle Lösungen",
-  heroTitle: "Professionelle Elektro- und Montagelösungen",
-  heroSubtitle:
-    "Wir liefern genau die Fachkräfte, die Ihr Projekt benötigt – schnell, zuverlässig und überall in Europa und darüber hinaus.",
-  getQuote: "Kontaktieren Sie uns",
-  ourProjects: "Unsere Projekte",
-  learnMore: "Mehr erfahren",
-
-  // About section
-  aboutTitle: "Über E&P Industry",
-  aboutText1:
-    "E&P Industry ist ein slowakisches Unternehmen, das sich auf die Bereitstellung qualifizierter Fachkräfte für internationale Industrieprojekte spezialisiert hat. Wir konzentrieren uns auf mechanische und elektrotechnische Arbeiten in jeder Form – von der Montage und Demontage von Produktionslinien, dem Aufbau von Regalsystemen, bis hin zum Anschluss von Schaltschränken, Elektroinstallationen, pneumatischen Systemen und umfassender technischer Unterstützung von Produktionsbetrieben.",
-  aboutText2:
-    "Wir sind in Europa und darüber hinaus tätig. Unsere Teams arbeiten präzise, effizient und ohne unnötige Komplikationen. Zuverlässigkeit, Qualität und die Einhaltung der geltenden Vorschriften stehen bei uns immer im Vordergrund.",
-
-  // Services
-  servicesL: "Leistungen",
-  komplex: "Wir bieten umfassende Lösungen im Bereich der Elektrotechnik und Industriemontage.",
-  servicesTitle: "Unsere Dienstleistungen",
-  service1Title: "Elektroinstallationen",
-  service1Desc:
-    "Wir bieten komplette Elektroinstallationen, Kabelverlegung, Trassenmontage und umfassende elektrotechnische Arbeiten. Sowohl einzelne Fachkräfte als auch komplette Montageteams stehen zur Verfügung.",
-  service2Title: "Industriemontagen",
-  service2Desc:
-    "Wir stellen Fachpersonal für die Montage und Wartung von Maschinen, Produktionslinien und Förderanlagen bereit.",
-  service3Title: "Mechatronik",
-  service3Desc:
-    "Wir liefern Spezialisten für Pneumatik, Automatisierung und Steuerungstechnik. Unsere Fachkräfte montieren und konfigurieren technische Einheiten, die Mechanik und Elektronik zu einem funktionierenden Ganzen verbinden.",
-  service4Title: "Stahlkonstruktionen & Regalsysteme",
-  service4Desc:
-    "Erfahrene Monteure für eine schnelle und präzise Umsetzung von Konstruktionen und Regalsystemen gemäß Projekt – zuverlässig, sicher und ohne Kompromisse.",
-
-  // Why choose us
-  why: "Warum wir",
-  reason: "Gründe, warum Kunden uns für ihre Projekte auswählen",
-  portfolio: "Portfolio unserer Arbeit",
-  whyChooseTitle: "Warum E&P Industry wählen",
-  reason1Title: "Erfahrene Fachkräfte",
-  reason1Desc:
-    "Wir stellen qualifizierte Fachkräfte mit Industrieerfahrung und geprüften Fähigkeiten zur Verfügung.",
-  reason2Title: "Zertifizierte Techniker",
-  reason2Desc:
-    "Alle unsere Techniker verfügen über die erforderlichen Zertifikate und absolvieren regelmäßige Schulungen.",
-  reason3Title: "Umfassender Service",
-  reason3Desc:
-    "Wir bieten Personal für verschiedene technische Bereiche – von Elektroinstallationen über mechanische Montage bis hin zur Mechatronik.",
-  reason4Title: "Flexibilität",
-  reason4Desc:
-    "Wir passen uns Ihren Anforderungen und Terminen an – ob für kurzfristige oder langfristige Projekte.",
-
-  // Projects page
-  presentation: "Wir präsentieren eine Auswahl unserer bedeutendsten Projekte im Bereich Elektrotechnik und Industriemontage, die wir für Großkunden umgesetzt haben.",
-  projectsTitle: "Unsere realisierten Projekte",
-  projectsSubtitle:
-    "Werfen Sie einen Blick auf eine Auswahl unserer bedeutendsten Projekte im Bereich Elektrotechnik und Industriemontage.",
-  viewProject: "Projekt anzeigen",
-  projectDetails: "Projektdetails",
-  completedIn: "Abgeschlossen in",
-  projectType: "Projekttyp",
-  client: "Kunde",
-
-  // Contact page
-  contactTitle: "Kontaktieren Sie uns",
-  contactSubtitle:
-    "Haben Sie ein Projekt oder eine Frage? Wir helfen Ihnen gerne bei der Umsetzung Ihrer Pläne.",
-  getInTouch: "Kontakt aufnehmen",
-  contactForm: "Kontaktformular",
-  name: "Vollständiger Name",
-  email: "E-Mail",
-  phone: "Telefon",
-  company: "Unternehmen",
-  message: "Nachricht",
-  sendMessage: "Nachricht senden",
-
-  // Contact info
-  phoneLabel: "Telefon",
-  emailLabel: "E-Mail",
-  addressLabel: "Adresse",
-  address: "Hlavná 123, 010 01 Žilina, Slowakei",
-  vas: "Wir sind für Sie da",
-  look: "Suchen Sie erfahrene Fachkräfte? Oder sind Sie Elektriker oder Mechaniker und bereit zu reisen? Kontaktieren Sie uns – wir verbinden Unternehmen mit qualifizierten Fachleuten.",
-  writeMessage: "Nachricht schreiben",
-  here: "Wir sind für Sie da. Kontaktieren Sie uns telefonisch oder per E-Mail. Gerne besprechen wir Ihr Projekt und finden die beste Lösung.",
-  nonstop: "24/7 Notfall-Hotline",
-  answer: "Antwort innerhalb von 24 Stunden",
-  nameGrey: "Ihr vollständiger Name",
-  emailGrey: "ihre@email.de",
-  companyGrey: "Firmenname",
-  projectGrey: "Beschreiben Sie Ihr Projekt oder Ihre Anforderungen...",
-  sending: "Wird gesendet...",
-
-  // Footer
-  footerText: `© ${new Date().getFullYear()} E&P Industry s.r.o. Alle Rechte vorbehalten.`,
-  followUs: "Folgen Sie uns",
-  quickLinks: "Schnellzugriff",
-  ourServices: "Unsere Dienstleistungen",
-  contactInfo: "Kontaktinformationen",
-  footer: "E&P Industry ist ein slowakisches Unternehmen, das auf die Bereitstellung qualifizierter Arbeitskräfte für internationale Industrieprojekte spezialisiert ist.",
-},
+  responseTime: "Reply within 24 hours",
+  profOther: "Other",
 }
+
+const de: Record<TranslationKey, string> = {
+  navAbout: "Über uns",
+  navServices: "Leistungen",
+  navProjects: "Projekte",
+  navProcess: "Ablauf",
+  navContact: "Kontakt",
+  navCta: "Team anfragen",
+  menu: "Menü",
+  close: "Schließen",
+  skip: "Zum Inhalt springen",
+  language: "Sprache",
+
+  heroKicker: "Fachkräfte für Industrieprojekte",
+  heroL1: "Elektriker",
+  heroL2: "Mechaniker",
+  heroL3: "Mechatroniker",
+  heroSub:
+    "Wir stellen erfahrene Fachkräfte und komplette Montageteams — von der Montage von Produktionslinien bis zur Verdrahtung von Schaltschränken. In der Slowakei, in ganz Europa und darüber hinaus.",
+  heroCta: "Team zusammenstellen",
+  heroCallLabel: "Direkt anrufen",
+  heroPhotoTag: "Foto vom Einsatz",
+  heroPhotoCaption: "Verdrahtung eines Schaltschranks",
+
+  disc_electro_title: "Elektroinstallationen",
+  disc_electro_short: "Schaltschränke, Verkabelung, Kabeltrassen",
+  disc_electro_desc:
+    "Komplette Elektroinstallationen, Kabelverlegung, Trassenmontage und Verdrahtung von Schaltschränken. Wir stellen einzelne Fachkräfte ebenso wie komplette Montageteams.",
+  disc_electro_tags: "Schaltschrankverdrahtung · Kabelzug · Trassenmontage · Elektroinstallation",
+  disc_assembly_title: "Industriemontage",
+  disc_assembly_short: "Linien, Maschinen, Förderanlagen",
+  disc_assembly_desc:
+    "Monteure für Montage, Demontage und Wartung von Maschinen, Produktionslinien und Förderanlagen.",
+  disc_assembly_tags: "Produktionslinien · Maschinen · Förderanlagen · Demontage & Verlagerung",
+  disc_mechatronics_title: "Mechatronik",
+  disc_mechatronics_short: "Pneumatik, Automatisierung, Steuerung",
+  disc_mechatronics_desc:
+    "Spezialisten für Pneumatik, Automatisierung und Steuerungstechnik. Sie montieren und richten technische Einheiten ein, die Mechanik und Elektronik zu einem funktionierenden Ganzen verbinden.",
+  disc_mechatronics_tags: "Pneumatik · Automatisierung · Steuerungstechnik · Einrichtung",
+  disc_steel_title: "Stahlbau & Regalsysteme",
+  disc_steel_short: "Konstruktionen, Regale, Bühnen",
+  disc_steel_desc:
+    "Erfahrene Monteure für die schnelle und präzise Umsetzung von Konstruktionen und Regalsystemen nach Projekt — zuverlässig, sicher und ohne Kompromisse.",
+  disc_steel_tags: "Stahlkonstruktionen · Regalsysteme · Arbeitsbühnen",
+
+  aboutMarker: "Über uns",
+  aboutStatement1:
+    "Wenn eine Produktion aufgebaut, verlagert oder modernisiert wird, schicken wir Leute, die wissen, was sie tun.",
+  aboutStatement2: "Einzelne Fachkräfte oder ganze Teams — genau so, wie Ihr Projekt es braucht.",
+  aboutText1:
+    "E&P Industry ist ein slowakisches Unternehmen, das qualifizierte Fachkräfte für internationale Industrieprojekte bereitstellt. Wir übernehmen mechanische und elektrotechnische Arbeiten in jeder Form — von Montage und Demontage von Produktionslinien und dem Aufbau von Regalsystemen bis zur Verdrahtung von Schaltschränken, Pneumatik und technischer Unterstützung von Produktionsbetrieben.",
+  aboutText2:
+    "Unsere Teams arbeiten präzise, effizient und ohne unnötige Komplikationen. Zuverlässigkeit, Qualität und die Einhaltung der geltenden Vorschriften stehen bei uns immer an erster Stelle.",
+  fact1K: "Umfang",
+  fact1V: "Einzelne Fachkräfte und komplette Teams",
+  fact2K: "Einsatz",
+  fact2V: "Kurz- und langfristige Projekte",
+  fact3K: "Einsatzgebiet",
+  fact3V: "Slowakei, Europa und darüber hinaus",
+  fact4K: "Standard",
+  fact4V: "Arbeit gemäß geltender Vorschriften",
+  aboutPhotoCaption: "Roboterzelle — Montage und Verdrahtung",
+
+  discMarker: "Leistungen",
+  discTitle: "Vier Gewerke. Ein Team.",
+  discSub:
+    "Wir stellen Teams nach der Aufgabe zusammen, nicht nach Tabelle — und kombinieren Gewerke so, dass das Team vor Ort den ganzen Umfang abdeckt.",
+
+  crewMarker: "Anfrage",
+  crewTitle: "Stellen Sie Ihr Team zusammen.",
+  crewSub:
+    "Wählen Sie Gewerke, Anzahl und Zeitraum. Daraus erstellen wir ein konkretes Angebot — Antwort innerhalb von 24 Stunden.",
+  role_electrician: "Elektriker",
+  role_electrician_d: "Schaltschränke, Kabel, Trassen",
+  role_mechanic: "Mechaniker / Monteur",
+  role_mechanic_d: "Linien, Maschinen, Förderer",
+  role_mechatronic: "Mechatroniker",
+  role_mechatronic_d: "Pneumatik, Automatisierung",
+  role_structural: "Stahlbaumonteur",
+  role_structural_d: "Stahl, Regale, Bühnen",
+  crewRoles: "Gewerke",
+  crewDuration: "Einsatzdauer",
+  duration_short: "Unter 1 Monat",
+  duration_mid: "1–3 Monate",
+  duration_long: "Über 3 Monate",
+  crewStart: "Beginn",
+  start_asap: "So bald wie möglich",
+  start_month: "Innerhalb von 30 Tagen",
+  start_planned: "Langfristig geplant",
+  crewLocation: "Einsatzort",
+  crewLocationPh: "z. B. Ingolstadt, Deutschland",
+  ticketTitle: "Montageauftrag",
+  ticketNo: "Nr.",
+  ticketDate: "Datum",
+  ticketCrew: "Team",
+  ticketTotal: "Gesamt",
+  ticketPeople: "Pers.",
+  ticketEmpty: "Fügen Sie mindestens ein Gewerk hinzu.",
+  ticketSend: "Anfrage senden",
+  ticketNote: "Die Angaben werden ins Kontaktformular übernommen.",
+  decrease: "Entfernen",
+  increase: "Hinzufügen",
+
+  fieldMarker: "Projekte",
+  fieldTitle: "Aus den Hallen, in denen wir gearbeitet haben.",
+  fieldSub: "Echte Fotos von unseren Einsätzen. Keine Stockfotos.",
+  fieldOpen: "Foto vergrößern",
+  fieldCtaTitle: "Die nächste Halle könnte Ihre sein.",
+  fieldCta: "Anfrage senden",
+  lbClose: "Schließen",
+  lbPrev: "Vorheriges",
+  lbNext: "Nächstes",
+
+  procMarker: "Ablauf",
+  procTitle: "Vom ersten Anruf bis zur ersten Schicht.",
+  proc1T: "Anfrage",
+  proc1D: "Sie beschreiben Arbeitsumfang, Gewerke, Anzahl der Personen und Starttermin.",
+  proc2T: "Auswahl",
+  proc2D: "Wir stellen ein Team mit Erfahrung in genau dieser Art von Arbeit zusammen.",
+  proc3T: "Einsatz",
+  proc3D: "Das Team ist zum vereinbarten Termin vor Ort und legt los.",
+  proc4T: "Ein Ansprechpartner",
+  proc4D: "Während des gesamten Projekts klären Sie alles mit einer Person — mit uns.",
+
+  teamMarker: "Kontakt",
+  teamTitle: "E&P Industry.",
+  teamTitleSub: "Direkter Draht. Kein Callcenter.",
+  lineLabel: "Leitung",
+  teamSub: "Wenn Sie anrufen, nimmt jemand ab, der über Ihr Projekt entscheidet.",
+  call: "Anrufen",
+  writeEmail: "E-Mail schreiben",
+
+  careersKicker: "Karriere",
+  careersTitle: "Sie sind Elektriker, Mechaniker oder Mechatroniker?",
+  careersText:
+    "Wir suchen erfahrene Leute, die bereit sind, für Industrieprojekte zu reisen. Melden Sie sich bei uns.",
+  careersCta: "Ich will dabei sein",
+
+  footerLine: "Ein Projekt? Wir finden die Leute dafür.",
+  footerAbout: "Ein slowakisches Unternehmen, das qualifizierte Fachkräfte für internationale Industrieprojekte stellt.",
+  footerNav: "Navigation",
+  footerServices: "Leistungen",
+  footerContact: "Kontakt",
+  footerRights: `© ${year} E&P Industry s.r.o. Alle Rechte vorbehalten.`,
+  backToTop: "Nach oben",
+
+  contactKicker: "Kontakt",
+  contactTitle: "Sagen Sie uns, wen Sie brauchen.",
+  contactSub: "Rufen Sie direkt an oder füllen Sie das Formular aus. Wir antworten innerhalb von 24 Stunden.",
+  modeClient: "Ich suche Fachkräfte",
+  modeJob: "Ich suche Arbeit",
+  modeClientHint: "Für Unternehmen und Projekte",
+  modeJobHint: "Für Elektriker, Mechaniker und Mechatroniker",
+  fName: "Vor- und Nachname",
+  fCompany: "Unternehmen",
+  fEmail: "E-Mail",
+  fPhone: "Telefon",
+  fMessage: "Nachricht",
+  fProfession: "Gewerk",
+  phName: "Ihr Name",
+  phCompany: "Firmenname",
+  phEmail: "ihre@firma.de",
+  phPhone: "+49 …",
+  phMessageClient: "Arbeitsumfang, Ort, Termine…",
+  phMessageJob: "Ihre Erfahrung, Zertifikate, frühester Beginn…",
+  required: "Pflichtfeld",
+  optional: "optional",
+  send: "Senden",
+  sending: "Wird gesendet…",
+  sent: "Vielen Dank. Wir haben Ihre Nachricht erhalten und melden uns innerhalb von 24 Stunden.",
+  sendError: "Die Nachricht konnte nicht gesendet werden. Bitte versuchen Sie es erneut oder rufen Sie uns an.",
+  crewAttached: "Angehängter Montageauftrag",
+  crewRemove: "Entfernen",
+  directLines: "Direkte Durchwahl",
+  emailLabel: "E-Mail",
+  responseTime: "Antwort innerhalb von 24 Stunden",
+  profOther: "Sonstiges",
+}
+
+const translations: Record<Language, Record<TranslationKey, string>> = { sk, en, de }
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined)
 
-export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [language, setLanguage] = useState<Language>("en")
-
-  const t = (key: string): string => {
-    return translations[language][key as keyof (typeof translations)[typeof language]] || key
-  }
-
-  return <LanguageContext.Provider value={{ language, setLanguage, t }}>{children}</LanguageContext.Provider>
+// The language comes from the URL (/, /en, /de), so the server renders the right one and Google indexes each
+export function LanguageProvider({ lang, children }: { lang: Language; children: ReactNode }) {
+  const value = useMemo<LanguageContextType>(
+    () => ({
+      language: lang,
+      t: (key) => translations[lang][key] ?? key,
+      lp: (href) => localePath(lang, href),
+    }),
+    [lang],
+  )
+  return <LanguageContext.Provider value={value}>{children}</LanguageContext.Provider>
 }
 
 export function useLanguage() {

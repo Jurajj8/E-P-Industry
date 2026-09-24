@@ -8,11 +8,41 @@ const config: Config = {
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./lib/**/*.{js,ts,jsx,tsx,mdx}",
     "*.{js,ts,jsx,tsx,mdx}"
   ],
   theme: {
   	extend: {
+  		screens: {
+  			rail: '1400px'
+  		},
+  		fontFamily: {
+  			sans: ['var(--font-archivo)', 'system-ui', 'sans-serif'],
+  			mono: ['var(--font-mono)', 'ui-monospace', 'SFMono-Regular', 'monospace']
+  		},
   		colors: {
+  			// E&P brand system — graphite, drawing paper, logo teal, wire-marker yellow
+  			ink: {
+  				DEFAULT: '#0E1317',
+  				800: '#151C21',
+  				700: '#1E272D',
+  				600: '#2C373E'
+  			},
+  			paper: {
+  				DEFAULT: '#F3F1EC',
+  				200: '#E9E6DF',
+  				300: '#D8D4CA'
+  			},
+  			steel: {
+  				DEFAULT: '#6F767B',
+  				light: '#A4A9AC'
+  			},
+  			teal: {
+  				DEFAULT: '#2A7394',
+  				dark: '#1F5A75',
+  				light: '#6DB2C8'
+  			},
+  			signal: '#F0C419',
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
   			card: {
@@ -85,11 +115,29 @@ const config: Config = {
   				to: {
   					height: '0'
   				}
+  			},
+  			'line-up': {
+  				from: {
+  					transform: 'translateY(105%)'
+  				},
+  				to: {
+  					transform: 'translateY(0)'
+  				}
+  			},
+  			'fade-in': {
+  				from: {
+  					opacity: '0'
+  				},
+  				to: {
+  					opacity: '1'
+  				}
   			}
   		},
   		animation: {
   			'accordion-down': 'accordion-down 0.2s ease-out',
-  			'accordion-up': 'accordion-up 0.2s ease-out'
+  			'accordion-up': 'accordion-up 0.2s ease-out',
+  			'line-up': 'line-up 0.9s cubic-bezier(0.2, 0.7, 0.1, 1) both',
+  			'fade-in': 'fade-in 0.8s ease-out both'
   		}
   	}
   },

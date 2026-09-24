@@ -1,186 +1,166 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useEffect, useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { usePathname } from "next/navigation"
-import { Menu, X, ChevronDown } from "lucide-react"
+import { ArrowUpRight } from "lucide-react"
 import { useLanguage } from "@/contexts/language-context"
+import LangSwitch from "@/components/site/lang-switch"
+import RevealObserver from "@/components/site/reveal-observer"
+import { contacts } from "@/lib/site"
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const [isLangOpen, setIsLangOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
-  const [searchQuery, setSearchQuery] = useState("")
-  const { language, setLanguage, t } = useLanguage()
+  const { t, lp } = useLanguage()
   const pathname = usePathname()
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20)
-    }
-    window.addEventListener("scroll", handleScroll)
+    const handleScroll = () => setIsScrolled(window.scrollY > 8)
+    handleScroll()
+    window.addEventListener("scroll", handleScroll, { passive: true })
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
   useEffect(() => {
     setIsMenuOpen(false)
-    setIsLangOpen(false)
   }, [pathname])
 
   useEffect(() => {
-    const handleClickOutside = () => {
-      setIsLangOpen(false)
+    document.body.style.overflow = isMenuOpen ? "hidden" : ""
+    if (!isMenuOpen) return
+    const onKey = (e: KeyboardEvent) => e.key === "Escape" && setIsMenuOpen(false)
+    window.addEventListener("keydown", onKey)
+    return () => {
+      document.body.style.overflow = ""
+      window.removeEventListener("keydown", onKey)
     }
-    if (isLangOpen) {
-      document.addEventListener("click", handleClickOutside)
-      return () => document.removeEventListener("click", handleClickOutside)
-    }
-  }, [isLangOpen])
+  }, [isMenuOpen])
 
   const navigation = [
-    { name: t("home"), href: "/" },
-    { name: t("about"), href: "/#about" },
-    { name: t("projects"), href: "/#projects" },
-    { name: t("services"), href: "/#services" },
-    { name: t("contact"), href: "/contact" },
+    { name: t("navAbout"), href: lp("/#about") },
+    { name: t("navServices"), href: lp("/#disciplines") },
+    { name: t("navProjects"), href: lp("/#field") },
+    { name: t("navProcess"), href: lp("/#process") },
+    { name: t("navContact"), href: lp("/contact") },
   ]
 
   return (
-    <header
-      className={`sticky top-0 z-50 transition-all duration-300 ${isScrolled ? "bg-white/95 backdrop-blur-md shadow-xl" : "bg-white shadow-lg"}`}
-    >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center py-3 sm:py-4">
-          {/* Logo */}
-          <Link href="/" className="flex items-center group flex-shrink-0">
+    <>
+      <a
+        href="#main"
+        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:bg-signal focus:px-4 focus:py-2 focus:text-ink"
+      >
+        {t("skip")}
+      </a>
+      <RevealObserver />
+      {/* Solid bar plus an ink extension above it: mobile browsers briefly expose the area above
+          a sticky header while the toolbar resizes or the page bounces */}
+      <header
+        className={`sticky top-0 z-50 border-b bg-ink transition-colors duration-300 before:pointer-events-none before:absolute before:inset-x-0 before:bottom-full before:h-40 before:bg-ink ${
+          isScrolled || isMenuOpen ? "border-paper/10" : "border-transparent"
+        }`}
+      >
+        <div className="mx-auto flex h-[72px] max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+          <Link href={lp("/")} className="flex-shrink-0" aria-label="E&P Industry">
             <Image
               src="/images/logo-transparent.png"
               alt="E&P Industry"
-              width={160}
-              height={48}
-              className="h-10 sm:h-12 w-auto object-contain group-hover:scale-105 transition-transform duration-300"
+              width={1280}
+              height={435}
+              className="h-9 w-auto sm:h-10"
               priority
             />
           </Link>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center space-x-8">
-            {navigation.map((item) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                className={`relative px-3 py-2 text-sm font-semibold transition-colors uppercase tracking-wide ${pathname === item.href || (item.href !== "/" && pathname.startsWith(item.href)) ? "text-[#3182A9]" : "text-[#1F2C3A] hover:text-[#3182A9]"}`}
-              >
-                {item.name}
-                {pathname === item.href ||
-                  (item.href !== "/" && pathname.startsWith(item.href) && (
-                    <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#3182A9] rounded-full" />
-                  ))}
-              </Link>
-            ))}
-          </nav>
-
-          {/* Search & Language & CTA */}
-          <div className="hidden lg:flex items-center space-x-4">
-            {/* Language Switcher */}
-            <div className="relative">
-              <button
-                onClick={(e) => {
-                  e.stopPropagation()
-                  setIsLangOpen(!isLangOpen)
-                }}
-                className={`flex items-center space-x-1.5 px-3 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${isLangOpen ? "bg-gray-100 text-[#1F2C3A]" : "text-[#1F2C3A] hover:bg-gray-50"}`}
-              >
-                <span className="text-xs uppercase tracking-wide font-bold">{language}</span>
-                <ChevronDown
-                  className={`h-3 w-3 transition-transform duration-200 ${isLangOpen ? "rotate-180" : ""}`}
-                />
-              </button>
-
-              {isLangOpen && (
-                <div className="absolute right-0 mt-2 bg-white rounded-lg shadow-xl py-1 min-w-[100px] border border-gray-200 animate-in slide-in-from-top-1 duration-150">
-                  {["sk", "en", "de"].map((lang) => (
-                    <button
-                      key={lang}
-                      onClick={(e) => {
-                        e.stopPropagation()
-                        setLanguage(lang as "sk" | "en" | "de")
-                        setIsLangOpen(false)
-                      }}
-                      className={`flex items-center justify-center px-3 py-2 w-full text-left text-sm transition-colors ${language === lang ? "bg-[#3182A9]/10 text-[#3182A9]" : "text-[#1F2C3A] hover:bg-gray-50"}`}
-                    >
-                      <span className="text-xs uppercase font-bold">{lang}</span>
-                    </button>
-                  ))}
-                </div>
-              )}
-            </div>
-
-            {/* CTA Button */}
-            <Link
-              href="/contact"
-              className="bg-gradient-to-r from-[#3182A9] to-[#1A73E8] text-white px-6 py-2.5 rounded-lg font-semibold hover:from-[#1A73E8] hover:to-[#1565C0] transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 text-sm uppercase tracking-wide"
-            >
-              {t("getQuote")}
-            </Link>
-          </div>
-
-          {/* Mobile menu button */}
-          <button
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="lg:hidden text-[#1F2C3A] p-2 rounded-lg hover:bg-gray-100 transition-colors touch-manipulation"
-            aria-label="Toggle menu"
-          >
-            {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-          </button>
-        </div>
-
-        {/* Mobile Navigation */}
-        {isMenuOpen && (
-          <div className="lg:hidden py-4 border-t border-gray-200 animate-in slide-in-from-top-2 duration-200">
-            <div className="flex flex-col space-y-2">
-              {navigation.map((item) => (
+          <nav className="hidden items-center gap-8 lg:flex" aria-label="Main">
+            {navigation.map((item) => {
+              const active = item.href.endsWith("/contact") && pathname.endsWith("/contact")
+              return (
                 <Link
-                  key={item.name}
+                  key={item.href}
                   href={item.href}
-                  onClick={() => setIsMenuOpen(false)}
-                  className={`px-3 py-3 text-base font-semibold transition-colors rounded-lg touch-manipulation uppercase tracking-wide ${pathname === item.href || (item.href !== "/" && pathname.startsWith(item.href)) ? "text-[#3182A9] bg-[#3182A9]/10" : "text-[#1F2C3A] hover:text-[#3182A9] hover:bg-gray-50"}`}
+                  aria-current={active ? "page" : undefined}
+                  className={`link-underline py-1 text-[15px] transition-colors ${
+                    active ? "text-paper" : "text-paper/65 hover:text-paper"
+                  }`}
                 >
                   {item.name}
                 </Link>
-              ))}
+              )
+            })}
+          </nav>
 
-              {/* Mobile Language Switcher */}
-              <div className="pt-3 border-t border-gray-200 mt-3">
-                <div className="flex space-x-2 justify-center">
-                  {["sk", "en", "de"].map((lang) => (
-                    <button
-                      key={lang}
-                      onClick={() => {
-                        setLanguage(lang as "sk" | "en" | "de")
-                        setIsMenuOpen(false)
-                      }}
-                      className={`flex items-center justify-center px-4 py-2 rounded-lg text-sm font-bold transition-colors touch-manipulation uppercase tracking-wide ${language === lang ? "bg-[#3182A9] text-white" : "text-[#1F2C3A] hover:bg-gray-100 border border-gray-300"}`}
-                    >
-                      {lang}
-                    </button>
-                  ))}
-                </div>
-              </div>
-
-              {/* Mobile CTA */}
-              <Link
-                href="/contact"
-                onClick={() => setIsMenuOpen(false)}
-                className="bg-gradient-to-r from-[#3182A9] to-[#1A73E8] text-white px-6 py-3 rounded-lg font-semibold hover:from-[#1A73E8] hover:to-[#1565C0] transition-all duration-300 shadow-lg text-center mt-4 uppercase tracking-wide touch-manipulation"
-              >
-                {t("getQuote")}
-              </Link>
-            </div>
+          <div className="hidden items-center gap-6 lg:flex">
+            <a
+              href={`tel:${contacts.people[0].tel}`}
+              className="hidden font-mono text-xs tracking-wide text-paper/65 transition-colors hover:text-paper xl:block"
+            >
+              {contacts.people[0].phone}
+            </a>
+            <LangSwitch />
+            <Link href={lp("/#crew")} className="btn-teal px-5 py-3 text-sm">
+              {t("navCta")}
+            </Link>
           </div>
-        )}
-      </div>
-    </header>
+
+          <button
+            onClick={() => setIsMenuOpen((v) => !v)}
+            className="-mr-2 flex h-11 items-center gap-3 px-2 font-mono text-xs uppercase tracking-[0.18em] text-paper lg:hidden"
+            aria-expanded={isMenuOpen}
+            aria-controls="mobile-menu"
+          >
+            {isMenuOpen ? t("close") : t("menu")}
+            <span className="relative block h-3 w-5" aria-hidden>
+              <span
+                className={`absolute left-0 h-px w-5 bg-paper transition-transform duration-300 ${
+                  isMenuOpen ? "top-1.5 rotate-45" : "top-0"
+                }`}
+              />
+              <span
+                className={`absolute left-0 h-px w-5 bg-paper transition-transform duration-300 ${
+                  isMenuOpen ? "top-1.5 -rotate-45" : "top-3"
+                }`}
+              />
+            </span>
+          </button>
+        </div>
+      </header>
+      {/* Kept outside <header> so no ancestor filter/transform can trap this fixed overlay */}
+      {isMenuOpen && (
+        <div
+          id="mobile-menu"
+          className="fixed inset-x-0 bottom-0 top-[72px] z-50 flex animate-fade-in flex-col [animation-duration:200ms] overflow-y-auto bg-ink px-4 pb-8 pt-6 sm:px-6 lg:hidden"
+        >
+          <nav className="flex flex-col" aria-label="Mobile">
+            {navigation.map((item, i) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                onClick={() => setIsMenuOpen(false)}
+                className="stretch-wide flex items-baseline justify-between border-b border-paper/10 py-4 text-3xl font-bold text-paper"
+              >
+                {item.name}
+                <span className="font-mono text-xs font-normal text-paper/40">0{i + 1}</span>
+              </Link>
+            ))}
+          </nav>
+          <Link href={lp("/#crew")} onClick={() => setIsMenuOpen(false)} className="btn-teal mt-8 w-full">
+            {t("navCta")}
+            <ArrowUpRight className="h-4 w-4" />
+          </Link>
+          <div className="mt-auto space-y-3 pt-10">
+            {contacts.people.map((p) => (
+              <a key={p.tel} href={`tel:${p.tel}`} className="flex justify-between font-mono text-sm text-paper/70">
+                <span>{p.name}</span>
+                <span className="text-paper">{p.phone}</span>
+              </a>
+            ))}
+            <LangSwitch size="lg" className="pt-4" />
+          </div>
+        </div>
+      )}
+    </>
   )
 }
